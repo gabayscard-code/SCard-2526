@@ -1,0 +1,270 @@
+<div style="width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden;">
+<!-- Make mobile scaling work properly -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+<div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
+
+  <!-- Search Bar -->
+  <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:20px;">
+    <input 
+      id="searchInput" 
+      type="text" 
+      placeholder="Looking for a specific SCard partner?" 
+      style="width:90%; padding:12px 16px; border:none; border-radius:30px; background-color:#902f36; color:white; font-size:16px; outline:none; text-align:center;">
+  </div>
+
+  <!-- Filter Buttons -->
+  <div id="filters" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:25px;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="JSEC">JSEC</button>
+    <button class="filter-btn" data-filter="Gonz1">Gonz1</button>
+    <button class="filter-btn" data-filter="Along Katipunan">Along Katipunan</button>
+    <button class="filter-btn" data-filter="Other Locations">Other Locations</button>
+    <button class="filter-btn" data-filter="Food">Food</button>
+    <button class="filter-btn" data-filter="Services">Services</button>
+    <button class="filter-btn" data-filter="Accessories">Accessories</button>
+  </div>
+
+  <!-- Partner Cards -->
+  <div id="cardContainer" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+    <!-- Cards go here -->
+  </div>
+
+  <!-- Pagination Controls -->
+  <div id="pagination" style="display:flex; justify-content:center; align-items:center; margin-top:25px; gap:6px; flex-wrap:wrap;">
+    <!-- Page numbers go here -->
+  </div>
+
+</div>
+
+<script>
+const partners = [
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"] },
+  { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
+  { name:"Funki Izakaya", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Funki Pizzikaya", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Charlie’s", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Funki Izakaya - Masinag", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Other Locations","Food"] },
+  { name:"Anytime Fitness", tier:"Platinum", discount:["38% discount on the Regular Enrollment Package","Tiered discounts on Personal Training Packages"], filters:["Along Katipunan","Services"] },
+  { name:"Allo Coffee Roasters", tier:"Bronze", discount:"10% discount on drinks", filters:["Food","Along Katipunan"] },
+  { name:"SweatBread Cafe", tier:"Bronze", discount: ["10% discount on one food order per member per day", "10% discount on one drink order per member per day"] , filters:["Food","Others"] },
+  { name:"Potico", tier:"Platinum", discount:"30% discount with free shipping (ADMUGABAY30), valid for multiple uses with a maximum discount of PHP 250.", filters:["Accessories","Other Locations"] },
+  { name:"FlowerStore", tier:"Platinum", discount:"20% discount with free shipping (ADMUGABAY20), valid for multiple uses with a maximum discount of PHP 200.", filters:["Accessories","Other Locations"] }
+];
+
+const cardContainer = document.getElementById("cardContainer");
+const pagination = document.getElementById("pagination");
+
+let currentPage = 1;
+const cardsPerPage = 9;
+let filteredPartners = [...partners];
+
+function renderCards(list, page=1) {
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const paginated = list.slice(start, end);
+
+  cardContainer.innerHTML = paginated.map(p => `
+    <div style="
+      background:white; 
+      border-radius:16px; 
+      padding:16px; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      border-top:5px solid ${getTierColor(p.tier)};
+    ">
+      <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+      <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+      <div style="margin:4px 0;">
+        ${
+          Array.isArray(p.discount)
+            ? p.discount.map(d => `<div>${d}</div>`).join('')
+            : `<div>${p.discount}</div>`
+        }
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+        ${p.filters.map(f => `<span style="
+          background-color:${getFilterColor(f)}; 
+          color:#902f36;
+          padding:4px 8px;
+          border-radius:12px;
+          font-size:12px;
+        ">${f}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  updatePagination(list);
+}
+
+function getTierColor(tier) {
+  switch(tier) {
+    case "Platinum": return "#b6e630";
+    case "Gold": return "#fedd1d";
+    case "Bronze": return "#cbd54b";
+    default: return "#dce198";
+  }
+}
+
+function getFilterColor(filter) {
+  const colors = ["#fedd1d","#dce198","#b6e630","#cbd54b"];
+  return colors[filter.length % colors.length];
+}
+
+function filterCards() {
+  const search = document.getElementById("searchInput").value.toLowerCase();
+  const activeFilters = Array.from(document.querySelectorAll(".filter-btn.active"))
+                            .map(btn => btn.dataset.filter);
+
+  // If "All" is active → show everything
+  if (activeFilters.includes("all")) {
+    filteredPartners = partners.filter(p => 
+      p.name.toLowerCase().includes(search)
+    );
+  } else {
+    // AND logic: must include *all* active filters
+    filteredPartners = partners.filter(p => {
+      const matchesSearch = p.name.toLowerCase().includes(search);
+      const matchesFilters = activeFilters.every(f => p.filters.includes(f));
+      return matchesSearch && matchesFilters;
+    });
+  }
+
+  currentPage = 1;
+  renderCards(filteredPartners, currentPage);
+}
+
+function updatePagination(list) {
+  const totalPages = Math.ceil(list.length / cardsPerPage);
+  pagination.innerHTML = "";
+
+  if (totalPages <= 1) return;
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = "page-number";
+    if (i === currentPage) btn.classList.add("active-page");
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderCards(filteredPartners, currentPage);
+    });
+    pagination.appendChild(btn);
+  }
+}
+
+document.getElementById("searchInput").addEventListener("input", filterCards);
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (btn.dataset.filter === "all") {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    } else {
+      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+      allBtn.classList.remove("active");
+
+      btn.classList.toggle("active");
+
+      const activeBtns = document.querySelectorAll(".filter-btn.active:not([data-filter='all'])");
+      if (activeBtns.length > 2) btn.classList.remove("active");
+
+      if (document.querySelectorAll(".filter-btn.active:not([data-filter='all'])").length === 0) {
+        allBtn.classList.add("active");
+      }
+    }
+    filterCards();
+  });
+});
+
+// Initial render
+renderCards(partners);
+</script>
+
+<style>
+.filter-btn {
+  background-color:white;
+  border:2px solid #902f36;
+  color:#902f36;
+  border-radius:20px;
+  padding:6px 14px;
+  font-family:'Karla', sans-serif;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+  background-color:#902f36;
+  color:white;
+}
+
+/* Pagination style */
+.page-number {
+  background-color:white;
+  border:2px solid #902f36;
+  color:#902f36;
+  border-radius:10px;
+  padding:6px 12px;
+  font-family:'Karla', sans-serif;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.page-number:hover {
+  background-color:#902f36;
+  color:white;
+}
+.active-page {
+  background-color:#902f36;
+  color:white;
+  border-color:#902f36;
+}
+
+/* White italicized placeholder */
+#searchInput::placeholder {
+  color:white;
+  font-style:italic;
+  opacity:1;
+}
+
+/* ✅ Mobile Adaptability */
+div[style*="max-width:1000px"] {
+  padding: 0 10px;
+}
+
+#cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  #filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    width: 80%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #searchInput {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .page-number {
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+
+  #cardContainer div {
+    padding: 14px;
+  }
+}
+</style>
+</div>
