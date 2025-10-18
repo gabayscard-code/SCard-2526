@@ -6,14 +6,15 @@
     display: flex;
     align-items: center;
     background-color: #902f36;
-    padding: 20px 30px; /* 🔥 increased from 10px → 20px */
+    padding: 20px 30px;
     font-family: 'Finger Paint', cursive;
     position: relative;
+    flex-wrap: wrap; /* allows wrapping on small screens */
   }
 
   /* LEFT LOGO */
   .navbar .logo {
-    flex: 0 0 auto; /* stick to the far left */
+    flex: 0 0 auto;
   }
 
   .navbar .logo img {
@@ -28,9 +29,9 @@
     font-size: 30px; 
     font-weight: bold;
     white-space: nowrap;
+    text-align: center;
   }
 
-  /* Alternate colors for each letter */
   .title span:nth-child(1) { color: #fedd1d; }
   .title span:nth-child(2) { color: #dce198; }
   .title span:nth-child(3) { color: #b6e630; }
@@ -43,9 +44,10 @@
 
   /* RIGHT NAV LINKS */
   .navbar .nav-links {
-    margin-left: auto; /* push links to far right */
+    margin-left: auto;
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
   }
 
   .navbar .nav-links a {
@@ -59,6 +61,38 @@
 
   .navbar .nav-links a:hover {
     background-color: rgba(255,255,255,0.1);
+  }
+
+  /* MOBILE ADAPTABILITY */
+  @media (max-width: 700px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .navbar .logo img {
+      height: 48px;
+    }
+
+    .navbar .title {
+      position: static;
+      transform: none;
+      margin: 10px 0;
+      font-size: 26px;
+    }
+
+    .navbar .nav-links {
+      margin-left: 0;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .navbar .nav-links a {
+      font-size: 15px;
+      padding: 8px 14px;
+    }
   }
 </style>
 
@@ -85,7 +119,9 @@
   </div>
 </div>
 
-<div style="height: 30px;">></div>
+
+<div style="height: 30px;"></div>
+
 
 <div style="width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden;">
 <!-- Make mobile scaling work properly -->
