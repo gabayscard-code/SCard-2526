@@ -1,3 +1,90 @@
+<!-- Load Finger Paint font -->
+<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+
+<style>
+  .navbar {
+    display: flex;
+    align-items: center;
+    background-color: #902f36;
+    padding: 20px 30px; /* 🔥 increased from 10px → 20px */
+    font-family: 'Finger Paint', cursive;
+    position: relative;
+  }
+
+  /* LEFT LOGO */
+  .navbar .logo {
+    flex: 0 0 auto; /* stick to the far left */
+  }
+
+  .navbar .logo img {
+    height: 56px;
+  }
+
+  /* CENTER TITLE */
+  .navbar .title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px; 
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  /* Alternate colors for each letter */
+  .title span:nth-child(1) { color: #fedd1d; }
+  .title span:nth-child(2) { color: #dce198; }
+  .title span:nth-child(3) { color: #b6e630; }
+  .title span:nth-child(4) { color: #cbd54b; }
+  .title span:nth-child(5) { color: #fedd1d; }
+  .title span:nth-child(6) { color: #dce198; }
+  .title span:nth-child(7) { color: #b6e630; }
+  .title span:nth-child(8) { color: #cbd54b; }
+  .title span:nth-child(9) { color: #fedd1d; }
+
+  /* RIGHT NAV LINKS */
+  .navbar .nav-links {
+    margin-left: auto; /* push links to far right */
+    display: flex;
+    gap: 15px;
+  }
+
+  .navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 11px 18px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+
+  .navbar .nav-links a:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+</style>
+
+<div class="navbar">
+  <!-- LEFT: LOGO -->
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/2b141dee4659d959700f4c7d2d91ca91f5a3150f/Gabay%20%5BLogo%20-%20White%5D" alt="Logo">
+    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/16e8ab87551a1d20b86a60a4afe66db263ad3691/White.png" alt="Logo">
+  </div>
+
+  <!-- CENTER: TITLE with alternating colors -->
+  <div class="title">
+     <a href="https://sites.google.com/view/scholarscard/home" style="text-decoration:none;">
+       <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span>
+       <span>2</span><span>5</span><span>2</span><span>6</span>
+     </a>
+  </div>
+
+  <!-- RIGHT: NAV LINKS -->
+  <div class="nav-links">
+    <a href="https://sites.google.com/view/scholarscard/about-scard">About SCard</a>
+    <a href="https://sites.google.com/view/scholarscard/partners">Partners</a>
+    <a href="https://sites.google.com/view/scholarscard/contact-us">Contact Us</a>
+  </div>
+</div>
+
 <div style="width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden;">
 <!-- Make mobile scaling work properly -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
