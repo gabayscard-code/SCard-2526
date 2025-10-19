@@ -79,10 +79,28 @@
   transition: all 0.3s;
 }
 
-/* MOBILE DROPDOWN - removed panel */
+/* MOBILE DROPDOWN */
 .mobile-nav {
-  display: none;
+  display: none; /* hidden by default */
+  flex-direction: column;
+  position: absolute;
+  right: 15px;
+  top: 100%;
+  background-color: #902f36;
+  padding: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+  width: 140px;
 }
+.mobile-nav a {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.mobile-nav a:hover { background-color: rgba(255,255,255,0.1); }
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
@@ -134,14 +152,20 @@
     <div></div>
   </div>
 
-  <!-- MOBILE DROPDOWN (removed) -->
-  <div class="mobile-nav"></div>
+  <!-- MOBILE DROPDOWN -->
+  <div class="mobile-nav">
+    <a href="https://sites.google.com/view/scholarscard/about-scard">About SCard</a>
+    <a href="https://sites.google.com/view/scholarscard/partners">Partners</a>
+    <a href="https://sites.google.com/view/scholarscard/contact-us">Contact Us</a>
+  </div>
 </div>
 
 <script>
 function toggleMenu(el) {
   el.classList.toggle("active");
-  // Panel removed, so no toggle needed
+  const mobileNav = document.querySelector(".mobile-nav");
+  if(mobileNav.style.display === "flex") mobileNav.style.display = "none";
+  else mobileNav.style.display = "flex";
 }
 </script>
 
