@@ -232,6 +232,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
 }
 
 .hero-text h1 {
@@ -243,15 +244,15 @@ body {
   color: #902f36;
   margin: 0;
   white-space: pre-line;
+  position: relative;
 }
 
-/* IMAGE positioning relative to text */
+/* IMAGE positioning beside "SCard!" with slight upward shift */
 .hero-image {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: -20px;
-  margin-left: 140px;
+  position: absolute;
+  top: 55%;
+  left: calc(100% + 25px); /* small gap beside text */
+  transform: translateY(-60%); /* raise image slightly */
 }
 
 .hero-image img {
@@ -273,7 +274,7 @@ body {
   animation: bounce 2s infinite;
   transition: color 0.3s;
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 220px; /* ensures it sits below the image+text combo */
   margin-left: 10px;
 }
 .scroll-down:hover { color: #b6e630; }
@@ -328,12 +329,13 @@ footer {
   }
 
   .hero-image {
-    margin: 0;
+    position: static;
+    transform: none;
+    margin-top: 10px;
   }
 
   .hero-image img {
     width: 240px;
-    margin-top: 10px;
   }
 
   .scroll-down {
