@@ -87,7 +87,7 @@
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
   .navbar {
-    padding: 15px 20px; /* keep original padding */
+    padding: 20px 20px; /* increase top & bottom padding to fit title */
   }
   .navbar .nav-links { display: none; } /* hide links on mobile */
 
@@ -103,10 +103,9 @@
     transform: translateY(-50%);
   }
 
-  /* Add 2px vertical margin to title on mobile */
+  /* Title spacing is handled by navbar padding */
   .navbar .title {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 0; /* reset margin */
   }
 }
 </style>
