@@ -217,9 +217,18 @@ body {
   box-sizing: border-box;
 }
 
+/* CONTENT WRAPPER (TEXT + IMAGE SIDE BY SIDE) */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
 /* TEXT SECTION */
 .hero-text {
-  margin-bottom: 20px;
+  text-align: right;
 }
 
 .hero-text h1 {
@@ -230,7 +239,7 @@ body {
   line-height: 1.1;
   color: #902f36;
   margin: 0;
-  white-space: pre-line; /* allows line break */
+  white-space: pre-line;
 }
 
 /* SCROLL DOWN directly below text */
@@ -252,7 +261,6 @@ body {
 
 /* CARD IMAGE */
 .hero img {
-  margin-top: 40px;
   width: 320px;
   transform: rotate(-8deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -292,13 +300,21 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
   .hero-text h1 {
     font-size: 60px;
   }
 
   .hero img {
     width: 240px;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .scroll-down {
@@ -316,13 +332,15 @@ footer {
 
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
-  <div class="hero-text">
-    <h1>Welcome to
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Welcome to
 SCard!</h1>
-    <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
-  </div>
+      <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
+    </div>
 
-  <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+  </div>
 </section>
 
 <!-- ====== INSTRUCTIONS SECTION ====== -->
