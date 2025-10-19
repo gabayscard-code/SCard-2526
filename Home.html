@@ -185,7 +185,6 @@ function toggleMenu(el) {
 </script>
 
 <!-- Navbar ends. -->
-
 <style>
 body {
   margin: 0;
@@ -196,23 +195,26 @@ body {
   scroll-behavior: smooth;
 }
 
-/* HERO SECTION — side-by-side layout */
+/* HERO SECTION — centered side-by-side layout */
 .hero {
   min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
-  text-align: left;
+  text-align: center;
   background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
-  padding: 80px 100px;
+  padding: 80px 60px;
   box-sizing: border-box;
+  gap: 40px; /* closer spacing between text and image */
 }
 
 /* LEFT TEXT */
 .hero-text {
   flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-text h1 {
@@ -223,7 +225,7 @@ body {
   line-height: 1.1;
   color: #902f36;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 /* CARD IMAGE */
@@ -240,12 +242,11 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* SCROLL DOWN */
+/* SCROLL DOWN — directly below image */
 .scroll-down {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
   font-size: 1rem;
   color: #902f36;
   cursor: pointer;
@@ -255,9 +256,9 @@ body {
 .scroll-down:hover { color: #b6e630; }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-  40% { transform: translate(-50%, 8px); }
-  60% { transform: translate(-50%, 4px); }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
 }
 
 /* INSTRUCTIONS SECTION */
@@ -293,7 +294,7 @@ footer {
     flex-direction: column;
     text-align: center;
     padding: 60px 30px;
-    gap: 40px;
+    gap: 25px; /* closer spacing for mobile */
   }
 
   .hero-text h1 {
@@ -307,7 +308,7 @@ footer {
   }
 
   .scroll-down {
-    bottom: 20px;
+    margin-top: 10px;
     font-size: 0.9rem;
   }
 }
@@ -325,9 +326,10 @@ footer {
     <h1>Welcome to SCard!</h1>
   </div>
 
-  <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
-
-  <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
+  <div class="hero-image">
+    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+    <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
+  </div>
 </section>
 
 <!-- ====== INSTRUCTIONS SECTION ====== -->
