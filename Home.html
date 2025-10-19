@@ -275,23 +275,13 @@ body {
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
-  position: absolute;          /* position independently */
-  bottom: -10px;               /* 10px below the text */
-  left: 0;                     /* align with left of text */
+  margin-top: 10px;   /* just below text */
+  margin-left: 10px;
   display: flex;
   align-items: center;
-  gap: 7px;                    /* space between arrow and text */
+  gap: 7px;           /* space between arrow and text */
 }
 
-@media (max-width: 900px) {
-  .scroll-down {
-    position: static;          /* mobile stays normal */
-    margin-top: 20px;
-    flex-direction: row;
-    align-self: center;
-  }
-}
-  
 .scroll-down:hover { color: #b6e630; }
 
 .scroll-down span {
@@ -360,10 +350,9 @@ footer {
   }
 
   .scroll-down {
-    align-self: center;
-    font-size: 0.9rem;
     margin-top: 20px;
-    flex-direction: row; /* arrow stays left of text */
+    align-self: center;
+    flex-direction: row;
   }
 }
 </style>
@@ -377,11 +366,13 @@ footer {
     <div class="hero-text">
       <h1>Welcome to
 SCard!</h1>
-      <div class="hero-image">
-        <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
-      </div>
-      <div class="scroll-down" onclick="scrollToInstructions()">↓ <span>Scroll down for more information</span></div>
     </div>
+
+    <div class="hero-image">
+      <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+    </div>
+
+    <div class="scroll-down" onclick="scrollToInstructions()">↓ <span>Scroll down for more information</span></div>
   </div>
 </section>
 
