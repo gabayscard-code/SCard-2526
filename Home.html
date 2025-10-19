@@ -193,55 +193,44 @@ body {
   background-color: #ffffff;
   color: #902f36;
   overflow-x: hidden;
-  scroll-behavior: smooth; /* enables smooth scrolling */
+  scroll-behavior: smooth;
 }
 
-/* HERO SECTION */
+/* HERO SECTION — side-by-side layout */
 .hero {
-  min-height: calc(100vh - 90px); /* adjust for navbar height */
+  min-height: calc(100vh - 90px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  text-align: left;
   background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
-  padding: 60px 20px;
+  padding: 80px 100px;
   box-sizing: border-box;
 }
 
-/* Text Section */
+/* LEFT TEXT */
 .hero-text {
-  margin-bottom: 30px;
-}
-
-.hero-text h2 {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-  color: #902f36;
-  margin: 0;
+  flex: 1 1 400px;
 }
 
 .hero-text h1 {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
   font-weight: 700;
-  font-size: 4rem;
-  margin: 5px 0 0 0;
-  display: inline-block;
-  letter-spacing: 2px;
+  font-size: 96px;
+  line-height: 1.1;
+  color: #902f36;
+  margin: 0;
+  text-align: left;
 }
 
-/* Funky alternating colors for SCard letters */
-.hero-text h1 span:nth-child(1) { color: #fedd1d; }
-.hero-text h1 span:nth-child(2) { color: #dce198; }
-.hero-text h1 span:nth-child(3) { color: #b6e630; }
-.hero-text h1 span:nth-child(4) { color: #cbd54b; }
-.hero-text h1 span:nth-child(5) { color: #fedd1d; }
-
-/* Image */
+/* CARD IMAGE */
 .hero img {
-  margin-top: 40px;
-  width: 280px;
+  flex: 1 1 400px;
+  width: 100%;
+  max-width: 420px;
   transform: rotate(-8deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border-radius: 12px;
@@ -251,23 +240,24 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* Scroll Down */
+/* SCROLL DOWN */
 .scroll-down {
-  margin-top: 40px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 1rem;
   color: #902f36;
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
 }
-.scroll-down:hover {
-  color: #b6e630;
-}
+.scroll-down:hover { color: #b6e630; }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(8px); }
-  60% { transform: translateY(4px); }
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, 8px); }
+  60% { transform: translate(-50%, 4px); }
 }
 
 /* INSTRUCTIONS SECTION */
@@ -298,26 +288,26 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .hero {
-    padding: 40px 15px;
-  }
-
-  .hero-text h2 {
-    font-size: 1.3rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+    gap: 40px;
   }
 
   .hero-text h1 {
-    font-size: 2.6rem;
+    font-size: 60px;
+    text-align: center;
   }
 
   .hero img {
-    width: 220px;
-    margin-top: 25px;
+    max-width: 300px;
+    margin-top: 10px;
   }
 
   .scroll-down {
-    margin-top: 25px;
+    bottom: 20px;
     font-size: 0.9rem;
   }
 }
@@ -332,10 +322,7 @@ footer {
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
   <div class="hero-text">
-    <h2>Welcome to</h2>
-    <h1>
-      <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span><span>!</span>
-    </h1>
+    <h1>Welcome to SCard!</h1>
   </div>
 
   <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
@@ -363,10 +350,6 @@ function scrollToInstructions() {
   const section = document.getElementById('instructions');
   section.scrollIntoView({ behavior: 'smooth' });
 }
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
