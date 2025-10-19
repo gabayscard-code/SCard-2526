@@ -101,15 +101,18 @@
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
+  /* Keep existing padding */
   .navbar {
-    padding: 12px 15px;
+    padding: 12px 15px; /* unchanged */
   }
+
+  /* Hide nav-links and show hamburger */
   .navbar .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  /* Adjust logos to avoid overlap with title */
+  /* Hide logos only */
   .navbar .logo {
-    display: none; /* hide logos on mobile */
+    display: none;
   }
 }
 </style>
