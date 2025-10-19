@@ -101,14 +101,19 @@
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
-  .navbar .logo {
-    display: none;
+  .navbar {
+    padding: 15px 20px; /* keep original padding */
   }
+  .navbar .nav-links { display: none; }
 
+  /* Hide logos */
+  .navbar .logo { display: none; }
+
+  /* Hamburger stays on the right */
   .hamburger {
     display: flex;
     position: absolute;
-    right: 15px; /* aligns with navbar padding */
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
   }
