@@ -187,13 +187,13 @@ function toggleMenu(el) {
 
 
 
-  
+
 <!-- Navbar ends. -->
 
 
 
 
-  
+
 <style>
 body {
   margin: 0;
@@ -233,7 +233,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  margin-right: 45px;
+  margin-right: 45px; 
   margin-top: 45px;
 }
 
@@ -253,8 +253,8 @@ body {
 .hero-image {
   position: absolute;
   top: 55%;
-  left: calc(100% - 198px);
-  transform: translateY(-60%);
+  left: calc(100% - 198px); /* small gap beside text */
+  transform: translateY(-60%); /* raise image slightly */
 }
 
 .hero-image img {
@@ -263,7 +263,6 @@ body {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border-radius: 12px;
 }
-
 .hero-image img:hover {
   transform: rotate(0deg) scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
@@ -284,10 +283,7 @@ body {
   align-items: center;
   gap: 7px; /* space between arrow and text */
 }
-
-.scroll-down:hover {
-  color: #b6e630;
-}
+.scroll-down:hover { color: #b6e630; }
 
 .scroll-down span {
   font-weight: 500;
@@ -306,12 +302,10 @@ body {
   padding: 80px 20px;
   text-align: center;
 }
-
 .instructions h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
 }
-
 .instructions p {
   max-width: 700px;
   margin: 0 auto;
@@ -365,13 +359,15 @@ footer {
 }
 </style>
 </head>
+
 <body>
 
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <h1>Welcome to SCard!</h1>
+      <h1>Welcome to
+SCard!</h1>
       <div class="hero-image">
         <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
       </div>
