@@ -275,13 +275,23 @@ body {
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
-  align-self: flex-start;
-  margin-top: 10px; /* place just below the text */
-  margin-left: 10px;
+  position: absolute;          /* position independently */
+  bottom: -10px;               /* 10px below the text */
+  left: 0;                     /* align with left of text */
   display: flex;
   align-items: center;
-  gap: 7px; /* space between arrow and text */
+  gap: 7px;                    /* space between arrow and text */
 }
+
+@media (max-width: 900px) {
+  .scroll-down {
+    position: static;          /* mobile stays normal */
+    margin-top: 20px;
+    flex-direction: row;
+    align-self: center;
+  }
+}
+  
 .scroll-down:hover { color: #b6e630; }
 
 .scroll-down span {
