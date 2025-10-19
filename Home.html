@@ -193,11 +193,12 @@ body {
   background-color: #ffffff;
   color: #902f36;
   overflow-x: hidden;
+  scroll-behavior: smooth; /* enables smooth scrolling */
 }
 
 /* HERO SECTION */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 90px); /* adjust for navbar height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,25 +206,39 @@ body {
   text-align: center;
   background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
   padding: 60px 20px;
+  box-sizing: border-box;
 }
 
-.hero h1 {
-  font-family: 'Rubik Mono One', sans-serif;
-  font-size: 3.5rem;
-  margin-bottom: 10px;
+/* Text Section */
+.hero-text {
+  margin-bottom: 30px;
+}
+
+.hero-text h2 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
   color: #902f36;
+  margin: 0;
 }
 
-.hero h1 span {
-  color: #b6e630;
+.hero-text h1 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 5px 0 0 0;
+  display: inline-block;
+  letter-spacing: 2px;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  color: #333;
-  margin-top: 10px;
-}
+/* Funky alternating colors for SCard letters */
+.hero-text h1 span:nth-child(1) { color: #fedd1d; }
+.hero-text h1 span:nth-child(2) { color: #dce198; }
+.hero-text h1 span:nth-child(3) { color: #b6e630; }
+.hero-text h1 span:nth-child(4) { color: #cbd54b; }
+.hero-text h1 span:nth-child(5) { color: #fedd1d; }
 
+/* Image */
 .hero img {
   margin-top: 40px;
   width: 280px;
@@ -236,12 +251,17 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* SCROLL HINT */
+/* Scroll Down */
 .scroll-down {
-  margin-top: 30px;
-  font-size: 0.95rem;
+  margin-top: 40px;
+  font-size: 1rem;
   color: #902f36;
+  cursor: pointer;
   animation: bounce 2s infinite;
+  transition: color 0.3s;
+}
+.scroll-down:hover {
+  color: #b6e630;
 }
 
 @keyframes bounce {
@@ -250,7 +270,7 @@ body {
   60% { transform: translateY(4px); }
 }
 
-/* INSTRUCTION SECTION */
+/* INSTRUCTIONS SECTION */
 .instructions {
   background-color: #cbd54b;
   color: #902f36;
@@ -279,11 +299,26 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 700px) {
-  .hero h1 {
-    font-size: 2.4rem;
+  .hero {
+    padding: 40px 15px;
   }
+
+  .hero-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+  }
+
   .hero img {
     width: 220px;
+    margin-top: 25px;
+  }
+
+  .scroll-down {
+    margin-top: 25px;
+    font-size: 0.9rem;
   }
 }
 </style>
@@ -292,18 +327,24 @@ footer {
 <body>
 
 <!-- ====== NAVBAR GOES HERE ====== -->
-<!-- (Paste your existing navbar code here) -->
+<!-- (Paste your existing navbar code above this comment) -->
 
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
-  <h1>Welcome to <span>SCard!</span></h1>
-  <p>Scroll down to see instructions on how to use.</p>
-  <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/edb0b056056c942a9f1727b930726b19e29d66df/SCard%20Image.png" alt="SCard Image">
-  <div class="scroll-down">↓ Scroll Down ↓</div>
+  <div class="hero-text">
+    <h2>Welcome to</h2>
+    <h1>
+      <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span><span>!</span>
+    </h1>
+  </div>
+
+  <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+
+  <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
 </section>
 
 <!-- ====== INSTRUCTIONS SECTION ====== -->
-<section class="instructions">
+<section id="instructions" class="instructions">
   <h2>How to Use Your SCard</h2>
   <p>
     Your SCard serves as your all-in-one scholar identification and access pass.
@@ -318,7 +359,14 @@ footer {
 </footer>
 
 <script>
-// (You can add animations or scroll effects later)
+function scrollToInstructions() {
+  const section = document.getElementById('instructions');
+  section.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
 </script>
 
 </body>
