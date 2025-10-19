@@ -87,22 +87,20 @@
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
   .navbar {
-    width: 100%;
-    box-sizing: border-box; /* includes padding in width */
-    padding: 15px 20px; /* vertical padding makes it taller */
+    padding: 15px 20px; /* keep original padding */
   }
   .navbar .nav-links { display: none; } /* hide links on mobile */
-  .navbar .logo { display: none; } /* hide logos */
+
+  /* Hide logos */
+  .navbar .logo { display: none; }
+
+  /* Hamburger stays on the right */
   .hamburger {
     display: flex;
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-  }
-  .navbar .title {
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
 }
 </style>
