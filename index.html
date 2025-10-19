@@ -87,14 +87,12 @@
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
   .navbar {
-    padding: 20px 20px; /* increase top & bottom padding to fit title */
+    width: 100%;
+    box-sizing: border-box; /* includes padding in width */
+    padding: 15px 20px; /* vertical padding makes it taller */
   }
   .navbar .nav-links { display: none; } /* hide links on mobile */
-
-  /* Hide logos */
-  .navbar .logo { display: none; }
-
-  /* Hamburger stays on the right */
+  .navbar .logo { display: none; } /* hide logos */
   .hamburger {
     display: flex;
     position: absolute;
@@ -102,10 +100,9 @@
     top: 50%;
     transform: translateY(-50%);
   }
-
-  /* Title spacing is handled by navbar padding */
   .navbar .title {
-    margin: 0; /* reset margin */
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 </style>
