@@ -211,24 +211,27 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
   padding: 60px 20px;
   box-sizing: border-box;
 }
 
-/* CONTENT WRAPPER (TEXT + IMAGE SIDE BY SIDE) */
+/* CONTENT WRAPPER */
 .hero-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
+  text-align: left;
+  gap: 15px;
 }
 
 /* TEXT SECTION */
 .hero-text {
-  text-align: right;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-text h1 {
@@ -242,6 +245,26 @@ body {
   white-space: pre-line;
 }
 
+/* IMAGE positioning relative to text */
+.hero-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: -20px;
+  margin-left: 140px;
+}
+
+.hero-image img {
+  width: 320px;
+  transform: rotate(-8deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 12px;
+}
+.hero-image img:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
 /* SCROLL DOWN directly below text */
 .scroll-down {
   font-size: 1rem;
@@ -249,7 +272,9 @@ body {
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
-  margin-top: 20px;
+  align-self: flex-start;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .scroll-down:hover { color: #b6e630; }
 
@@ -257,18 +282,6 @@ body {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(8px); }
   60% { transform: translateY(4px); }
-}
-
-/* CARD IMAGE */
-.hero img {
-  width: 320px;
-  transform: rotate(-8deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 12px;
-}
-.hero img:hover {
-  transform: rotate(0deg) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 /* INSTRUCTIONS SECTION */
@@ -301,10 +314,12 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-content {
-    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-text {
+    align-items: center;
     text-align: center;
   }
 
@@ -312,12 +327,17 @@ footer {
     font-size: 60px;
   }
 
-  .hero img {
+  .hero-image {
+    margin: 0;
+  }
+
+  .hero-image img {
     width: 240px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .scroll-down {
+    align-self: center;
     font-size: 0.9rem;
     margin-top: 15px;
   }
@@ -336,10 +356,11 @@ footer {
     <div class="hero-text">
       <h1>Welcome to
 SCard!</h1>
+      <div class="hero-image">
+        <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+      </div>
       <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
     </div>
-
-    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
   </div>
 </section>
 
