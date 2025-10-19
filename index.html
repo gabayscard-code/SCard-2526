@@ -413,7 +413,7 @@ renderCards(partners);
   opacity:1;
 }
 
-/* ✅ Mobile Adaptability */
+/* Mobile Adaptability */
 div[style*="max-width:1000px"] {
   padding: 0 10px;
 }
@@ -426,14 +426,17 @@ div[style*="max-width:1000px"] {
 
 @media (max-width: 600px) {
   #filters {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* keep as row */
+    flex-wrap: wrap;     /* allow wrapping to next line if needed */
+    justify-content: center;
+    gap: 8px;            /* slightly smaller gap for mobile */
   }
 
   .filter-btn {
-    width: 80%;
-    font-size: 16px;
-    padding: 10px;
+    flex: 1 1 auto;      /* let buttons shrink and wrap nicely */
+    max-width: 45%;      /* max two per row */
+    font-size: 14px;     /* slightly smaller font */
+    padding: 8px 12px;
   }
 
   #searchInput {
