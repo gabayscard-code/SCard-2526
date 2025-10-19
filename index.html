@@ -13,6 +13,7 @@
   top: 0;
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* lighter shadow for subtle depth */
+  width: 99.75%; /* slightly narrower */
 }
 
 /* LEFT LOGO */
@@ -68,43 +69,27 @@
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
+  padding: 5px; /* reduced width/padding */
 }
 .hamburger div {
-  width: 25px;
+  width: 20px;
   height: 3px;
   background: white;
   border-radius: 2px;
   transition: all 0.3s;
 }
 
-/* MOBILE DROPDOWN */
+/* MOBILE DROPDOWN - removed panel */
 .mobile-nav {
   display: none;
-  flex-direction: column;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  background-color: #902f36;
-  padding: 10px 0;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  width: 140px;
-  z-index: 999;
 }
-.mobile-nav a {
-  padding: 8px 15px;
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-}
-.mobile-nav a:hover { background-color: rgba(255,255,255,0.1); }
 
 /* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
   .navbar {
     padding: 15px 20px; /* keep original padding */
   }
-  .navbar .nav-links { display: none; }
+  .navbar .nav-links { display: none; } /* hide links on mobile */
 
   /* Hide logos */
   .navbar .logo { display: none; }
@@ -113,7 +98,7 @@
   .hamburger {
     display: flex;
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -149,20 +134,14 @@
     <div></div>
   </div>
 
-  <!-- MOBILE DROPDOWN -->
-  <div class="mobile-nav">
-    <a href="https://sites.google.com/view/scholarscard/about-scard">About SCard</a>
-    <a href="https://sites.google.com/view/scholarscard/partners">Partners</a>
-    <a href="https://sites.google.com/view/scholarscard/contact-us">Contact Us</a>
-  </div>
+  <!-- MOBILE DROPDOWN (removed) -->
+  <div class="mobile-nav"></div>
 </div>
 
 <script>
 function toggleMenu(el) {
   el.classList.toggle("active");
-  const mobileNav = document.querySelector(".mobile-nav");
-  if(mobileNav.style.display === "flex") mobileNav.style.display = "none";
-  else mobileNav.style.display = "flex";
+  // Panel removed, so no toggle needed
 }
 </script>
 
