@@ -184,7 +184,16 @@ function toggleMenu(el) {
 }
 </script>
 
+
+
+
+  
 <!-- Navbar ends. -->
+
+
+
+
+  
 <style>
 body {
   margin: 0;
@@ -195,26 +204,22 @@ body {
   scroll-behavior: smooth;
 }
 
-/* HERO SECTION — centered side-by-side layout */
+/* HERO SECTION */
 .hero {
   min-height: calc(100vh - 90px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   text-align: center;
   background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
-  padding: 80px 60px;
+  padding: 60px 20px;
   box-sizing: border-box;
-  gap: 40px; /* closer spacing between text and image */
 }
 
-/* LEFT TEXT */
+/* TEXT SECTION */
 .hero-text {
-  flex: 1 1 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
 .hero-text h1 {
@@ -225,33 +230,17 @@ body {
   line-height: 1.1;
   color: #902f36;
   margin: 0;
-  text-align: center;
+  white-space: pre-line; /* allows line break */
 }
 
-/* CARD IMAGE */
-.hero img {
-  flex: 1 1 400px;
-  width: 100%;
-  max-width: 420px;
-  transform: rotate(-8deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 12px;
-}
-.hero img:hover {
-  transform: rotate(0deg) scale(1.05);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* SCROLL DOWN — directly below image */
+/* SCROLL DOWN directly below text */
 .scroll-down {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
   font-size: 1rem;
   color: #902f36;
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
+  margin-top: 20px;
 }
 .scroll-down:hover { color: #b6e630; }
 
@@ -259,6 +248,19 @@ body {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(8px); }
   60% { transform: translateY(4px); }
+}
+
+/* CARD IMAGE */
+.hero img {
+  margin-top: 40px;
+  width: 320px;
+  transform: rotate(-8deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 12px;
+}
+.hero img:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 /* INSTRUCTIONS SECTION */
@@ -290,26 +292,18 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 30px;
-    gap: 25px; /* closer spacing for mobile */
-  }
-
   .hero-text h1 {
     font-size: 60px;
-    text-align: center;
   }
 
   .hero img {
-    max-width: 300px;
-    margin-top: 10px;
+    width: 240px;
+    margin-top: 30px;
   }
 
   .scroll-down {
-    margin-top: 10px;
     font-size: 0.9rem;
+    margin-top: 15px;
   }
 }
 </style>
@@ -323,13 +317,12 @@ footer {
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Welcome to SCard!</h1>
-  </div>
-
-  <div class="hero-image">
-    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
+    <h1>Welcome to
+SCard!</h1>
     <div class="scroll-down" onclick="scrollToInstructions()">↓ Scroll Down ↓</div>
   </div>
+
+  <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
 </section>
 
 <!-- ====== INSTRUCTIONS SECTION ====== -->
