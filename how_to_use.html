@@ -259,40 +259,13 @@ body {
 
 .hero-image img {
   width: 320px;
-  transform: rotate(-8deg);
+  transform: rotate(0deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border-radius: 12px;
 }
 .hero-image img:hover {
   transform: rotate(0deg) scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* SCROLL DOWN directly below text */
-.scroll-down {
-  font-size: 1rem;
-  color: #902f36;
-  cursor: pointer;
-  animation: bounce 2s infinite;
-  transition: color 0.3s;
-  align-self: flex-start;
-  margin-top: 220px; /* ensures it sits below the image+text combo */
-  margin-left: 10px;
-  top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 7px; /* space between arrow and text */
-}
-.scroll-down:hover { color: #b6e630; }
-
-.scroll-down span {
-  font-weight: 500;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(8px); }
-  60% { transform: translateY(4px); }
 }
 
 /* FOOTER */
@@ -348,12 +321,10 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
-      <h1>Welcome to
-SCard!</h1>
+      <h1>How to use your Scholars Card?</h1>
       <div class="hero-image">
         <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/1acf0ada78bd7e8e5be1eb85bf6e7b62cda5984c/SCard-Design.png" alt="SCard Design">
       </div>
-      <div class="scroll-down" onclick="scrollToInstructions()">↓ <span>Scroll down for more information</span></div>
     </div>
   </div>
 </section>
