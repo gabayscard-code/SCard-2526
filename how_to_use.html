@@ -412,14 +412,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function downloadCard(cardNumber) {
+  function downloadCard(cardNumber, name) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  const baseImage = new Image();
+
+  baseImage.src = "SCard-base.png"; // your base design
+  baseImage.onload = function () {
+    // set canvas size to match base image
+    canvas.width = baseImage.width;
+    canvas.height = baseImage.height;
+
+    // draw base image
+    ctx.drawImage(baseImage, 0, 0);
+
+    // Add name
+    ctx.font = "bold 36px Poppins";
+    ctx.fillStyle = "#ffffff"; // white text — change to match design
+    ctx.textAlign = "center";
+    ctx.fillText(name, canvas.width / 2, canvas.height - 140); // adjust Y to move up/down
+
+    // Add card number
+    ctx.font = "bold 32px Poppins";
+    ctx.fillText(cardNumber, canvas.width / 2, canvas.height - 80);
+
+    // download the final personalized card
     const link = document.createElement("a");
-    link.href = "SCard-Design.jpg"; // or change this to your personalized card template file
-    link.download = `ScholarsCard_${cardNumber}.jpg`;
-    document.body.appendChild(link);
+    link.download = `ScholarsCard_${cardNumber}.png`;
+    link.href = canvas.toDataURL("image/png");
     link.click();
-    document.body.removeChild(link);
-  }
+  };
+}
 });
 </script>
 
