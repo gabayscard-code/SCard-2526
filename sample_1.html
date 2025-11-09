@@ -291,12 +291,13 @@ function renderCards(list, page = 1) {
   const paginated = list.slice(start, end);
 
   cardContainer.innerHTML = paginated.map(p => {
-    // Prepare embed link (replace with your Google Maps Embed API key)
+    // Embed URL (auto converts name + first location filter)
     let embedSrc = "";
     if (p.googleMapsLink) {
-      // Convert share link to embed (requires API key)
-      const query = encodeURIComponent(p.name); // simple fallback if no coordinates
-      embedSrc = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${query}`;
+      const queryParts = [p.name];
+      if (p.filters && p.filters.length > 0) queryParts.push(p.filters[0]);
+      const query = encodeURIComponent(queryParts.join(" "));
+      embedSrc = `https://www.google.com/maps?q=${query}&output=embed`;
     }
 
     return `
