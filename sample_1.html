@@ -308,7 +308,6 @@ function renderCards(list, page=1) {
         top:0; left:0; width:100%; height:66%;
         border-radius:16px 16px 0 0;
         overflow:hidden;
-        display:block;
         opacity:0;
         transition: opacity 0.3s ease;
       ">
@@ -326,43 +325,43 @@ function renderCards(list, page=1) {
         ">Tap for more deets</div>
       </div>` : ''}
 
-      <div class="card-content" style="
-        position:relative; 
-        z-index:2;
-      ">
-        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
-        <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
-        <div class="full-details" style="margin-top:4px;">
-          ${
-            Array.isArray(p.discount)
-              ? p.discount.map(d => `<div>${d}</div>`).join('')
-              : `<div>${p.discount}</div>`
-          }
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:4px;">
-            ${p.filters.map(f => `<span style="
-              background-color:${getFilterColor(f)}; 
-              color:#902f36;
-              padding:3px 6px;
-              border-radius:12px;
-              font-size:12px;
-            ">${f}</span>`).join('')}
-          </div>
-        </div>
-
-        <div class="condensed-details" style="display:none; margin-top:4px;">
-          <strong>${p.name}</strong> - <strong>${p.tier}</strong>
-          <div>
+      <div class="card-content" style="position:relative; z-index:2;">
+        <div class="original-details">
+          <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+          <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+          <div style="margin:4px 0;">
             ${
               Array.isArray(p.discount)
                 ? p.discount.map(d => `<div>${d}</div>`).join('')
                 : `<div>${p.discount}</div>`
             }
           </div>
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:4px;">
+          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
             ${p.filters.map(f => `<span style="
               background-color:${getFilterColor(f)}; 
               color:#902f36;
-              padding:3px 6px;
+              padding:4px 8px;
+              border-radius:12px;
+              font-size:12px;
+            ">${f}</span>`).join('')}
+          </div>
+        </div>
+
+        <div class="expanded-details" style="display:none; margin-top:4px;">
+          <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+          <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+          <div style="margin:4px 0;">
+            ${
+              Array.isArray(p.discount)
+                ? p.discount.map(d => `<div>${d}</div>`).join('')
+                : `<div>${p.discount}</div>`
+            }
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+            ${p.filters.map(f => `<span style="
+              background-color:${getFilterColor(f)}; 
+              color:#902f36;
+              padding:4px 8px;
               border-radius:12px;
               font-size:12px;
             ">${f}</span>`).join('')}
@@ -377,54 +376,54 @@ function renderCards(list, page=1) {
   document.querySelectorAll('.partner-card').forEach(card => {
     const mapPreview = card.querySelector('.map-preview');
     const mapOverlay = card.querySelector('.map-overlay');
-    const fullDetails = card.querySelector('.full-details');
-    const condensedDetails = card.querySelector('.condensed-details');
+    const originalDetails = card.querySelector('.original-details');
+    const expandedDetails = card.querySelector('.expanded-details');
     const link = card.dataset.link;
 
-    // Hover effect: show semi-transparent map preview with overlay text
-    if(mapOverlay) {
+    // Hover overlay (desktop)
+    if (mapOverlay) {
       card.addEventListener('mouseenter', () => {
-        if(window.innerWidth > 600) mapPreview.style.opacity = '1';
+        if(window.innerWidth > 600) mapOverlay.style.opacity = 1;
       });
       card.addEventListener('mouseleave', () => {
-        if(window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) mapPreview.style.opacity = '0';
+        if(window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) mapOverlay.style.opacity = 0;
       });
     }
 
-    // Click to expand/collapse card
-    card.addEventListener('click', (e) => {
+    // Click to expand card
+    card.addEventListener('click', () => {
       if(window.innerWidth > 600) {
+        // Collapse previous expanded card
         if(expandedCard && expandedCard !== card) {
-          // collapse previous card
           const prevMap = expandedCard.querySelector('.map-preview');
-          const prevFull = expandedCard.querySelector('.full-details');
-          const prevCondensed = expandedCard.querySelector('.condensed-details');
+          const prevOriginal = expandedCard.querySelector('.original-details');
+          const prevExpanded = expandedCard.querySelector('.expanded-details');
           expandedCard.style.transform = 'scale(1)';
           expandedCard.style.zIndex = '1';
-          if(prevMap) prevMap.style.opacity = '0';
-          if(prevFull) prevFull.style.display = 'block';
-          if(prevCondensed) prevCondensed.style.display = 'none';
+          if(prevMap) prevMap.style.opacity = 0;
+          if(prevOriginal) prevOriginal.style.display = 'block';
+          if(prevExpanded) prevExpanded.style.display = 'none';
         }
 
         if(card.style.transform === 'scale(2)') {
           // collapse this card
           card.style.transform = 'scale(1)';
           card.style.zIndex = '1';
-          if(mapPreview) mapPreview.style.opacity = '0';
-          if(fullDetails) fullDetails.style.display = 'block';
-          if(condensedDetails) condensedDetails.style.display = 'none';
+          if(mapPreview) mapPreview.style.opacity = 0;
+          if(originalDetails) originalDetails.style.display = 'block';
+          if(expandedDetails) expandedDetails.style.display = 'none';
           expandedCard = null;
         } else {
           // expand this card
           card.style.transform = 'scale(2)';
           card.style.zIndex = '1000';
-          if(mapPreview) mapPreview.style.opacity = '1';
-          if(fullDetails) fullDetails.style.display = 'none';
-          if(condensedDetails) condensedDetails.style.display = 'block';
+          if(mapPreview) mapPreview.style.opacity = 1;
+          if(originalDetails) originalDetails.style.display = 'none';
+          if(expandedDetails) expandedDetails.style.display = 'block';
           expandedCard = card;
         }
       } else {
-        // mobile tap
+        // mobile tap opens link
         if(link) window.open(link, '_blank');
       }
     });
