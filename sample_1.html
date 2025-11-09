@@ -290,7 +290,16 @@ function renderCards(list, page = 1) {
   const end = start + cardsPerPage;
   const paginated = list.slice(start, end);
 
-  cardContainer.innerHTML = paginated.map(p => `
+  cardContainer.innerHTML = paginated.map(p => {
+    // Prepare embed link (replace with your Google Maps Embed API key)
+    let embedSrc = "";
+    if (p.googleMapsLink) {
+      // Convert share link to embed (requires API key)
+      const query = encodeURIComponent(p.name); // simple fallback if no coordinates
+      embedSrc = `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${query}`;
+    }
+
+    return `
     <div class="partner-card" style="
       background:white; 
       border-radius:16px; 
@@ -302,7 +311,7 @@ function renderCards(list, page = 1) {
       overflow:hidden;
       transition: all 0.3s ease;
     " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
-      
+
       <div class="card-original">
         <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
         <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
@@ -324,7 +333,7 @@ function renderCards(list, page = 1) {
         </div>
       </div>
 
-      ${p.googleMapsLink ? `<div class="map-container" style="
+      ${embedSrc ? `<div class="map-container" style="
         position:absolute;
         top:0; left:0; width:100%; height:66%;
         border-radius:16px 16px 0 0;
@@ -333,7 +342,7 @@ function renderCards(list, page = 1) {
         pointer-events:none;
         transition: opacity 0.3s ease;
       ">
-        <iframe src="${p.googleMapsLink}" style="width:100%; height:100%; border:0;" allowfullscreen loading="lazy"></iframe>
+        <iframe src="${embedSrc}" style="width:100%; height:100%; border:0;" allowfullscreen loading="lazy"></iframe>
         <div class="map-overlay" style="
           position:absolute; top:0; left:0; width:100%; height:100%;
           display:flex; justify-content:center; align-items:center;
@@ -341,30 +350,15 @@ function renderCards(list, page = 1) {
           background: rgba(255,255,255,0.4);
         ">Tap for more deets</div>
       </div>` : ''}
-      
+
       <div class="card-condensed" style="display:none; margin-top:4px;">
         <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
         <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
-        <div style="margin:4px 0;">
-          ${
-            Array.isArray(p.discount)
-              ? p.discount.map(d => `<div>${d}</div>`).join('')
-              : `<div>${p.discount}</div>`
-          }
-        </div>
-        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:4px;">
-          ${p.filters.map(f => `<span style="
-            background-color:${getFilterColor(f)}; 
-            color:#902f36;
-            padding:4px 8px;
-            border-radius:12px;
-            font-size:12px;
-          ">${f}</span>`).join('')}
-        </div>
       </div>
 
     </div>
-  `).join('');
+    `;
+  }).join('');
 
   let expandedCard = null;
 
@@ -375,20 +369,13 @@ function renderCards(list, page = 1) {
     const condensed = card.querySelector('.card-condensed');
     const link = card.dataset.link;
 
-    // Hover overlay
     if (overlay) {
-      card.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 600) overlay.style.opacity = 1;
-      });
-      card.addEventListener('mouseleave', () => {
-        if (window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) overlay.style.opacity = 0;
-      });
+      card.addEventListener('mouseenter', () => { if (window.innerWidth > 600) overlay.style.opacity = 1; });
+      card.addEventListener('mouseleave', () => { if (window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) overlay.style.opacity = 0; });
     }
 
-    // Click to expand/collapse (desktop) or open map (mobile)
     card.addEventListener('click', () => {
       if (window.innerWidth > 600) {
-        // collapse previously expanded card
         if (expandedCard && expandedCard !== card) {
           const prevMap = expandedCard.querySelector('.map-container');
           const prevOriginal = expandedCard.querySelector('.card-original');
@@ -401,7 +388,6 @@ function renderCards(list, page = 1) {
         }
 
         if (card.style.transform === 'scale(2)') {
-          // collapse this card
           card.style.transform = 'scale(1)';
           card.style.zIndex = '1';
           if (mapContainer) mapContainer.style.opacity = 0;
@@ -409,7 +395,6 @@ function renderCards(list, page = 1) {
           if (condensed) condensed.style.display = 'none';
           expandedCard = null;
         } else {
-          // expand this card
           card.style.transform = 'scale(2)';
           card.style.zIndex = '1000';
           if (mapContainer) mapContainer.style.opacity = 1;
@@ -418,12 +403,10 @@ function renderCards(list, page = 1) {
           expandedCard = card;
         }
       } else {
-        // mobile tap → open link
         if (link) window.open(link, '_blank');
       }
     });
 
-    // Tap iframe itself → open Google Maps
     if (mapContainer) {
       const iframe = mapContainer.querySelector('iframe');
       iframe.addEventListener('click', e => {
