@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (match) {
           const cardName = match["Full Name"]; 
 
-          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing your personalized download...</div>`;
+          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing Scholars' Card </div>`;
           setTimeout(() => downloadCard(cardNumber, cardName), 1000);
         } else {
           status.innerHTML = `<div class="alert alert-danger">❌ Invalid or unverified card number. Please try again.</div>`;
@@ -429,14 +429,14 @@ document.addEventListener("DOMContentLoaded", function () {
       ctx.drawImage(baseImage, 0, 0);
 
       // Add Name
-      ctx.font = "bold 100px Inter";
+      ctx.font = "bold 120px Inter";
       ctx.fillStyle = "#c8f7d6";
       ctx.textAlign = "right";
       ctx.fillText(cardName, canvas.width - 20, canvas.height - 220); // adjust position
 
       // Add Card Number
-      ctx.font = "bold 120px Inter";
-      ctx.fillText(cardNumber, canvas.width - 50, canvas.height - 100);
+      ctx.font = "bold 150px Inter";
+      ctx.fillText(cardNumber, canvas.width - 70, canvas.height - 100);
 
       // Download final image
       const link = document.createElement("a");
