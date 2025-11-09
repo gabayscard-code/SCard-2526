@@ -285,7 +285,7 @@ let currentPage = 1;
 const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
-function renderCards(list, page=1) {
+function renderCards(list, page = 1) {
   const start = (page - 1) * cardsPerPage;
   const end = start + cardsPerPage;
   const paginated = list.slice(start, end);
@@ -302,21 +302,38 @@ function renderCards(list, page=1) {
       overflow:hidden;
       transition: all 0.3s ease;
     " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
+      
+      <div class="card-original">
+        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+        <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+        <div style="margin:4px 0;">
+          ${
+            Array.isArray(p.discount)
+              ? p.discount.map(d => `<div>${d}</div>`).join('')
+              : `<div>${p.discount}</div>`
+          }
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+          ${p.filters.map(f => `<span style="
+            background-color:${getFilterColor(f)}; 
+            color:#902f36;
+            padding:4px 8px;
+            border-radius:12px;
+            font-size:12px;
+          ">${f}</span>`).join('')}
+        </div>
+      </div>
 
-      ${p.googleMapsLink ? `<div class="map-preview" style="
+      ${p.googleMapsLink ? `<div class="map-container" style="
         position:absolute;
         top:0; left:0; width:100%; height:66%;
         border-radius:16px 16px 0 0;
         overflow:hidden;
         opacity:0;
+        pointer-events:none;
         transition: opacity 0.3s ease;
       ">
-        <iframe 
-          src="${p.googleMapsLink}" 
-          style="width:100%; height:100%; border:0;" 
-          allowfullscreen 
-          loading="lazy">
-        </iframe>
+        <iframe src="${p.googleMapsLink}" style="width:100%; height:100%; border:0;" allowfullscreen loading="lazy"></iframe>
         <div class="map-overlay" style="
           position:absolute; top:0; left:0; width:100%; height:100%;
           display:flex; justify-content:center; align-items:center;
@@ -324,116 +341,94 @@ function renderCards(list, page=1) {
           background: rgba(255,255,255,0.4);
         ">Tap for more deets</div>
       </div>` : ''}
-
-      <div class="card-content" style="position:relative; z-index:2;">
-        <div class="original-details">
-          <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
-          <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
-          <div style="margin:4px 0;">
-            ${
-              Array.isArray(p.discount)
-                ? p.discount.map(d => `<div>${d}</div>`).join('')
-                : `<div>${p.discount}</div>`
-            }
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
-            ${p.filters.map(f => `<span style="
-              background-color:${getFilterColor(f)}; 
-              color:#902f36;
-              padding:4px 8px;
-              border-radius:12px;
-              font-size:12px;
-            ">${f}</span>`).join('')}
-          </div>
+      
+      <div class="card-condensed" style="display:none; margin-top:4px;">
+        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+        <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+        <div style="margin:4px 0;">
+          ${
+            Array.isArray(p.discount)
+              ? p.discount.map(d => `<div>${d}</div>`).join('')
+              : `<div>${p.discount}</div>`
+          }
         </div>
-
-        <div class="expanded-details" style="display:none; margin-top:4px;">
-          <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
-          <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
-          <div style="margin:4px 0;">
-            ${
-              Array.isArray(p.discount)
-                ? p.discount.map(d => `<div>${d}</div>`).join('')
-                : `<div>${p.discount}</div>`
-            }
-          </div>
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
-            ${p.filters.map(f => `<span style="
-              background-color:${getFilterColor(f)}; 
-              color:#902f36;
-              padding:4px 8px;
-              border-radius:12px;
-              font-size:12px;
-            ">${f}</span>`).join('')}
-          </div>
+        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:4px;">
+          ${p.filters.map(f => `<span style="
+            background-color:${getFilterColor(f)}; 
+            color:#902f36;
+            padding:4px 8px;
+            border-radius:12px;
+            font-size:12px;
+          ">${f}</span>`).join('')}
         </div>
       </div>
+
     </div>
   `).join('');
 
   let expandedCard = null;
 
   document.querySelectorAll('.partner-card').forEach(card => {
-    const mapPreview = card.querySelector('.map-preview');
-    const mapOverlay = card.querySelector('.map-overlay');
-    const originalDetails = card.querySelector('.original-details');
-    const expandedDetails = card.querySelector('.expanded-details');
+    const mapContainer = card.querySelector('.map-container');
+    const overlay = card.querySelector('.map-overlay');
+    const original = card.querySelector('.card-original');
+    const condensed = card.querySelector('.card-condensed');
     const link = card.dataset.link;
 
-    // Hover overlay (desktop)
-    if (mapOverlay) {
+    // Hover overlay
+    if (overlay) {
       card.addEventListener('mouseenter', () => {
-        if(window.innerWidth > 600) mapOverlay.style.opacity = 1;
+        if (window.innerWidth > 600) overlay.style.opacity = 1;
       });
       card.addEventListener('mouseleave', () => {
-        if(window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) mapOverlay.style.opacity = 0;
+        if (window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) overlay.style.opacity = 0;
       });
     }
 
-    // Click to expand card
+    // Click to expand/collapse (desktop) or open map (mobile)
     card.addEventListener('click', () => {
-      if(window.innerWidth > 600) {
-        // Collapse previous expanded card
-        if(expandedCard && expandedCard !== card) {
-          const prevMap = expandedCard.querySelector('.map-preview');
-          const prevOriginal = expandedCard.querySelector('.original-details');
-          const prevExpanded = expandedCard.querySelector('.expanded-details');
+      if (window.innerWidth > 600) {
+        // collapse previously expanded card
+        if (expandedCard && expandedCard !== card) {
+          const prevMap = expandedCard.querySelector('.map-container');
+          const prevOriginal = expandedCard.querySelector('.card-original');
+          const prevCondensed = expandedCard.querySelector('.card-condensed');
           expandedCard.style.transform = 'scale(1)';
           expandedCard.style.zIndex = '1';
-          if(prevMap) prevMap.style.opacity = 0;
-          if(prevOriginal) prevOriginal.style.display = 'block';
-          if(prevExpanded) prevExpanded.style.display = 'none';
+          if (prevMap) prevMap.style.opacity = 0;
+          if (prevOriginal) prevOriginal.style.display = 'block';
+          if (prevCondensed) prevCondensed.style.display = 'none';
         }
 
-        if(card.style.transform === 'scale(2)') {
+        if (card.style.transform === 'scale(2)') {
           // collapse this card
           card.style.transform = 'scale(1)';
           card.style.zIndex = '1';
-          if(mapPreview) mapPreview.style.opacity = 0;
-          if(originalDetails) originalDetails.style.display = 'block';
-          if(expandedDetails) expandedDetails.style.display = 'none';
+          if (mapContainer) mapContainer.style.opacity = 0;
+          if (original) original.style.display = 'block';
+          if (condensed) condensed.style.display = 'none';
           expandedCard = null;
         } else {
           // expand this card
           card.style.transform = 'scale(2)';
           card.style.zIndex = '1000';
-          if(mapPreview) mapPreview.style.opacity = 1;
-          if(originalDetails) originalDetails.style.display = 'none';
-          if(expandedDetails) expandedDetails.style.display = 'block';
+          if (mapContainer) mapContainer.style.opacity = 1;
+          if (original) original.style.display = 'none';
+          if (condensed) condensed.style.display = 'block';
           expandedCard = card;
         }
       } else {
-        // mobile tap opens link
-        if(link) window.open(link, '_blank');
+        // mobile tap → open link
+        if (link) window.open(link, '_blank');
       }
     });
 
     // Tap iframe itself → open Google Maps
-    if(mapPreview) {
-      const iframe = mapPreview.querySelector('iframe');
-      iframe.addEventListener('click', (e) => {
+    if (mapContainer) {
+      const iframe = mapContainer.querySelector('iframe');
+      iframe.addEventListener('click', e => {
         e.stopPropagation();
-        if(link) window.open(link, '_blank');
+        if (link) window.open(link, '_blank');
       });
     }
   });
