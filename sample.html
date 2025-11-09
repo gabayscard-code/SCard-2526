@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #902f36;
-  padding: 17px 20px; /* increased vertical padding for 2px allowance */
+  padding: 17px 20px;
   font-family: 'Finger Paint', cursive;
   position: sticky;
   top: 0;
@@ -211,8 +211,36 @@ function toggleMenu(el) {
 </div>
 
 <script>
-// Partners array same as previous
-const partners = [/* ... your partners array remains unchanged ... */];
+// FULL partners array restored
+const partners = [
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://www.google.com/maps/place/Kindred+Clinic" },
+  { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
+  { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Funki Pizzikaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Charlie’s", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Funki Izakaya - Masinag", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Other Locations","Food"] },
+  { name:"Anytime Fitness", tier:"Platinum", discount:["38% discount on the Regular Enrollment Package","Tiered discounts on Personal Training Packages"], filters:["Along Katipunan","Services"] },
+  { name:"Allo Coffee Roasters", tier:"Bronze", discount:"10% discount on drinks", filters:["Food","Along Katipunan"] },
+  { name:"SweetBread Cafe", tier:"Bronze", discount: ["10% discount on one food order per member per day", "10% discount on one drink order per member per day"] , filters:["Food","Others"] },
+  { name:"Potico.ph", tier:"Platinum", discount:"30% discount with free shipping (ADMUGABAY30), valid for multiple uses with a maximum discount of Php 250.00", filters:["Accessories","Other Locations", "Online"] },
+  { name:"FlowerStore", tier:"Platinum", discount:"20% discount with free shipping (ADMUGABAY20), valid for multiple uses with a maximum discount of Php 200.00", filters:["Accessories","Other Locations", "Online"] },
+  { name:"Hikori", tier:"Bronze", discount:"10% discount on menu items", filters:["Food","JSEC"] },
+  { name:"Tampai", tier:"Platinum", discount:"10% discount on rice meals", filters:["Food","JSEC"] },
+  { name:"Lami", tier:"Gold", discount:"15% discount on menu items", filters:["Food","JSEC"] },
+  { name:"Beanleaf", tier:"Bronze", discount:"10% discount on menu items with Php 120.00 minimum purchase", filters:["Food","Along Katipunan"] },
+  { name:"PC Formula", tier:"Gold", discount:"15% discount on services", filters:["Services","Other Locations"] },
+  { name:"Mason's Cafe", tier:"Bronze", discount:"10% discount on all products", filters:["Food","Along Katipunan"] },
+  { name:"Neolivbrews", tier:"Bronze", discount:"10% discount on drinks", filters:["Food","Along Katipunan"] },
+  { name:"Chicken United", tier:"Gold", discount:"15% discount on all products", filters:["Food","Along Katipunan"] },
+  { name:"Yummy Tokyo", tier:"Gold", discount:"15% discount on all regular priced items", filters:["Food","Regis"] },
+  { name:"Namit Gid Ya", tier:"Gold", discount:"15% discount on all menu items", filters:["Food","JSEC"] },
+  { name:"LA Sauce Sneaker laundry Katiipunan", tier:"Bronze", discount:"10% discount on services", filters:["Service","Along Katipunan"] },
+  { name:"Enrico's", tier:"Bronze", discount:"10% discount", filters:["Food","Along Katipunan"] },
+  { name:"Benny Coffee & Brunch", tier:"Bronze", discount:"10% discount", filters:["Food","Along Katipunan"] },
+  { name:"Cozi Studios", tier:"Platinum", discount:"20% discount", filters:["Accessories","Other Location", "Online"] },
+  { name:"Brucal Dental Studios", tier:"Platinum", discount:"20% discount on services", filters:["Services","Along Katipunan"] },
+  { name:"Kim's Ramyun - Regis Center", tier:"Bronze", discount:"10% discount", filters:["Food","Regis"] },
+];
 
 const cardContainer = document.getElementById("cardContainer");
 const pagination = document.getElementById("pagination");
@@ -242,14 +270,17 @@ function renderCards(list, page=1) {
         display:flex;
         justify-content:center;
         align-items:center;
-        background:rgba(0,0,0,0.6); /* background added */
-        color:white;
-        font-weight:700;
-        font-size:18px;
-        opacity:0;
-        transition:opacity 0.3s;
         z-index:2;
-      ">📍 View on Maps</div>` : ''}
+      ">
+        <div style="
+          background: rgba(0,0,0,0.5);
+          border-radius:12px;
+          padding:8px 14px;
+          color:white;
+          font-weight:700;
+          font-size:18px;
+        ">📍 View on Maps</div>
+      </div>` : ''}
       <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
       <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
       <div style="margin:4px 0;">
@@ -300,7 +331,7 @@ function getFilterColor(filter) {
 function filterCards() {
   const search = document.getElementById("searchInput").value.toLowerCase();
   const activeFilters = Array.from(document.querySelectorAll(".filter-btn.active"))
-                          .map(btn => btn.dataset.filter);
+                            .map(btn => btn.dataset.filter);
 
   filteredPartners = partners.filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(search);
@@ -312,9 +343,34 @@ function filterCards() {
   renderCards(filteredPartners, currentPage);
 }
 
+// Filter button logic (single-select per group with deselect)
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const group = btn.dataset.group;
+    const currentlyActive = document.querySelector(`.filter-btn.active[data-group="${group}"]`);
+
+          if(currentlyActive === btn) {
+        // Deselect if clicked again
+        btn.classList.remove("active");
+      } else {
+        // Deselect previous, select current
+        if(currentlyActive) currentlyActive.classList.remove("active");
+        btn.classList.add("active");
+      }
+
+      filterCards();
+  });
+});
+
+const cardContainerEl = document.getElementById("cardContainer");
+const paginationEl = document.getElementById("pagination");
+let currentPage = 1;
+const cardsPerPage = 9;
+
+// Pagination logic
 function updatePagination(list) {
   const totalPages = Math.ceil(list.length / cardsPerPage);
-  pagination.innerHTML = "";
+  paginationEl.innerHTML = "";
 
   if (totalPages <= 1) return;
 
@@ -327,30 +383,16 @@ function updatePagination(list) {
       currentPage = i;
       renderCards(filteredPartners, currentPage);
     });
-    pagination.appendChild(btn);
+    paginationEl.appendChild(btn);
   }
 }
 
 document.getElementById("searchInput").addEventListener("input", filterCards);
 
-// Filter button logic (updated as requested)
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const group = btn.dataset.group;
-
-    if(btn.classList.contains("active")) {
-      btn.classList.remove("active"); // deselect if clicked again
-    } else {
-      document.querySelectorAll(`.filter-btn[data-group='${group}']`).forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    }
-
-    filterCards();
-  });
-});
-
 // Initial render
-renderCards(partners);
+window.addEventListener("DOMContentLoaded", () => {
+  renderCards(partners);
+});
 </script>
 
 <style>
