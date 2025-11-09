@@ -211,12 +211,13 @@ function toggleMenu(el) {
   <div id="filters" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:25px;">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="JSEC">JSEC</button>
-    <button class="filter-btn" data-filter="Gonz1">Gonz1</button>
+    <button class="filter-btn" data-filter="Regis">Regis</button>
     <button class="filter-btn" data-filter="Along Katipunan">Along Katipunan</button>
     <button class="filter-btn" data-filter="Other Locations">Other Locations</button>
     <button class="filter-btn" data-filter="Food">Food</button>
     <button class="filter-btn" data-filter="Services">Services</button>
     <button class="filter-btn" data-filter="Accessories">Accessories</button>
+    <button class="filter-btn" data-filter="Online">Online</button>
   </div>
 
   <!-- Partner Cards -->
@@ -241,9 +242,9 @@ const partners = [
   { name:"Funki Izakaya - Masinag", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Other Locations","Food"] },
   { name:"Anytime Fitness", tier:"Platinum", discount:["38% discount on the Regular Enrollment Package","Tiered discounts on Personal Training Packages"], filters:["Along Katipunan","Services"] },
   { name:"Allo Coffee Roasters", tier:"Bronze", discount:"10% discount on drinks", filters:["Food","Along Katipunan"] },
-  { name:"SweatBread Cafe", tier:"Bronze", discount: ["10% discount on one food order per member per day", "10% discount on one drink order per member per day"] , filters:["Food","Others"] },
-  { name:"Potico.ph", tier:"Platinum", discount:"30% discount with free shipping (ADMUGABAY30), valid for multiple uses with a maximum discount of Php 250.00", filters:["Accessories","Other Locations"] },
-  { name:"FlowerStore", tier:"Platinum", discount:"20% discount with free shipping (ADMUGABAY20), valid for multiple uses with a maximum discount of Php 200.00", filters:["Accessories","Other Locations"] },
+  { name:"SweetBread Cafe", tier:"Bronze", discount: ["10% discount on one food order per member per day", "10% discount on one drink order per member per day"] , filters:["Food","Others"] },
+  { name:"Potico.ph", tier:"Platinum", discount:"30% discount with free shipping (ADMUGABAY30), valid for multiple uses with a maximum discount of Php 250.00", filters:["Accessories","Other Locations", "Online"] },
+  { name:"FlowerStore", tier:"Platinum", discount:"20% discount with free shipping (ADMUGABAY20), valid for multiple uses with a maximum discount of Php 200.00", filters:["Accessories","Other Locations", "Online"] },
   { name:"Hikori", tier:"Bronze", discount:"10% discount on menu items", filters:["Food","JSEC"] },
   { name:"Tampai", tier:"Platinum", discount:"10% discount on rice meals", filters:["Food","JSEC"] },
   { name:"Lami", tier:"Gold", discount:"15% discount on menu items", filters:["Food","JSEC"] },
@@ -251,6 +252,14 @@ const partners = [
   { name:"PC Formula", tier:"Gold", discount:"15% discount on services", filters:["Services","Other Locations"] },
   { name:"Mason's Cafe", tier:"Bronze", discount:"10% discount on all products", filters:["Food","Along Katipunan"] },
   { name:"Neolivbrews", tier:"Bronze", discount:"10% discount on drinks", filters:["Food","Along Katipunan"] },
+  { name:"Chicken United", tier:"Gold", discount:"15% discount on all products", filters:["Food","Along Katipunan"] },
+  { name:"Yummy Tokyo", tier:"Gold", discount:"15% discount on all regular priced items", filters:["Food","Regis"] },
+  { name:"Namit Gid Ya", tier:"Gold", discount:"15% discount on all menu items", filters:["Food","JSEC"] },
+  { name:"LA Sauce Sneaker laundry Katiipunan", tier:"Bronze", discount:"10% discount on services", filters:["Service","Along Katipunan"] },
+  { name:"Enrico's", tier:"Bronze", discount:"10% discount", filters:["Food","Katipunan"] },
+  { name:"Benny Coffee & Brunch", tier:"Bronze", discount:"10% discount", filters:["Food","Katipunan"] },
+  { name:"Cozi Studios", tier:"Platinum", discount:"20% discount", filters:["Accessories","Other Location", "Online"] },
+  { name:"Brucal Dental Studios", tier:"Platinum", discount:"20% discount on services", filters:["Services","Other Locations"] },
 ];
 
 const cardContainer = document.getElementById("cardContainer");
