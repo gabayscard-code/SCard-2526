@@ -397,7 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
       download: true,
       header: true,
       complete: function (results) {
-        const valid = results.data.some(row => row["CardNumber"] === cardNumber);
+        const valid = results.data.some(row => row["Card Number"] === cardNumber);
 
         if (valid) {
           status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your personalized download...</div>`;
