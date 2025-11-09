@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const match = results.data.find(row => row["Card Number"] === cardNumber);
 
         if (match) {
-          const cardName = match["Name (SURNAME, First Name ML.)"]; // ✅ extract name from CSV
+          const cardName = match["Full Name"]; 
 
           status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing your personalized download...</div>`;
           setTimeout(() => downloadCard(cardNumber, cardName), 1000);
@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Add Name
       ctx.font = "bold 100px Inter";
       ctx.fillStyle = "#8CF4AB";
-      ctx.textAlign = "center";
+      ctx.textAlign = "right";
       ctx.fillText(cardName, canvas.width / 2, canvas.height - 220); // adjust position
 
       // Add Card Number
