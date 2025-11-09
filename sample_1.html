@@ -289,6 +289,10 @@ const cardContainer = document.getElementById('card-container');
 const cardsPerPage = 6; // adjust as needed
 let expandedCard = null;
 
+const cardContainer = document.getElementById('card-container');
+const cardsPerPage = 6; // adjust as needed
+let expandedCard = null;
+
 function renderCards(partners, page = 1) {
   const start = (page - 1) * cardsPerPage;
   const end = start + cardsPerPage;
@@ -394,6 +398,9 @@ function renderCards(partners, page = 1) {
     cardContainer.appendChild(card);
   });
 }
+
+
+  
 
 function getTierColor(tier) {
   switch(tier) {
