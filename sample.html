@@ -285,138 +285,70 @@ let currentPage = 1;
 const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
-function renderCards(list, page=1) {
-  const start = (page - 1) * cardsPerPage;
-  const end = start + cardsPerPage;
-  const paginated = list.slice(start, end);
-
-  cardContainer.innerHTML = paginated.map(p => `
-    <div class="partner-card" style="
-      background:white; 
-      border-radius:16px; 
-      padding:0; 
-      box-shadow:0 2px 6px rgba(0,0,0,0.1);
-      border-top:5px solid ${getTierColor(p.tier)};
-      position:relative;
-      cursor:pointer;
-      overflow:hidden;
-      transition: all 0.3s ease;
-    " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
-      
-      ${p.googleMapsLink ? `<div class="map-preview" style="
-        position:relative;
-        width:100%;
-        height:66%;
-        overflow:hidden;
-        display:block;
-      ">
-        <iframe 
-          src="${p.googleMapsLink}" 
-          style="width:100%; height:100%; border:0;" 
-          allowfullscreen 
-          loading="lazy">
-        </iframe>
-        <div class="map-overlay" style="
-          position:absolute; top:0; left:0; width:100%; height:100%;
-          background: rgba(255,255,255,0.4);
-          display:flex; justify-content:center; align-items:center;
-          color:#902f36; font-weight:700; font-size:16px;
-          transition: background 0.2s;
-        ">Tap for more deets</div>
-      </div>` : ''}
-
-      <div class="card-content" style="
-        position:relative; 
-        z-index:2; 
-        padding:8px 12px; 
-        height:34%;
-        overflow:hidden;
-      ">
-        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
-        <p style="margin:2px 0;"><strong>${p.tier}</strong> Partner</p>
-        <div class="card-details" style="display:none; margin-top:4px;">
-          ${
-            Array.isArray(p.discount)
-              ? p.discount.map(d => `<div>${d}</div>`).join('')
-              : `<div>${p.discount}</div>`
-          }
-          <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:4px;">
-            ${p.filters.map(f => `<span style="
-              background-color:${getFilterColor(f)}; 
-              color:#902f36;
-              padding:3px 6px;
-              border-radius:12px;
-              font-size:12px;
-            ">${f}</span>`).join('')}
-          </div>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  let expandedCard = null;
-
-  document.querySelectorAll('.partner-card').forEach(card => {
-    const mapPreview = card.querySelector('.map-preview');
-    const mapOverlay = card.querySelector('.map-overlay');
-    const cardDetails = card.querySelector('.card-details');
-    const link = card.dataset.link;
-
-    // Desktop hover: show "tap for more deets"
-    if(mapOverlay) {
-      card.addEventListener('mouseenter', () => {
-        if(window.innerWidth > 600) mapOverlay.style.background = 'rgba(255,255,255,0.4)';
-      });
-      card.addEventListener('mouseleave', () => {
-        if(window.innerWidth > 600) mapOverlay.style.background = 'rgba(255,255,255,0.4)';
-      });
-    }
-
-    // Click to expand card
-    card.addEventListener('click', (e) => {
-      if(window.innerWidth > 600) {
-        if(expandedCard && expandedCard !== card) {
-          // collapse previous
-          const prevMap = expandedCard.querySelector('.map-preview');
-          const prevDetails = expandedCard.querySelector('.card-details');
-          expandedCard.style.transform = 'scale(1)';
-          expandedCard.style.zIndex = '1';
-          if(prevMap) prevMap.style.height = '66%';
-          if(prevDetails) prevDetails.style.display = 'none';
-        }
-
-        if(card.style.transform === 'scale(2)') {
-          // collapse
-          card.style.transform = 'scale(1)';
-          card.style.zIndex = '1';
-          if(mapPreview) mapPreview.style.height = '66%';
-          if(cardDetails) cardDetails.style.display = 'none';
-          expandedCard = null;
-        } else {
-          // expand
-          card.style.transform = 'scale(2)';
-          card.style.zIndex = '1000';
-          if(mapPreview) mapPreview.style.height = '66%';
-          if(cardDetails) cardDetails.style.display = 'block';
-          expandedCard = card;
-        }
-      } else {
-        // mobile tap
-        if(link) window.open(link, '_blank');
-      }
-    });
-
-    // Tap iframe itself → open Google Maps
-    if(mapPreview) {
-      const iframe = mapPreview.querySelector('iframe');
-      iframe.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if(link) window.open(link, '_blank');
-      });
-    }
-  });
-
-  updatePagination(list);
+function renderCards(list, page=1) { 
+    const start = (page - 1) * cardsPerPage; 
+    const end = start + cardsPerPage; 
+    const paginated = list.slice(start, end); 
+    cardContainer.innerHTML = paginated.map(p => 
+        <div class="partner-card" style=" 
+            background:white; 
+            border-radius:16px; 
+            padding:16px; 
+            box-shadow:0 2px 6px rgba(0,0,0,0.1); 
+            border-top:5px solid ${getTierColor(p.tier)}; 
+            position:relative; 
+            cursor:pointer; 
+            overflow:hidden;" 
+            ${p.googleMapsLink ? data-link="${p.googleMapsLink}" : ''}> 
+            
+            ${p.googleMapsLink ? 
+                <div class="overlay" style=" 
+                    position:absolute; 
+                    top:0; left:0; right:0; bottom:0; 
+                    display:flex; 
+                    justify-content:center; 
+                    align-items:center; 
+                    z-index:2; 
+                    background: rgba(0,0,0,0.5); /* transparent black overlay */"> 
+                    <div style=" 
+                        border: 2px solid white; /* white rectangular border */ 
+                        border-radius:12px; 
+                        padding:8px 14px; 
+                        color:#902f36; /* maroon text */ 
+                        font-weight:700; 
+                        font-size:18px; 
+                        background: white; /* optional, can remove if you want text box transparent */">View on Maps</div> 
+                </div> 
+            : ''} 
+            
+            <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3> 
+            <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p> 
+            <div style="margin:4px 0;"> 
+                ${ Array.isArray(p.discount) ? p.discount.map(d => <div>${d}</div>).join('') : <div>${p.discount}</div> } 
+            </div> 
+            <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;"> 
+                ${p.filters.map(f => <span style=" 
+                    background-color:${getFilterColor(f)}; 
+                    color:#902f36; 
+                    padding:4px 8px; 
+                    border-radius:12px; 
+                    font-size:12px;">${f}</span>).join('')} 
+            </div> 
+        </div> 
+    ).join(''); 
+    
+    document.querySelectorAll('.partner-card').forEach(card => { 
+        const overlay = card.querySelector('.overlay'); 
+        if(overlay) { 
+            card.addEventListener('mouseenter', () => { 
+                if(window.innerWidth>600) overlay.style.opacity=1; 
+            }); 
+            card.addEventListener('mouseleave', () => { overlay.style.opacity=0; }); 
+            card.addEventListener('click', () => { window.open(card.dataset.link, '_blank'); }); 
+        } 
+    }); 
+    
+    updatePagination(list); 
 }
   
 function getTierColor(tier) {
