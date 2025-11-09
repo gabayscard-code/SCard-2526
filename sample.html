@@ -201,6 +201,13 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
   </div>
 </div>
 
+
+
+
+
+
+
+  
 <div style="height: 30px;"></div>
 
 <div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
@@ -233,6 +240,8 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
   <div id="pagination" style="display:flex; justify-content:center; align-items:center; margin-top:25px; gap:6px; flex-wrap:wrap;"></div>
 </div>
 
+<br>
+  
 <script>
 // Toggle Mobile Menu
 function toggleMenu(el) {
@@ -281,7 +290,6 @@ function renderCards(list, page=1) {
   const end = start + cardsPerPage;
   const paginated = list.slice(start, end);
 
-  const cardContainer = document.getElementById("cardContainer");
   cardContainer.innerHTML = paginated.map(p => `
     <div class="partner-card" style="
       background:white; 
@@ -300,22 +308,26 @@ function renderCards(list, page=1) {
         justify-content:center;
         align-items:center;
         z-index:2;
-        opacity:0;
-        transition:opacity 0.3s;
+        background: rgba(0,0,0,0.5); /* transparent black overlay */
       ">
         <div style="
-          background: rgba(0,0,0,0.5);
+          border: 2px solid white; /* white rectangular border */
           border-radius:12px;
           padding:8px 14px;
-          color:white;
+          color:#902f36; /* maroon text */
           font-weight:700;
           font-size:18px;
-        ">📍 View on Maps</div>
+          background: white; /* optional, can remove if you want text box transparent */
+        ">View on Maps</div>
       </div>` : ''}
       <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
       <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
       <div style="margin:4px 0;">
-        ${Array.isArray(p.discount) ? p.discount.map(d => `<div>${d}</div>`).join('') : `<div>${p.discount}</div>`}
+        ${
+          Array.isArray(p.discount)
+            ? p.discount.map(d => `<div>${d}</div>`).join('')
+            : `<div>${p.discount}</div>`
+        }
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
         ${p.filters.map(f => `<span style="
