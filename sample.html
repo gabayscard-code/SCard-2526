@@ -7,8 +7,10 @@
 
 <!-- Load Finger Paint font -->
 <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+/* NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
@@ -22,7 +24,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-/* LEFT LOGO */
 .navbar .logo {
   display: flex;
   gap: 10px;
@@ -34,7 +35,6 @@
 }
 .navbar .logo img:hover { transform: scale(1.05); }
 
-/* CENTER TITLE */
 .navbar .title {
   font-size: 28px;
   font-weight: bold;
@@ -54,7 +54,6 @@
 .title span:nth-child(8) { color: #cbd54b; }
 .title span:nth-child(9) { color: #fedd1d; }
 
-/* RIGHT NAV LINKS */
 .navbar .nav-links {
   display: flex;
   gap: 15px;
@@ -69,7 +68,6 @@
 }
 .navbar .nav-links a:hover { background-color: rgba(255,255,255,0.1); }
 
-/* HAMBURGER ICON */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -84,7 +82,6 @@
   transition: all 0.3s;
 }
 
-/* MOBILE DROPDOWN */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -106,11 +103,8 @@
 }
 .mobile-nav a:hover { background-color: rgba(255,255,255,0.1); }
 
-/* RESPONSIVE MOBILE */
 @media (max-width: 700px) {
-  .navbar {
-    padding: 17px 20px;
-  }
+  .navbar { padding: 17px 20px; }
   .navbar .nav-links { display: none; }
   .navbar .logo { display: none; }
   .hamburger {
@@ -125,7 +119,57 @@
     margin-bottom: 5px;
   }
 }
+
+/* FILTER BUTTONS */
+.filter-btn {
+  background-color:white;
+  border:2px solid #902f36;
+  color:#902f36;
+  border-radius:20px;
+  padding:6px 14px;
+  font-family:'Karla', sans-serif;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+  background-color:#902f36;
+  color:white;
+}
+
+/* PAGINATION */
+.page-number {
+  background-color:white;
+  border:2px solid #902f36;
+  color:#902f36;
+  border-radius:10px;
+  padding:6px 12px;
+  font-family:'Karla', sans-serif;
+  font-size:14px;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+.page-number:hover { background-color:#902f36; color:white; }
+.active-page { background-color:#902f36; color:white; border-color:#902f36; }
+
+/* SEARCH INPUT */
+#searchInput::placeholder { color:white; font-style:italic; opacity:1; }
+
+/* CARD CONTAINER */
+#cardContainer { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+
+/* MOBILE ADAPTATION */
+div[style*="max-width:1000px"] { padding: 0 10px; }
+@media (max-width: 600px) {
+  #filters { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 7px; }
+  .filter-btn { flex: 1 1 auto; max-width: 40%; font-size: 12px; padding: 5px 9px; }
+  #searchInput { width: 95%; font-size: 16px; }
+  .page-number { padding: 8px 14px; font-size: 16px; }
+  #cardContainer div { padding: 14px; }
+}
 </style>
+</head>
+<body>
 
 <div class="navbar">
   <div class="logo">
@@ -147,9 +191,7 @@
   </div>
 
   <div class="hamburger" onclick="toggleMenu(this)">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div></div><div></div><div></div>
   </div>
 
   <div class="mobile-nav">
@@ -159,20 +201,7 @@
   </div>
 </div>
 
-<script>
-function toggleMenu(el) {
-  el.classList.toggle("active");
-  const mobileNav = document.querySelector(".mobile-nav");
-  if(mobileNav.style.display === "flex") mobileNav.style.display = "none";
-  else mobileNav.style.display = "flex";
-}
-</script>
-
 <div style="height: 30px;"></div>
-
-<div style="width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden;">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
 
 <div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
   <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:20px;">
@@ -183,7 +212,6 @@ function toggleMenu(el) {
       style="width:90%; padding:12px 16px; border:none; border-radius:30px; background-color:#902f36; color:white; font-size:16px; outline:none; text-align:center;">
   </div>
 
-  <!-- Filters -->
   <div id="filters" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
     <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
       <strong>Industry:</strong>
@@ -201,17 +229,19 @@ function toggleMenu(el) {
     </div>
   </div>
 
-  <!-- Partner Cards -->
-  <div id="cardContainer" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
-  </div>
-
-  <!-- Pagination -->
-  <div id="pagination" style="display:flex; justify-content:center; align-items:center; margin-top:25px; gap:6px; flex-wrap:wrap;">
-  </div>
+  <div id="cardContainer"></div>
+  <div id="pagination" style="display:flex; justify-content:center; align-items:center; margin-top:25px; gap:6px; flex-wrap:wrap;"></div>
 </div>
 
 <script>
-// FULL partners array restored
+// Toggle Mobile Menu
+function toggleMenu(el) {
+  el.classList.toggle("active");
+  const mobileNav = document.querySelector(".mobile-nav");
+  mobileNav.style.display = mobileNav.style.display === "flex" ? "none" : "flex";
+}
+
+// Partners array
 const partners = [
   { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://www.google.com/maps/place/Kindred+Clinic" },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
@@ -242,8 +272,6 @@ const partners = [
   { name:"Kim's Ramyun - Regis Center", tier:"Bronze", discount:"10% discount", filters:["Food","Regis"] },
 ];
 
-const cardContainer = document.getElementById("cardContainer");
-const pagination = document.getElementById("pagination");
 let currentPage = 1;
 const cardsPerPage = 9;
 let filteredPartners = [...partners];
@@ -253,6 +281,7 @@ function renderCards(list, page=1) {
   const end = start + cardsPerPage;
   const paginated = list.slice(start, end);
 
+  const cardContainer = document.getElementById("cardContainer");
   cardContainer.innerHTML = paginated.map(p => `
     <div class="partner-card" style="
       background:white; 
@@ -271,6 +300,8 @@ function renderCards(list, page=1) {
         justify-content:center;
         align-items:center;
         z-index:2;
+        opacity:0;
+        transition:opacity 0.3s;
       ">
         <div style="
           background: rgba(0,0,0,0.5);
@@ -284,11 +315,7 @@ function renderCards(list, page=1) {
       <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
       <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
       <div style="margin:4px 0;">
-        ${
-          Array.isArray(p.discount)
-            ? p.discount.map(d => `<div>${d}</div>`).join('')
-            : `<div>${p.discount}</div>`
-        }
+        ${Array.isArray(p.discount) ? p.discount.map(d => `<div>${d}</div>`).join('') : `<div>${p.discount}</div>`}
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
         ${p.filters.map(f => `<span style="
@@ -349,27 +376,21 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
     const group = btn.dataset.group;
     const currentlyActive = document.querySelector(`.filter-btn.active[data-group="${group}"]`);
 
-          if(currentlyActive === btn) {
-        // Deselect if clicked again
-        btn.classList.remove("active");
-      } else {
-        // Deselect previous, select current
-        if(currentlyActive) currentlyActive.classList.remove("active");
-        btn.classList.add("active");
-      }
+    if(currentlyActive === btn) {
+      btn.classList.remove("active");
+    } else {
+      if(currentlyActive) currentlyActive.classList.remove("active");
+      btn.classList.add("active");
+    }
 
-      filterCards();
+    filterCards();
   });
 });
-
-const cardContainerEl = document.getElementById("cardContainer");
-const paginationEl = document.getElementById("pagination");
-let currentPage = 1;
-const cardsPerPage = 9;
 
 // Pagination logic
 function updatePagination(list) {
   const totalPages = Math.ceil(list.length / cardsPerPage);
+  const paginationEl = document.getElementById("pagination");
   paginationEl.innerHTML = "";
 
   if (totalPages <= 1) return;
@@ -394,95 +415,6 @@ window.addEventListener("DOMContentLoaded", () => {
   renderCards(partners);
 });
 </script>
-
-<style>
-.filter-btn {
-  background-color:white;
-  border:2px solid #902f36;
-  color:#902f36;
-  border-radius:20px;
-  padding:6px 14px;
-  font-family:'Karla', sans-serif;
-  font-size:14px;
-  cursor:pointer;
-  transition:all 0.2s ease;
-}
-.filter-btn:hover, .filter-btn.active {
-  background-color:#902f36;
-  color:white;
-}
-
-/* Pagination style */
-.page-number {
-  background-color:white;
-  border:2px solid #902f36;
-  color:#902f36;
-  border-radius:10px;
-  padding:6px 12px;
-  font-family:'Karla', sans-serif;
-  font-size:14px;
-  cursor:pointer;
-  transition:all 0.2s ease;
-}
-.page-number:hover {
-  background-color:#902f36;
-  color:white;
-}
-.active-page {
-  background-color:#902f36;
-  color:white;
-  border-color:#902f36;
-}
-
-/* White italicized placeholder */
-#searchInput::placeholder {
-  color:white;
-  font-style:italic;
-  opacity:1;
-}
-
-/* Mobile Adaptability */
-div[style*="max-width:1000px"] {
-  padding: 0 10px;
-}
-
-#cardContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-@media (max-width: 600px) {
-  #filters {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 7px;
-  }
-
-  .filter-btn {
-    flex: 1 1 auto;
-    max-width: 40%;
-    font-size: 12px;
-    padding: 5px 9px;
-  }
-
-  #searchInput {
-    width: 95%;
-    font-size: 16px;
-  }
-
-  .page-number {
-    padding: 8px 14px;
-    font-size: 16px;
-  }
-
-  #cardContainer div {
-    padding: 14px;
-  }
-}
-</style>
-</div>
 
 </body>
 </html>
