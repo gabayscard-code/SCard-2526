@@ -285,72 +285,92 @@ let currentPage = 1;
 const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
-function renderCards(list, page=1) { 
-    const start = (page - 1) * cardsPerPage; 
-    const end = start + cardsPerPage; 
-    const paginated = list.slice(start, end); 
-    cardContainer.innerHTML = paginated.map(p => 
-        <div class="partner-card" style=" 
-            background:white; 
-            border-radius:16px; 
-            padding:16px; 
-            box-shadow:0 2px 6px rgba(0,0,0,0.1); 
-            border-top:5px solid ${getTierColor(p.tier)}; 
-            position:relative; 
-            cursor:pointer; 
-            overflow:hidden;" 
-            ${p.googleMapsLink ? data-link="${p.googleMapsLink}" : ''}> 
-            
-            ${p.googleMapsLink ? 
-                <div class="overlay" style=" 
-                    position:absolute; 
-                    top:0; left:0; right:0; bottom:0; 
-                    display:flex; 
-                    justify-content:center; 
-                    align-items:center; 
-                    z-index:2; 
-                    background: rgba(0,0,0,0.5); /* transparent black overlay */"> 
-                    <div style=" 
-                        border: 2px solid white; /* white rectangular border */ 
-                        border-radius:12px; 
-                        padding:8px 14px; 
-                        color:#902f36; /* maroon text */ 
-                        font-weight:700; 
-                        font-size:18px; 
-                        background: white; /* optional, can remove if you want text box transparent */">View on Maps</div> 
-                </div> 
-            : ''} 
-            
-            <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3> 
-            <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p> 
-            <div style="margin:4px 0;"> 
-                ${ Array.isArray(p.discount) ? p.discount.map(d => <div>${d}</div>).join('') : <div>${p.discount}</div> } 
-            </div> 
-            <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;"> 
-                ${p.filters.map(f => <span style=" 
-                    background-color:${getFilterColor(f)}; 
-                    color:#902f36; 
-                    padding:4px 8px; 
-                    border-radius:12px; 
-                    font-size:12px;">${f}</span>).join('')} 
-            </div> 
-        </div> 
-    ).join(''); 
-    
-    document.querySelectorAll('.partner-card').forEach(card => { 
-        const overlay = card.querySelector('.overlay'); 
-        if(overlay) { 
-            card.addEventListener('mouseenter', () => { 
-                if(window.innerWidth>600) overlay.style.opacity=1; 
-            }); 
-            card.addEventListener('mouseleave', () => { overlay.style.opacity=0; }); 
-            card.addEventListener('click', () => { window.open(card.dataset.link, '_blank'); }); 
-        } 
-    }); 
-    
-    updatePagination(list); 
+function renderCards(list, page=1) {
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const paginated = list.slice(start, end);
+
+  cardContainer.innerHTML = paginated.map(p => `
+    <div class="partner-card" style="
+      background:white; 
+      border-radius:16px; 
+      padding:16px; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      border-top:5px solid ${getTierColor(p.tier)};
+      position:relative;
+      cursor:pointer;
+      overflow:hidden;
+    " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
+      ${p.googleMapsLink ? `<div class="overlay" style="
+        position:absolute;
+        top:0; left:0; right:0; bottom:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:2;
+        background: rgba(0,0,0,0.5);
+        opacity:0;
+        transition: opacity 0.3s ease;
+      ">
+        <div style="
+          border: 2px solid white;
+          border-radius:12px;
+          padding:8px 14px;
+          color:#902f36;
+          font-weight:700;
+          font-size:18px;
+          background: white;
+        ">View on Maps</div>
+      </div>` : ''}
+      <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+      <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+      <div style="margin:4px 0;">
+        ${
+          Array.isArray(p.discount)
+            ? p.discount.map(d => `<div>${d}</div>`).join('')
+            : `<div>${p.discount}</div>`
+        }
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+        ${p.filters.map(f => `<span style="
+          background-color:${getFilterColor(f)}; 
+          color:#902f36;
+          padding:4px 8px;
+          border-radius:12px;
+          font-size:12px;
+        ">${f}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  // Overlay hover (desktop) and tap (mobile)
+  document.querySelectorAll('.partner-card').forEach(card => {
+    const overlay = card.querySelector('.overlay');
+    const link = card.dataset.link;
+
+    // Desktop hover for overlay
+    if (overlay) {
+      card.addEventListener('mouseenter', () => { 
+        if(window.innerWidth > 600) overlay.style.opacity = 1; 
+      });
+      card.addEventListener('mouseleave', () => { 
+        if(window.innerWidth > 600) overlay.style.opacity = 0; 
+      });
+    }
+
+    // Mobile tap opens link
+    if (link) {
+      card.addEventListener('click', () => {
+        if(window.innerWidth <= 600) {
+          window.open(link, '_blank');
+        }
+      });
+    }
+  });
+
+  updatePagination(list);
 }
-  
+
 function getTierColor(tier) {
   switch(tier) {
     case "Platinum": return "#b6e630";
