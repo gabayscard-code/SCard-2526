@@ -377,6 +377,43 @@ footer {
 </style>
 </head>
 
+<script>
+document.getElementById("cardForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const cardNumber = document.getElementById("cardNumber").value.trim();
+  const status = document.getElementById("statusMessage");
+
+  // Fetch the verification CSV file
+  fetch("Verified Card Numbers.csv")
+    .then(response => {
+      if (!response.ok) throw new Error("CSV not found");
+      return response.text();
+    })
+    .then(csvText => {
+      // Split CSV into lines, trim extra spaces
+      const lines = csvText.split("\n").map(line => line.trim());
+      
+      // Check if card number exists in CSV
+      if (lines.includes(cardNumber)) {
+        status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your download...</div>`;
+        
+        // Simulate download after short delay
+        setTimeout(() => {
+          const link = document.createElement("a");
+          link.href = "SCard-Design.jpg"; // Replace with your actual personalized card file
+          link.download = `ScholarCard-${cardNumber}.jpg`;
+          link.click();
+        }, 1000);
+      } else {
+        status.innerHTML = `<div class="alert alert-danger">❌ Invalid card number. Please try again.</div>`;
+      }
+    })
+    .catch(() => {
+      status.innerHTML = `<div class="alert alert-warning">⚠️ Unable to verify your card right now. Please try again later.</div>`;
+    });
+});
+</script>
+
 <body>
 
 <!-- ====== HERO SECTION ====== -->
@@ -449,6 +486,23 @@ footer {
         <p class="fs-5 mb-0">• Scanning the QR Code</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="content py-5 text-center">
+  <div class="container" style="max-width: 500px;">
+    <h2 class="fw-bold mb-4">Download Your Scholar’s Card</h2>
+
+    <form id="cardForm" class="mb-3">
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label fw-semibold">Enter Your Card Number:</label>
+        <input type="text" id="cardNumber" class="form-control text-center" placeholder="e.g. 2025-2026-Student No." required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg w-100">Verify & Download</button>
+    </form>
+
+    <div id="statusMessage" class="mt-3"></div>
   </div>
 </section>
 
