@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #902f36;
-  padding: 17px 20px; /* increased vertical padding for 2px allowance */
+  padding: 17px 20px;
   font-family: 'Finger Paint', cursive;
   position: sticky;
   top: 0;
@@ -212,9 +212,9 @@ function toggleMenu(el) {
 
 <script>
 const partners = [
-  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://www.google.com/maps/place/Kindred+Clinic+-+Ayala+Malls+Vertis+North/@14.6527487,121.0314856,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b7948a4a6e13:0xea69c53c7173917c!8m2!3d14.6527488!4d121.0363565!16s%2Fg%2F11w8rzb4s2?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D" },
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://www.google.com/maps/place/Kindred+Clinic" },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
-  { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
+  { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday"], filters:["Along Katipunan","Food"] },
   // ... other partners ...
 ];
 
@@ -242,7 +242,7 @@ function renderCards(list, page=1) {
       overflow:hidden;
     " data-link="${p.googleMapsLink ? p.googleMapsLink : ''}">
       ${
-        p.googleMapsLink 
+        p.googleMapsLink
         ? `<div class="overlay" style="
             position:absolute;
             top:0; left:0; right:0; bottom:0;
@@ -282,7 +282,7 @@ function renderCards(list, page=1) {
 
   document.querySelectorAll('.partner-card').forEach(card => {
     const overlay = card.querySelector('.overlay');
-    if (overlay) {
+    if(overlay){
       card.addEventListener('mouseenter', () => { if(window.innerWidth>600) overlay.style.opacity=1; });
       card.addEventListener('mouseleave', () => { overlay.style.opacity=0; });
       card.addEventListener('click', () => { window.open(card.dataset.link, '_blank'); });
@@ -342,10 +342,10 @@ function updatePagination(list) {
 
 document.getElementById("searchInput").addEventListener("input", filterCards);
 
-// Filter button toggle
+// FILTER BUTTONS: toggle independent selection
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    btn.classList.toggle("active"); // tap toggles selection
+    btn.classList.toggle("active");
     filterCards();
   });
 });
@@ -413,16 +413,16 @@ div[style*="max-width:1000px"] {
 
 @media (max-width: 600px) {
   #filters {
-    flex-direction: row; /* keep as row */
-    flex-wrap: wrap;     /* allow wrapping to next line if needed */
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 7px;            /* slightly smaller gap for mobile */
+    gap: 7px;
   }
 
   .filter-btn {
-    flex: 1 1 auto;      /* let buttons shrink and wrap nicely */
-    max-width: 40%;      /* max two per row */
-    font-size: 12px;     /* slightly smaller font */
+    flex: 1 1 auto;
+    max-width: 40%;
+    font-size: 12px;
     padding: 5px 9px;
   }
 
