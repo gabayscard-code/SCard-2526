@@ -291,7 +291,7 @@ function renderCards(list, page = 1) {
   const paginated = list.slice(start, end);
 
   cardContainer.innerHTML = paginated.map(p => {
-    // Embed URL (auto converts name + first location filter)
+    // Embed URL without API key
     let embedSrc = "";
     if (p.googleMapsLink) {
       const queryParts = [p.name];
@@ -312,7 +312,7 @@ function renderCards(list, page = 1) {
       overflow:hidden;
       transition: all 0.3s ease;
     " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
-
+      
       <div class="card-original">
         <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
         <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
@@ -370,13 +370,16 @@ function renderCards(list, page = 1) {
     const condensed = card.querySelector('.card-condensed');
     const link = card.dataset.link;
 
+    // Desktop hover overlay
     if (overlay) {
       card.addEventListener('mouseenter', () => { if (window.innerWidth > 600) overlay.style.opacity = 1; });
       card.addEventListener('mouseleave', () => { if (window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) overlay.style.opacity = 0; });
     }
 
+    // Click handler
     card.addEventListener('click', () => {
       if (window.innerWidth > 600) {
+        // Collapse previous expanded card
         if (expandedCard && expandedCard !== card) {
           const prevMap = expandedCard.querySelector('.map-container');
           const prevOriginal = expandedCard.querySelector('.card-original');
@@ -388,6 +391,7 @@ function renderCards(list, page = 1) {
           if (prevCondensed) prevCondensed.style.display = 'none';
         }
 
+        // Toggle clicked card
         if (card.style.transform === 'scale(2)') {
           card.style.transform = 'scale(1)';
           card.style.zIndex = '1';
@@ -404,10 +408,12 @@ function renderCards(list, page = 1) {
           expandedCard = card;
         }
       } else {
+        // Mobile: open map link
         if (link) window.open(link, '_blank');
       }
     });
 
+    // Click on iframe opens map in new tab
     if (mapContainer) {
       const iframe = mapContainer.querySelector('iframe');
       iframe.addEventListener('click', e => {
