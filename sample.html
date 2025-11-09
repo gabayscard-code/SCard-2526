@@ -308,16 +308,18 @@ function renderCards(list, page=1) {
         justify-content:center;
         align-items:center;
         z-index:2;
-        background: rgba(0,0,0,0.5); /* transparent black overlay */
+        background: rgba(0,0,0,0.5);
+        opacity:0;
+        transition: opacity 0.3s ease;
       ">
         <div style="
-          border: 2px solid white; /* white rectangular border */
+          border: 2px solid white;
           border-radius:12px;
           padding:8px 14px;
-          color:#902f36; /* maroon text */
+          color:#902f36;
           font-weight:700;
           font-size:18px;
-          background: white; /* optional, can remove if you want text box transparent */
+          background: white;
         ">View on Maps</div>
       </div>` : ''}
       <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
@@ -341,12 +343,28 @@ function renderCards(list, page=1) {
     </div>
   `).join('');
 
+  // Overlay hover (desktop) and tap (mobile)
   document.querySelectorAll('.partner-card').forEach(card => {
     const overlay = card.querySelector('.overlay');
-    if(overlay) {
-      card.addEventListener('mouseenter', () => { if(window.innerWidth>600) overlay.style.opacity=1; });
-      card.addEventListener('mouseleave', () => { overlay.style.opacity=0; });
-      card.addEventListener('click', () => { window.open(card.dataset.link, '_blank'); });
+    const link = card.dataset.link;
+
+    // Desktop hover for overlay
+    if (overlay) {
+      card.addEventListener('mouseenter', () => { 
+        if(window.innerWidth > 600) overlay.style.opacity = 1; 
+      });
+      card.addEventListener('mouseleave', () => { 
+        if(window.innerWidth > 600) overlay.style.opacity = 0; 
+      });
+    }
+
+    // Mobile tap opens link
+    if (link) {
+      card.addEventListener('click', () => {
+        if(window.innerWidth <= 600) {
+          window.open(link, '_blank');
+        }
+      });
     }
   });
 
