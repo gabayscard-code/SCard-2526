@@ -252,7 +252,7 @@ function toggleMenu(el) {
 
 // Partners array
 const partners = [
-  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9", mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!...kindred...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>` },
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9" }, mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!...kindred...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>` },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
   { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
   { name:"Funki Pizzikaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
@@ -285,114 +285,171 @@ let currentPage = 1;
 const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
-const cardContainer = document.getElementById('card-container');
-const cardsPerPage = 6; // adjust as needed
-let expandedCard = null;
-
-function renderCards(partners, page = 1) {
+function renderCards(list, page = 1) {
   const start = (page - 1) * cardsPerPage;
   const end = start + cardsPerPage;
-  const paginated = partners.slice(start, end);
+  const paginated = list.slice(start, end);
 
-  cardContainer.innerHTML = ''; // clear existing cards
+  cardContainer.innerHTML = paginated.map(p => `
+    <div class="partner-card" style="
+      background:white; 
+      border-radius:16px; 
+      padding:16px; 
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      border-top:5px solid ${getTierColor(p.tier)};
+      position:relative;
+      cursor:pointer;
+      overflow:hidden;
+      transition: all 0.3s ease;
+    " ${p.googleMapsLink ? `data-link="${p.googleMapsLink}"` : ''}>
 
-  paginated.forEach(partner => {
-    const card = document.createElement('div');
-    card.className = 'partner-card';
-    card.style.position = 'relative';
-    card.style.background = 'white';
-    card.style.borderRadius = '16px';
-    card.style.padding = '16px';
-    card.style.boxShadow = '0 2px 6px rgba(0,0,0,0.1)';
-    card.style.overflow = 'hidden';
-    card.style.transition = 'transform 0.3s, z-index 0.3s';
+      <!-- Original details -->
+      <div class="card-original">
+        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+        <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+        <div style="margin:4px 0;">
+          ${Array.isArray(p.discount) ? p.discount.map(d => `<div>${d}</div>`).join('') : `<div>${p.discount}</div>`}
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;">
+          ${p.filters.map(f => `<span style="
+            background-color:${getFilterColor(f)}; 
+            color:#902f36;
+            padding:4px 8px;
+            border-radius:12px;
+            font-size:12px;
+          ">${f}</span>`).join('')}
+        </div>
+      </div>
 
-    // Overlay for hover
-    const overlay = document.createElement('div');
-    overlay.className = 'hover-overlay';
-    overlay.style.position = 'absolute';
-    overlay.style.top = 0;
-    overlay.style.left = 0;
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.background = 'rgba(0,0,0,0.6)';
-    overlay.style.display = 'flex';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.opacity = '0';
-    overlay.style.transition = 'opacity 0.2s';
+      <!-- Hover overlay for desktop -->
+      ${p.googleMapsLink ? `
+      <div class="hover-overlay" style="
+        position:absolute;
+        top:0; left:0; width:100%; height:100%;
+        display:flex; justify-content:center; align-items:center;
+        background: rgba(0,0,0,0);
+        transition: background 0.3s ease;
+        pointer-events:none;
+        z-index:2;
+      ">
+        <div style="
+          border: 2px solid white;
+          border-radius:12px;
+          padding:10px 16px;
+          color:red;
+          font-weight:700;
+          font-size:18px;
+          background:white;
+          opacity:0;
+          transition: opacity 0.3s ease;
+        ">Tap for more deets</div>
+      </div>
+      ` : ''}
 
-    const overlayText = document.createElement('div');
-    overlayText.innerText = 'Tap for more deets';
-    overlayText.style.background = 'white';
-    overlayText.style.borderRadius = '12px';
-    overlayText.style.padding = '8px 16px';
-    overlayText.style.color = 'red';
-    overlayText.style.fontWeight = 'bold';
-    overlay.appendChild(overlayText);
+      <!-- Map container (top 2/3 when expanded) -->
+      ${p.mapEmbed ? `
+      <div class="map-container" style="
+        position:absolute;
+        top:0; left:0; width:100%; height:66%;
+        border-radius:16px 16px 0 0;
+        overflow:hidden;
+        opacity:0;
+        pointer-events:none;
+        transition: opacity 0.3s ease;
+      ">
+        ${p.mapEmbed}
+      </div>` : ''}
 
-    card.appendChild(overlay);
+      <!-- Condensed details for expanded view bottom 1/3 -->
+      <div class="card-condensed" style="display:none; margin-top:4px;">
+        <h3 style="margin:0; font-weight:700; color:#902f36;">${p.name}</h3>
+        <p style="margin:4px 0;"><strong>${p.tier}</strong> Partner</p>
+      </div>
 
-    // Card content
-    const name = document.createElement('h3');
-    name.innerText = partner.name;
-    name.style.marginBottom = '8px';
-    card.appendChild(name);
+    </div>
+  `).join('');
 
-    const tier = document.createElement('p');
-    tier.innerText = `Tier: ${partner.tier}`;
-    tier.style.marginBottom = '8px';
-    card.appendChild(tier);
+  let expandedCard = null;
 
-    const discount = document.createElement('p');
-    discount.innerText = partner.discount.join(', ');
-    discount.style.marginBottom = '8px';
-    card.appendChild(discount);
+  document.querySelectorAll('.partner-card').forEach(card => {
+    const overlay = card.querySelector('.hover-overlay');
+    const overlayText = overlay ? overlay.querySelector('div') : null;
+    const mapContainer = card.querySelector('.map-container');
+    const original = card.querySelector('.card-original');
+    const condensed = card.querySelector('.card-condensed');
+    const link = card.dataset.link;
 
-    const condensed = document.createElement('div');
-    condensed.className = 'condensed';
-    condensed.style.display = 'none';
-    condensed.innerHTML = partner.mapEmbed; // use proper iframe
-    card.appendChild(condensed);
+    // Desktop hover overlay
+    if (overlay) {
+      card.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 600) {
+          overlay.style.background = 'rgba(0,0,0,0.5)';
+          overlayText.style.opacity = 1;
+        }
+      });
+      card.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 600 && (!expandedCard || expandedCard !== card)) {
+          overlay.style.background = 'rgba(0,0,0,0)';
+          overlayText.style.opacity = 0;
+        }
+      });
+    }
 
-    // Hover behavior (desktop only)
-    card.addEventListener('mouseenter', () => {
-      if (window.innerWidth > 600 && !expandedCard) overlay.style.opacity = '1';
-    });
-    card.addEventListener('mouseleave', () => {
-      if (window.innerWidth > 600 && !expandedCard) overlay.style.opacity = '0';
-    });
-
-    // Click behavior
+    // Click handler
     card.addEventListener('click', () => {
       if (window.innerWidth > 600) {
-        // Hide overlay
-        overlay.style.display = 'none';
-
-        // Collapse previously expanded card
+        // Collapse previous expanded card
         if (expandedCard && expandedCard !== card) {
-          expandedCard.style.transform = '';
-          expandedCard.style.zIndex = '';
-          expandedCard.querySelector('.condensed').style.display = 'none';
+          const prevMap = expandedCard.querySelector('.map-container');
+          const prevOriginal = expandedCard.querySelector('.card-original');
+          const prevCondensed = expandedCard.querySelector('.card-condensed');
           const prevOverlay = expandedCard.querySelector('.hover-overlay');
-          if (prevOverlay) prevOverlay.style.display = 'flex';
+          const prevOverlayText = prevOverlay ? prevOverlay.querySelector('div') : null;
+
+          expandedCard.style.transform = 'scale(1)';
+          expandedCard.style.zIndex = '1';
+          if (prevMap) prevMap.style.opacity = 0;
+          if (prevOriginal) prevOriginal.style.display = 'block';
+          if (prevCondensed) prevCondensed.style.display = 'none';
+          if (prevOverlay) prevOverlay.style.background = 'rgba(0,0,0,0)';
+          if (prevOverlayText) prevOverlayText.style.opacity = 0;
         }
 
-        // Expand clicked card
-        card.style.transform = 'scale(2)';
-        card.style.zIndex = '1000';
-        condensed.style.display = 'block';
-        expandedCard = card;
+        // Toggle clicked card
+        if (card.style.transform === 'scale(2)') {
+          card.style.transform = 'scale(1)';
+          card.style.zIndex = '1';
+          if (mapContainer) mapContainer.style.opacity = 0;
+          if (original) original.style.display = 'block';
+          if (condensed) condensed.style.display = 'none';
+          if (overlay) overlay.style.background = 'rgba(0,0,0,0)';
+          if (overlayText) overlayText.style.opacity = 0;
+          expandedCard = null;
+        } else {
+          card.style.transform = 'scale(2)';
+          card.style.zIndex = '1000';
+          if (mapContainer) mapContainer.style.opacity = 1;
+          if (original) original.style.display = 'none';
+          if (condensed) condensed.style.display = 'block';
+          expandedCard = card;
 
-        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       } else {
-        // Mobile: open Google Maps link
-        if (partner.googleMapsLink) window.open(partner.googleMapsLink, '_blank');
+        if (link) window.open(link, '_blank');
       }
     });
 
-    cardContainer.appendChild(card);
+    // Click on overlay triggers card click
+    if (overlay) {
+      overlay.addEventListener('click', e => {
+        e.stopPropagation();
+        card.click();
+      });
+    }
   });
+
+  updatePagination(list);
 }
 
 function getTierColor(tier) {
