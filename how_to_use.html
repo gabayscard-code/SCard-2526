@@ -392,17 +392,21 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Parse the verification CSV file
+    // ✅ Parse the verification CSV file
     Papa.parse("Verified-Card-Numbers.csv", {
       download: true,
       header: true,
       complete: function (results) {
-        const valid = results.data.some(row => row["Card Number"] === cardNumber);
-        const valid = results.data.some(row => row["Name (SURNAME, First Name MI.) Ex. DELA CRUZ, Juan S."] === cardName);
+        // ✅ Find the matching row by "Card Number"
+        const matchedRow = results.data.find(
+          row => row["Card Number"]?.trim() === cardNumber
+        );
 
-        if (valid) {
-          status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your personalized download...</div>`;
-          setTimeout(() => downloadCard(cardNumber), 1000);
+        if (matchedRow) {
+          const cardName = matchedRow["Name (SURNAME, First Name ML.)"]?.trim() || "Scholar";
+
+          status.innerHTML = `<div class="alert alert-success">✅ Card verified for <strong>${cardName}</strong>! Preparing your personalized card...</div>`;
+          setTimeout(() => downloadCard(cardNumber, cardName), 1000);
         } else {
           status.innerHTML = `<div class="alert alert-danger">❌ Invalid or unverified card number. Please try again.</div>`;
         }
@@ -413,41 +417,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function downloadCard(cardNumber, name) {
-  const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d");
-  const baseImage = new Image();
+  // ✅ Function to generate personalized card
+  function downloadCard(cardNumber, cardName) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const baseImage = new Image();
 
-  baseImage.src = "SCard-base.png"; // your base design
-  baseImage.onload = function () {
-    // set canvas size to match base image
-    canvas.width = baseImage.width;
-    canvas.height = baseImage.height;
+    baseImage.src = "SCard-base.png"; // your base template
+    baseImage.onload = function () {
+      canvas.width = baseImage.width;
+      canvas.height = baseImage.height;
 
-    // draw base image
-    ctx.drawImage(baseImage, 0, 0);
+      // draw the base image
+      ctx.drawImage(baseImage, 0, 0);
 
-    // Add name
-    ctx.font = "bold 100px Inter";
-    ctx.fillStyle = "#8CF4AB"; // white text — change to match design
-    ctx.textAlign = "left"
-    ctx.fillText(cardName, canvas.width / 2, canvas.height - 140); // adjust Y to move up/down
+      // Add Name
+      ctx.font = "bold 80px Inter";
+      ctx.fillStyle = "#8CF4AB"; // change color to fit your design
+      ctx.textAlign = "left";
+      ctx.fillText(cardName, 200, canvas.height - 250); // adjust positioning
 
-    // Add card number
-    ctx.font = "bold 100px Inter";
-    ctx.fillStyle = "#8CF4AB";
-    ctx.textAlign = "left";
-    ctx.fillText(cardNumber, canvas.width / 2, canvas.height - 80);
+      // Add Card Number
+      ctx.font = "bold 60px Inter";
+      ctx.fillText(cardNumber, 200, canvas.height - 150);
 
-    // download the final personalized card
-    const link = document.createElement("a");
-    link.download = `ScholarsCard_${cardNumber}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  };
-}
+      // download the final personalized card
+      const link = document.createElement("a");
+      link.download = `ScholarsCard_${cardNumber}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    };
+  }
 });
 </script>
+
 
 <body>
 
