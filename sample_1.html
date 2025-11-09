@@ -201,6 +201,13 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
   </div>
 </div>
 
+
+
+
+
+
+
+  
 <div style="height: 30px;"></div>
 
 <div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
@@ -234,7 +241,7 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
 </div>
 
 <br>
-
+  
 <script>
 // Toggle Mobile Menu
 function toggleMenu(el) {
@@ -245,7 +252,7 @@ function toggleMenu(el) {
 
 // Partners array
 const partners = [
-  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9", mapEmbed: `<iframe src="https://www.google.com/maps?q=Kindred+Clinic,+Metro+Manila,+Philippines&output=embed" width="100%" height="100%" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>` },
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9", mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!...kindred...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>` },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
   { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
   { name:"Funki Pizzikaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
@@ -275,12 +282,192 @@ const partners = [
 ];
 
 let currentPage = 1;
+const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
-const cardContainer = document.getElementById('cardContainer');
+const cardContainer = document.getElementById('card-container');
+const cardsPerPage = 6; // adjust as needed
 let expandedCard = null;
 
-// renderCards() and all other scripts remain unchanged
+function renderCards(partners, page = 1) {
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const paginated = partners.slice(start, end);
+
+  cardContainer.innerHTML = ''; // clear existing cards
+
+  paginated.forEach(partner => {
+    const card = document.createElement('div');
+    card.className = 'partner-card';
+    card.style.position = 'relative';
+    card.style.background = 'white';
+    card.style.borderRadius = '16px';
+    card.style.padding = '16px';
+    card.style.boxShadow = '0 2px 6px rgba(0,0,0,0.1)';
+    card.style.overflow = 'hidden';
+    card.style.transition = 'transform 0.3s, z-index 0.3s';
+
+    // Overlay for hover
+    const overlay = document.createElement('div');
+    overlay.className = 'hover-overlay';
+    overlay.style.position = 'absolute';
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.background = 'rgba(0,0,0,0.6)';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.2s';
+
+    const overlayText = document.createElement('div');
+    overlayText.innerText = 'Tap for more deets';
+    overlayText.style.background = 'white';
+    overlayText.style.borderRadius = '12px';
+    overlayText.style.padding = '8px 16px';
+    overlayText.style.color = 'red';
+    overlayText.style.fontWeight = 'bold';
+    overlay.appendChild(overlayText);
+
+    card.appendChild(overlay);
+
+    // Card content
+    const name = document.createElement('h3');
+    name.innerText = partner.name;
+    name.style.marginBottom = '8px';
+    card.appendChild(name);
+
+    const tier = document.createElement('p');
+    tier.innerText = `Tier: ${partner.tier}`;
+    tier.style.marginBottom = '8px';
+    card.appendChild(tier);
+
+    const discount = document.createElement('p');
+    discount.innerText = partner.discount.join(', ');
+    discount.style.marginBottom = '8px';
+    card.appendChild(discount);
+
+    const condensed = document.createElement('div');
+    condensed.className = 'condensed';
+    condensed.style.display = 'none';
+    condensed.innerHTML = partner.mapEmbed; // use proper iframe
+    card.appendChild(condensed);
+
+    // Hover behavior (desktop only)
+    card.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 600 && !expandedCard) overlay.style.opacity = '1';
+    });
+    card.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 600 && !expandedCard) overlay.style.opacity = '0';
+    });
+
+    // Click behavior
+    card.addEventListener('click', () => {
+      if (window.innerWidth > 600) {
+        // Hide overlay
+        overlay.style.display = 'none';
+
+        // Collapse previously expanded card
+        if (expandedCard && expandedCard !== card) {
+          expandedCard.style.transform = '';
+          expandedCard.style.zIndex = '';
+          expandedCard.querySelector('.condensed').style.display = 'none';
+          const prevOverlay = expandedCard.querySelector('.hover-overlay');
+          if (prevOverlay) prevOverlay.style.display = 'flex';
+        }
+
+        // Expand clicked card
+        card.style.transform = 'scale(2)';
+        card.style.zIndex = '1000';
+        condensed.style.display = 'block';
+        expandedCard = card;
+
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // Mobile: open Google Maps link
+        if (partner.googleMapsLink) window.open(partner.googleMapsLink, '_blank');
+      }
+    });
+
+    cardContainer.appendChild(card);
+  });
+}
+
+function getTierColor(tier) {
+  switch(tier) {
+    case "Platinum": return "#b6e630";
+    case "Gold": return "#fedd1d";
+    case "Bronze": return "#cbd54b";
+    default: return "#dce198";
+  }
+}
+
+function getFilterColor(filter) {
+  const colors = ["#fedd1d","#dce198","#b6e630","#cbd54b"];
+  return colors[filter.length % colors.length];
+}
+
+function filterCards() {
+  const search = document.getElementById("searchInput").value.toLowerCase();
+  const activeFilters = Array.from(document.querySelectorAll(".filter-btn.active"))
+                            .map(btn => btn.dataset.filter);
+
+  filteredPartners = partners.filter(p => {
+    const matchesSearch = p.name.toLowerCase().includes(search);
+    const matchesFilters = activeFilters.every(f => p.filters.includes(f));
+    return matchesSearch && matchesFilters;
+  });
+
+  currentPage = 1;
+  renderCards(filteredPartners, currentPage);
+}
+
+// Filter button logic (single-select per group with deselect)
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const group = btn.dataset.group;
+    const currentlyActive = document.querySelector(`.filter-btn.active[data-group="${group}"]`);
+
+    if(currentlyActive === btn) {
+      btn.classList.remove("active");
+    } else {
+      if(currentlyActive) currentlyActive.classList.remove("active");
+      btn.classList.add("active");
+    }
+
+    filterCards();
+  });
+});
+
+// Pagination logic
+function updatePagination(list) {
+  const totalPages = Math.ceil(list.length / cardsPerPage);
+  const paginationEl = document.getElementById("pagination");
+  paginationEl.innerHTML = "";
+
+  if (totalPages <= 1) return;
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = "page-number";
+    if (i === currentPage) btn.classList.add("active-page");
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderCards(filteredPartners, currentPage);
+    });
+    paginationEl.appendChild(btn);
+  }
+}
+
+document.getElementById("searchInput").addEventListener("input", filterCards);
+
+// Initial render
+window.addEventListener("DOMContentLoaded", () => {
+  renderCards(partners);
+});
 </script>
 
 </body>
