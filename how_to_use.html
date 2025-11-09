@@ -398,6 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header: true,
       complete: function (results) {
         const valid = results.data.some(row => row["Card Number"] === cardNumber);
+        const valid = results.data.some(row => row["Name (SURNAME, First Name MI.) Ex. DELA CRUZ, Juan S."] === cardName);
 
         if (valid) {
           status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your personalized download...</div>`;
@@ -429,13 +430,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add name
     ctx.font = "bold 100px Inter";
     ctx.fillStyle = "#8CF4AB"; // white text — change to match design
-    ctx.textAlign = "right"
-    ctx.fillText(name, canvas.width / 2, canvas.height - 140); // adjust Y to move up/down
+    ctx.textAlign = "left"
+    ctx.fillText(cardName, canvas.width / 2, canvas.height - 140); // adjust Y to move up/down
 
     // Add card number
     ctx.font = "bold 100px Inter";
     ctx.fillStyle = "#8CF4AB";
-    ctx.textAlign = "right";
+    ctx.textAlign = "left";
     ctx.fillText(cardNumber, canvas.width / 2, canvas.height - 80);
 
     // download the final personalized card
