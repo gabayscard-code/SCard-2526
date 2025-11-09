@@ -427,13 +427,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.drawImage(baseImage, 0, 0);
 
     // Add name
-    ctx.font = "bold 36px Poppins";
-    ctx.fillStyle = "#ffffff"; // white text — change to match design
-    ctx.textAlign = "center";
+    ctx.font = "bold 100px Inter";
+    ctx.fillStyle = "#8CF4AB"; // white text — change to match design
+    ctx.textAlign = "right"
     ctx.fillText(name, canvas.width / 2, canvas.height - 140); // adjust Y to move up/down
 
     // Add card number
-    ctx.font = "bold 32px Poppins";
+    ctx.font = "bold 100px Inter";
+    ctx.fillStyle = "#8CF4AB";
+    ctx.textAlign = "right";
     ctx.fillText(cardNumber, canvas.width / 2, canvas.height - 80);
 
     // download the final personalized card
