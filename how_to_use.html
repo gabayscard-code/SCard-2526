@@ -377,40 +377,49 @@ footer {
 </style>
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
-document.getElementById("cardForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const cardNumber = document.getElementById("cardNumber").value.trim();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("cardForm");
   const status = document.getElementById("statusMessage");
 
-  // Fetch the verification CSV file
-  fetch("Verified-Card-Numbers.csv")
-    .then(response => {
-      if (!response.ok) throw new Error("CSV not found");
-      return response.text();
-    })
-    .then(csvText => {
-      // Split CSV into lines, trim extra spaces
-      const lines = csvText.split("\n").map(line => line.trim());
-      
-      // Check if card number exists in CSV
-      if (lines.includes(cardNumber)) {
-        status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your download...</div>`;
-        
-        // Simulate download after short delay
-        setTimeout(() => {
-          const link = document.createElement("a");
-          link.href = "SCard-Design.jpg"; // Replace with your actual personalized card file
-          link.download = `ScholarCard-${cardNumber}.jpg`;
-          link.click();
-        }, 1000);
-      } else {
-        status.innerHTML = `<div class="alert alert-danger">❌ Invalid card number. Please try again.</div>`;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const cardNumber = document.getElementById("cardNumber").value.trim();
+
+    if (!cardNumber) {
+      status.innerHTML = `<div class="alert alert-warning">⚠️ Please enter your card number.</div>`;
+      return;
+    }
+
+    // Parse the verification CSV file
+    Papa.parse("Verified Card Numbers.csv", {
+      download: true,
+      header: true,
+      complete: function (results) {
+        const valid = results.data.some(row => row["CardNumber"] === cardNumber);
+
+        if (valid) {
+          status.innerHTML = `<div class="alert alert-success">✅ Card verified! Preparing your personalized download...</div>`;
+          setTimeout(() => downloadCard(cardNumber), 1000);
+        } else {
+          status.innerHTML = `<div class="alert alert-danger">❌ Invalid or unverified card number. Please try again.</div>`;
+        }
+      },
+      error: function () {
+        status.innerHTML = `<div class="alert alert-warning">⚠️ Unable to load verification list. Please try again later.</div>`;
       }
-    })
-    .catch(() => {
-      status.innerHTML = `<div class="alert alert-warning">⚠️ Unable to verify your card right now. Please try again later.</div>`;
     });
+  });
+
+  function downloadCard(cardNumber) {
+    const link = document.createElement("a");
+    link.href = "SCard-Design.jpg"; // or change this to your personalized card template file
+    link.download = `ScholarsCard_${cardNumber}.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 });
 </script>
 
