@@ -23,6 +23,14 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* lighter shadow for subtle depth */
 }
 
+footer {
+  background-color: #902f36;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
 /* LEFT LOGO */
 .navbar .logo {
   display: flex;
@@ -132,6 +140,109 @@
     margin-bottom: 5px;
   }
 }
+
+/* Container */
+
+.search-bar input::placeholder {
+  color: #f1f1f1;
+  opacity: 0.9;
+}
+
+.search-bar input:focus {
+  background-color: #b84b53;
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(144,47,54,0.25);
+}
+
+.search-section span {
+  transition: transform 0.2s ease;
+}
+
+.search-section span:hover {
+  transform: scale(1.2);
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 700px;
+  background: #8b1e1e;
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  gap: 0.6rem;
+}
+
+.search-bar:focus-within {
+  background: #9f2d2d;
+  box-shadow: 0 0 0 3px #ffda47;
+}
+
+.search-bar i {
+  color: #ffda47;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: .95rem;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.filter-btn {
+  border: 2px solid #8b1e1e;
+  border-radius: 50px;
+  padding: 0.5rem 1.3rem;
+  background: white;
+  color: #8b1e1e;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background: #8b1e1e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: #ffda47;
+  color: #8b1e1e;
+  border-color: #ffda47;
+  box-shadow: 0 3px 8px rgba(255, 218, 71, 0.4);
+}
+
 </style>
 
 <div class="navbar">
@@ -199,17 +310,31 @@ function toggleMenu(el) {
 
 <div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
 
-  <!-- Search Bar -->
-  <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:20px;">
-    <input 
-      id="searchInput" 
-      type="text" 
-      placeholder="Looking for a specific SCard partner? Search here!" 
-      style="width:90%; padding:12px 16px; border:none; border-radius:30px; background-color:#902f36; color:white; font-size:16px; outline:none; text-align:center;">
+<!-- ===== Search & Filter Section ===== -->
+<section class="search-section py-3">
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
+    
+    <!-- Magnifying Glass -->
+    <span class="fs-4" style="color:#902f36;">🔍</span>
+    
+    <!-- Search Bar -->
+    <div class="col-md-6">
+      <div class="search-bar position-relative w-100">
+        <input 
+          id="searchInput" 
+          type="text" 
+          class="form-control form-control-lg"
+          placeholder="Looking for a specific SCard partner? Search here!"
+          style="border-radius:30px; background-color:#902f36; color:white; text-align:center;"
+        >
+      </div>
+    </div>
+
   </div>
+</section>
 
   <!-- Filter Buttons -->
-  <div id="filters" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:25px;">
+  <div id="filters" class="filter-buttons">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="JSEC">JSEC</button>
     <button class="filter-btn" data-filter="Regis">Regis</button>
@@ -217,9 +342,9 @@ function toggleMenu(el) {
     <button class="filter-btn" data-filter="Other Locations">Other Locations</button>
     <button class="filter-btn" data-filter="Food">Food</button>
     <button class="filter-btn" data-filter="Services">Services</button>
-    <button class="filter-btn" data-filter="Accessories">Accessories</button>
     <button class="filter-btn" data-filter="Online">Online</button>
   </div>
+</section>
 
   <!-- Partner Cards -->
   <div id="cardContainer" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
@@ -324,22 +449,13 @@ function getFilterColor(filter) {
 
 function filterCards() {
   const search = document.getElementById("searchInput").value.toLowerCase();
-  const activeFilters = Array.from(document.querySelectorAll(".filter-btn.active"))
-                            .map(btn => btn.dataset.filter);
+  const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
 
-  // If "All" is active → show everything
-  if (activeFilters.includes("all")) {
-    filteredPartners = partners.filter(p => 
-      p.name.toLowerCase().includes(search)
-    );
-  } else {
-    // AND logic: must include *all* active filters
-    filteredPartners = partners.filter(p => {
-      const matchesSearch = p.name.toLowerCase().includes(search);
-      const matchesFilters = activeFilters.every(f => p.filters.includes(f));
-      return matchesSearch && matchesFilters;
-    });
-  }
+  filteredPartners = partners.filter(p => {
+    const matchesSearch = p.name.toLowerCase().includes(search);
+    const matchesFilter = activeFilter === "all" || p.filters.includes(activeFilter);
+    return matchesSearch && matchesFilter;
+  });
 
   currentPage = 1;
   renderCards(filteredPartners, currentPage);
@@ -368,22 +484,13 @@ document.getElementById("searchInput").addEventListener("input", filterCards);
 
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    if (btn.dataset.filter === "all") {
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    } else {
-      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
-      allBtn.classList.remove("active");
-
-      btn.classList.toggle("active");
-
-      const activeBtns = document.querySelectorAll(".filter-btn.active:not([data-filter='all'])");
-      if (activeBtns.length > 2) btn.classList.remove("active");
-
-      if (document.querySelectorAll(".filter-btn.active:not([data-filter='all'])").length === 0) {
-        allBtn.classList.add("active");
-      }
-    }
+    // Remove 'active' from all
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    
+    // Add 'active' to clicked button
+    btn.classList.add("active");
+    
+    // Apply filter
     filterCards();
   });
 });
@@ -394,21 +501,26 @@ renderCards(partners);
 
 <style>
 .filter-btn {
-  background-color:white;
-  border:2px solid #902f36;
-  color:#902f36;
-  border-radius:20px;
-  padding:6px 14px;
-  font-family:'Karla', sans-serif;
-  font-size:14px;
-  cursor:pointer;
-  transition:all 0.2s ease;
-}
-.filter-btn:hover, .filter-btn.active {
-  background-color:#902f36;
-  color:white;
+  background: transparent;
+  border: 2px solid #902f36;
+  border-radius: 20px;
+  color: #902f36;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
+.filter-btn.active {
+  background: #902f36;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.filter-btn:hover:not(.active) {
+  background: #b84b53;
+  color: #fff;
+}
 /* Pagination style */
 .page-number {
   background-color:white;
@@ -447,6 +559,7 @@ div[style*="max-width:1000px"] {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 600px) {
@@ -480,6 +593,14 @@ div[style*="max-width:1000px"] {
 }
 </style>
 </div>
+
+</body>
+</html>
+
+<footer>
+  © 2025 Ateneo Scholars' Card 2526. All Rights Reserved.
+</footer>
+
 
 </body>
 </html>
