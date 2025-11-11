@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (match) {
           const cardName = match["Full Name"]; 
 
-          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing Scholars' Card </div>`;
+          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing Your Scholars' Card </div>`;
           setTimeout(() => downloadCard(cardNumber, cardName), 1000);
         } else {
           status.innerHTML = `<div class="alert alert-danger">❌ Invalid or unverified card number. Please try again.</div>`;
