@@ -429,14 +429,14 @@ document.addEventListener("DOMContentLoaded", function () {
       ctx.drawImage(baseImage, 0, 0);
 
       // Add Name
-      ctx.font = "bold 120px Inter";
+      ctx.font = "bold 130px Inter";
       ctx.fillStyle = "#c8f7d6";
       ctx.textAlign = "right";
-      ctx.fillText(cardName, canvas.width - 20, canvas.height - 220); // adjust position
+      ctx.fillText(cardName, canvas.width - 80, canvas.height - 220); // adjust position
 
       // Add Card Number
-      ctx.font = "bold 150px Inter";
-      ctx.fillText(cardNumber, canvas.width - 70, canvas.height - 100);
+      ctx.font = "bold 170px Inter";
+      ctx.fillText(cardNumber, canvas.width - 80, canvas.height - 100);
 
       // Download final image
       const link = document.createElement("a");
