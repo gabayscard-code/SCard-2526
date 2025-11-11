@@ -211,35 +211,35 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
 <div style="height: 30px;"></div>
 
 <div style="font-family:'Karla', sans-serif; max-width:1000px; margin:auto;">
-  <!-- Search Bar -->
-  <div class="col-12 col-md-6">
-    <div class="d-flex align-items-center w-100">
+  <section class="search-section py-3">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 flex-wrap flex-sm-nowrap">
       
-      <!-- Input -->
-      <div class="search-bar position-relative flex-grow-1 me-2">
-        <input 
-          id="searchInput" 
-          type="text" 
-          class="form-control form-control-lg"
-          placeholder="Looking for a specific SCard partner? Search here!"
-          style="border-radius:30px; background-color:#902f36; color:white; text-align:center;"
-        >
+      <!-- Search Bar -->
+      <div class="col-md-6 flex-grow-1">
+        <div class="search-bar position-relative w-100 d-flex align-items-center">
+          <input 
+            id="searchInput" 
+            type="text" 
+            class="form-control form-control-lg"
+            placeholder="Looking for a specific SCard partner? Search here!"
+            style="border-radius:30px; background-color:#902f36; color:white; text-align:center;"
+          >
+        </div>
       </div>
-      
+  
       <!-- Magnifying Glass -->
-      <button id="searchIcon" style="background:none; border:none; padding:0; cursor:pointer;">
-        <span class="fs-4" style="color:#902f36; display:inline-flex; align-items:center;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-               style="color:#902f36;">
-            <circle cx="8" cy="8" r="6"></circle>
-            <line x1="13" y1="13" x2="18" y2="18"></line>
-          </svg>
-        </span>
-      </button>
+      <span class="fs-4 ms-2" style="color:#902f36; display:inline-flex; align-items:center; flex-shrink:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             style="color:#902f36;">
+          <circle cx="8" cy="8" r="6"></circle>
+          <line x1="13" y1="13" x2="18" y2="18"></line>
+        </svg>
+      </span>
   
     </div>
-  </div>
+  </section>
+
   <div id="filters" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:10px;">
     <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
       <strong>Industry:</strong>
