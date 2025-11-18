@@ -1,443 +1,512 @@
-Card Number,Email Address,Full Name,ID Number
-2025-2026-253056,mervie.juros@student.ateneo.edu,"JUROS, Mervie T.",253056
-2025-2026-220656,selwyn.baldonado@student.ateneo.edu,"BALDONADO, Selwyn Matthew F.",220656
-2025-2026-255384,kezia.thea.franchesca.silang@student.ateneo.edu,"SILANG, Kezia Thea Franchesca M.",255384
-2025-2026-253146,mark.russell.lagunsad@student.ateneo.edu,"LAGUNSAD, Mark Russell A.",253146
-2025-2026-250856,rainfiala.daxen.boltiador@student.ateneo.edu,"BOLTIADOR, Rainfiala Daxen D. ",250856
-2025-2026-234239,rynel.mirallo@student.ateneo.edu,"MIRALLO, Rynel T.",234239
-2025-2026-247420,francis.roi.manimtim@student.ateneo.edu,"MANIMTIM, Francis Roi T.",247420
-2025-2026-226675,sean.vergara@student.ateneo.edu,"VERGARA, Sean Edward",226675
-2025-2026-250036,gabriel.abes@student.ateneo.edu,"ABES, Gabriel C.",250036
-2025-2026-241997,jeffrey.garcia@student.ateneo.edu,"GARCIA, JEFFREY S.",241997
-2025-2026-221413,joaquin.castillejos@student.ateneo.edu,"CASTILLEJOS, Joaquin Iñigo G.",221413
-2025-2026-242490,nina.angela.lardizabal@student.ateneo.edu,"LARDIZABAL, Niña Angela G.",242490
-2025-2026-255988,ashley.nicole.uygongco@student.ateneo.edu,"UYGONGCO, Ashley Nicole U.",255988
-2025-2026-254879,kirsteen.simoene.stacianne.retes@student.ateneo.edu,"RETES, Kirsteen Simoene Stacianne G.",254879
-2025-2026-246136,clarise.nicole.monteagudo@student.ateneo.edu,"MONTEAGUDO, Clarise Nicole A.",246136
-2025-2026-234509,juliana.obos@student.ateneo.edu,"OBOS, Juliana Roxcel B.",234509
-2025-2026-224103,lawrence.marino@student.ateneo.edu,MARINO,224103
-2025-2026-245844,lindsay.clarabelle.joring@student.ateneo.edu,"JORING, Lindsay Clarabelle M.",245844
-2025-2026-252861,kristel.mae.hilario@student.ateneo.edu,"HILARIO, Kristel Mae",252861
-2025-2026-256390,reigne.ysabella.castillo@student.ateneo.edu,"CASTILLO, Reigne Ysabella O.",256390
-2025-2026-257260,allison.chen@student.ateneo.edu,"CHEN, Allison N.",257260
-2025-2026-242335,princess.natalie.jaramilla@student.ateneo.edu,"JARAMILLA, Princess Natalie D.",242335
-2025-2026-231804,rhona.cruz@student.ateneo.edu,"CRUZ, Rhona Angela P.",231804
-2025-2026-240022,james.timothy.abejar@student.ateneo.edu,"ABEJAR, James Timothy H.",240022
-2025-2026-235282,gwyneth.reyes@student.ateneo.edu,"REYES, Gwyneth Erin M.",235282
-2025-2026-253037,gericho.miguel.juan@student.ateneo.edu,"Juan, Gericho Miguel C",253037
-2025-2026-255620,mary.seg.helena.talam@student.ateneo.edu,"TALAM, Mary Seg Helena C.",255620
-2025-2026-250813,jasel.angela.berones@student.ateneo.edu,"BERONES, Jasel Angela S. ",250813
-2025-2026-253536,jenkin.mosiah.luyun@student.ateneo.edu,"LUYUN, Jenkin Mosiah A.",253536
-2025-2026-232135,john.gabriel.delarosa@student.ateneo.edu,"DELA ROSA, John Gabriel V.",232135
-2025-2026-247113,jophiel.isaiah.mangulad@student.ateneo.edu,"MANGULAD, Jophiel Isaiah L.",247113
-2025-2026-253238,audrey.jae.lee@student.ateneo.edu,"LEE, Audrey Jae N.",253238
-2025-2026-244048,j.sanagustin@student.ateneo.edu,"SAN AGUSTIN, Joan A.",244048
-2025-2026-254510,reese.leanne.pastrana@student.ateneo.edu,"PASTRANA, Reese Leanne G.",254510
-2025-2026-255256,nathan.anthony.santos@student.ateneo.edu,"SANTOS, Nathan Anthony O.",255256
-2025-2026-250836,joshua.birco@student.ateneo.edu,"BIRCO, Joshua H.",250836
-2025-2026-221473,anasel-ace.caneso@student.ateneo.edu,"CAÑESO, Anasel-Ace M.",221473
-2025-2026-224933,christhia.pelago@student.ateneo.edu,"PELAGO, Ma. Christhia Eliz G.",224933
-2025-2026-257359,zaira.yuki.takahashi@student.ateneo.edu,"Takahashi, Zaira Yuki B.",257359
-2025-2026-22846,zanti.gayares@student.ateneo.edu,"GAYARES, Zanti Alfonzo C. ",22846
-2025-2026-241038,lance.jared.cayabyab@student.ateneo.edu,"CAYABYAB, Lance Jared S.",241038
-2025-2026-234723,kijrl.pagtulon-an@student.ateneo.edu,"PAGTULON-AN, Kijrl Cyrij D.",234723
-2025-2026-242494,zale.sebastian.latonio@student.ateneo.edu,"LATONIO, Zale Sebastian S.",242494
-2025-2026-251182,cherygail.cartajenas@student.ateneo.edu,"CARTAJENAS, Cherygail P.",251182
-2025-2026-220154,romina.aguilar@student.ateneo.edu,"AGUILAR, Romina Kei E.",220154
-2025-2026-231765,strawberry.cruel@student.ateneo.edu,"CRUEL, Strawberry Czamme C.",231765
-2025-2026-255043,yasmine.resse.rosel@student.ateneo.edu,"ROSEL, Yasmine Resse B.",255043
-2025-2026-232166,anthony.deocadiz@student.ateneo.edu,"DEOCADIZ, Anthony Jr. B.",232166
-2025-2026-254384,allainah.jade.pahunang@student.ateneo.edu,"PAHUNANG, Allainah Jade P.",254384
-2025-2026-251697,ian.carlo.decastro@student.ateneo.edu,"DE CASTRO, Ian Carlo B.",251697
-2025-2026-230748,karina.barona@student.ateneo.edu,"BAROÑA, Karina Angelie G.",230748
-2025-2026-233040,morella.guzon@student.ateneo.edu,"GUZON, Morella Joanna E.",233040
-2025-2026-252503,andy.krishane.garcia@student.ateneo.edu,"GARCIA, Andy Krishane F.",252503
-2025-2026-242516,christine.nicole.laza@student.ateneo.edu,"LAZA, Christine Nicole C. ",242516
-2025-2026-250811,keith.bernas@student.ateneo.edu,"BERNAS, Keith B.",250811
-2025-2026-252430,francezka.bossa.gabriel@student.ateneo.edu,"GABRIEL, Francezka Bossa M.",252430
-2025-2026-256450,marlon.angelo.macatantan@student.ateneo.edu,"MACATANTAN, Marlon Angelo B.",256450
-2025-2026-253309,john.mathew.librano@student.ateneo.edu,"LIBRANO, John Mathew S.",253309
-2025-2026-255902,genesis.tuazon@student.ateneo.edu,"TUAZON, Genesis B.",255902
-2025-2026-241585,armea.helena.sien.dimayacyac@student.ateneo.edu,"DIMAYACYAC, Armea Helena Sien G.",241585
-2025-2026-241379,brent.matthew.david@student.ateneo.edu,"DAVID, Brent Matthew T.",241379
-2025-2026-253729,johann.karol.benedict.manulat@student.ateneo.edu,"MANULAT, Johann Karol Benedict O.",253729
-2025-2026-254651,divine.rose.polido@student.ateneo.edu,"POLIDO, Divine Rose G.",254651
-2025-2026-255098,glaiza.salanio@student.ateneo.edu,"SALANIO, Glaiza L.",255098
-2025-2026-254082,finn.romeo.narita@student.ateneo.edu,"NARITA, Finn Romeo T.",254082
-2025-2026-253817,maria.dennise.masibag@student.ateneo.edu,"MASIBAG, Maria Dennise C.",253817
-2025-2026-241200,kyle.dominic.co@student.ateneo.edu,"CO, Kyle Dominic G.",241200
-2025-2026-255335,miel.nico.serdenia@student.ateneo.edu,"SERDENIA, Miel Nico S.",255335
-2025-2026-254554,kirby.peralta@student.ateneo.edu,"PERALTA, Kirby M.",254554
-2025-2026-257311,marie.angela.gabrielle.navarro@student.ateneo.edu,"NAVARRO, Marie Angela Gabrielle P.",257311
-2025-2026-242466,nicole.emanuelle.landicho@student.ateneo.edu,"LANDICHO, Nicole Emanuelle R.",242466
-2025-2026-220223,armand.aliman@student.ateneo.edu,"ALIMAN, Armand Chino T.",220223
-2025-2026-251020,janelle.caguioa@student.ateneo.edu,"CAGUIOA, Janelle S.",251020
-2025-2026-230827,joel.bautista@student.ateneo.edu,"BAUTISTA, Robert Joel C.",230827
-2025-2026-243900,ralph.dominic.rockwell@student.ateneo.edu,"ROCKWELL, Ralph Dominic T.",243900
-2025-2026-241502,maria.angeline.delacruz@student.ateneo.edu,"DELA CRUZ, Maria Angeline P.",241502
-2025-2026-233636,kendrick.lim@student.ateneo.edu,"LIM, Marc Kendrick A.",233636
-2025-2026-253998,leia.yzabel.monteclar@student.ateneo.edu,"MONTECLAR, Leia Yzabel Y.",253998
-2025-2026-254101,angela.patrice.navarrete@student.ateneo.edu,"NAVARRETE, Angela Patrice G.",254101
-2025-2026-254600,antonio.raul.penaranda@student.ateneo.edu,"PEÑARANDA, Antonio Raul L.",254600
-2025-2026-244886,henry.iii.yap@student.ateneo.edu,"YAP, Henry III T.",244886
-2025-2026-252422,karlo.keith.fulgar@student.ateneo.edu,"FULGAR, Karlo Keith M.",252422
-2025-2026-230970,sybrene.boaquena@student.ateneo.edu,"BOAQUEÑA, Sybrene Gabrielle A. ",230970
-2025-2026-224258,isabel.mercado@student.ateneo.edu,"MERCADO, Isabel Joy D.",224258
-2025-2026-242531,annika.joan.lee@student.ateneo.edu,LEEm Annika Joan O.,242531
-2025-2026-226789,jeansha.viray@student.ateneo.edu,"VIRAY, Jeansha Mae M.",226789
-2025-2026-253111,pia.lacanaria@student.ateneo.edu,"LACANARIA, Pia M. ",253111
-2025-2026-255308,xam.cheska.sanosa@student.ateneo.edu,"SAÑOSA, Xam Cheska G.",255308
-2025-2026-230623,fiona.baguiwet@student.ateneo.edu,"BAGUIWET, Fiona B.",230623
-2025-2026-251749,hannah.sofia.delara@student.ateneo.edu,"DE LARA, Hannah Sofia",251749
-2025-2026-Ciarah Olen,ciarah.olen.salac@student.ateneo.edu,SALAC,Ciarah Olen
-2025-2026-224062,rafaella.mapilisan@student.ateneo.edu,"MAPILISAN, Rafaella Margarette M.",224062
-2025-2026-233933,matthew.manalili@student.ateneo.edu,"MANALILI, Matthew T.",233933
-2025-2026-251728,justin.carl.deguzman@student.ateneo.edu,"DE GUZMAN, Justin Carl C.",251728
-2025-2026-250993,cabrerajustinbeaver@gmail.com,"CABRERA, Justin Beaver R.",250993
-2025-2026-250953,anne.charlize.burdeos@student.ateneo.edu,"BURDEOS, Anne Charlize L.",250953
-2025-2026-250904,edralyne.brigola@student.ateneo.edu,"BRIGOLA, Edralyne P.",250904
-2025-2026-256351,simone.antoinette.marie.zuniga@student.ateneo.edu,"ZUÑIGA, Simone Antoinette Marie L.",256351
-2025-2026-240991,naomi.kleah.casio@student.ateneo.edu,"CASIO, Naomi Kleah J.",240991
-2025-2026-255371,lester.sibaen@student.ateneo.edu,"SIBAEN, Lester C.",255371
-2025-2026-224056,jan.manzano@student.ateneo.edu,"MANZANO, Jan Gabriel N.",224056
-2025-2026-242330,elemiah.jarsi.japitana@student.ateneo.edu,"JAPITANA, Elemiah Jarsi Ann C.",242330
-2025-2026-254675,kathlyn.mae.postrado@student.ateneo.edu,"POSTRADO, Kathlyn Mae S.",254675
-2025-2026-223735,isabela.lomibao@student.ateneo.edu,"LOMIBAO, Isabela Gabrielle P.",223735
-2025-2026-235705,alyssa.sarmiento@student.ateneo.edu,"SARMIENTO, Alyssa Beatrice M. ",235705
-2025-2026-250685,jolo.bartolome@student.ateneo.edu,BARTOLOME,250685
-2025-2026-255275,charlene.angel.santosildes@student.ateneo.edu,"SANTOSILDES, Charlene Angel G.",255275
-2025-2026-230290,yohan.ambal@student.ateneo.edu,"AMBAL, Yohan Miguel F.",230290
-2025-2026-250616,cris.jillian.baltazar@student.ateneo.edu,"BALTAZAR, Cris Jillian P.",250616
-2025-2026-254464,keara.dannelle.pantalunan@student.ateneo.edu,"PANTALUNAN, Keara Dannelle M.",254464
-2025-2026-256202,ven.amabelle.vivar@student.ateneo.edu,"VIVAR, Ven Amabelle S.",256202
-2025-2026-251215,monica.castillo@student.ateneo.edu,"CASTILLO, Monica A.",251215
-2025-2026-255412,sophia.margarette.sison@student.ateneo.edu,"SISON, Sophia Margarette A.",255412
-2025-2026-242949,kendra.anne.cloei.marquez@student.ateneo.edu,"MARQUEZ, Kendra Anne Cloei T.",242949
-2025-2026-246303,precious.sabine.pinto@student.ateneo.edu,"PINTO, Precious Sabine C.",246303
-2025-2026-255338,jhian.brian.serna@student.ateneo.edu,"SERNA, Jhian Brian P.",255338
-2025-2026-250938,marion.benj.buencamino@student.ateneo.edu,"BUENCAMINO, Marion Benj D.",250938
-2025-2026-240815,marvey.cabarles@student.ateneo.edu,"CABARLES, Marvey T.",240815
-2025-2026-255833,chelsea.heart.toledo@student.ateneo.edu,"TOLEDO, Chelsea Heart B.",255833
-2025-2026-254677,ayezza.andronica.prado@student.ateneo.edu,"PRADO, Ayezza Andronica Faith B.",254677
-2025-2026-222765,anne.gamboa@student.ateneo.edu,"GAMBOA, Ma. Anne Jade R.",222765
-2025-2026-214688,christian.pitogo@student.ateneo.edu,"PITOGO, Christian Andre T.",214688
-2025-2026-235778,alexandra.sevilla@student.ateneo.edu,"SEVILLA, Alexandra Nicole P.",235778
-2025-2026-243658,martin.luigi.pontigon@student.ateneo.edu,"PONTIGON, Martin",243658
-2025-2026-245510,jhoyce.mariel.delacueva@student.ateneo.edu,"DELA CUEVA, Jhoyce Mariel C.",245510
-2025-2026-255591,janelle.ayessah.tabano@student.ateneo.edu,"TABANO, Janelle Ayessah A.",255591
-2025-2026-230942,jamie.bico@student.ateneo.edu,"BICO, Jamie Rose D.",230942
-2025-2026-240558,carl.basco@student.ateneo.edu,"BASCO, Carl A.",240558
-2025-2026-242799,john.david.magnaye@student.ateneo.edu,"MAGNAYE, John David F.",242799
-2025-2026-243837,carlos.gabriel.reyes@student.ateneo.edu,"REYES, Carlos Gabriel E.",243837
-2025-2026-243480,karel.ayesa.panghulan@student.ateneo.edu,"PANGHULAN, Karel Ayesa M.",243480
-2025-2026-222793,atasha.garcia@student.ateneo.edu,"GARCIA, Atasha Adrienne A.",222793
-2025-2026-225955,armand.sotelo@student.ateneo.edu,"SOTELO, Armand Joseph R.",225955
-2025-2026-245673,martin.paolo.gamosa@student.ateneo.edu,"GAMOSA, Martin Paolo S.",245673
-2025-2026-241764,eulalia.naomi.espiritu@student.ateneo.edu,"ESPIRITU, Eulalia Naomi J.",241764
-2025-2026-251147,carl.patrick.carandang@student.ateneo.edu,"CARANDANG, Carl Patrick V.",251147
-2025-2026-246128,joshua.lyndon.miranda@student.ateneo.edu,"MIRANDA, Joshua Lyndon S. ",246128
-2025-2026-252037,phoebe.duldulao@student.ateneo.edu,"DULDULAO, Phoebe C.",252037
-2025-2026-225734,prinze.sarical@student.ateneo.edu,"SARICAL, Prinze Dane D.",225734
-2025-2026-252049,aldren.immanuel.dungo@student.ateneo.edu,"DUNGO, Aldren Immanuel D. ",252049
-2025-2026-233891,john.malabuyo@student.ateneo.edu,"MALABUYO, John Edwin A.",233891
-2025-2026-255939,yohan.andrei.keisser.umbao@student.ateneo.edu,"UMBAO, Yohan Andrei Keisser N. ",255939
-2025-2026-251060,krizdarl.eurenz.callo@student.ateneo.edu,"CALLO, Krizdarl Eurenz S. ",251060
-2025-2026-255053,svetlana.viktoria.roxas@student.ateneo.edu,"ROXAS, Svetlana Viktoria C.",255053
-2025-2026-233666,eloisa.lingcod@student.ateneo.edu,"LINGCOD, Eloisa Belle E.",233666
-2025-2026-245972,jaybe.llante@student.ateneo.edu,"LLANTE, Jaybe M.",245972
-2025-2026-241036,sophia.aliza.caverte@student.ateneo.edu,"CAVERTE, Sophia Aliza B.",241036
-2025-2026-235831,dean.siman@student.ateneo.edu,"SIMAN, Dean Andrei N.",235831
-2025-2026-243267,janelle.fem.novelas@student.ateneo.edu,"NOVELAS, Janelle Fem M.",243267
-2025-2026-235353,annika.rivera@student.ateneo.edu,"RIVERA, Ma. Annika Angelin D.",235353
-2025-2026-231411,romulo.catindig@student.ateneo.edu,"CATINDIG, Romulo Martin T.",231411
-2025-2026-250686,marieselle.bartolome@student.ateneo.edu,"BARTOLOME, Marieselle V.",250686
-2025-2026-251526,carl.jhenkinz.cortez@student.ateneo.edu,"CORTEZ, Carl Jhenkinz",251526
-2025-2026-256040,kali.velasco@student.ateneo.edu,"VELASCO, Kali L.",256040
-2025-2026-241969,andrea.margarette.ganancial@student.ateneo.edu,"GANANCIAL, Andrea Margarette Y.",241969
-2025-2026-235274,josef.reycruz@student.ateneo.edu,"REY CRUZ, Josef James C. ",235274
-2025-2026-242101,william.vicson.gocheco@student.ateneo.edu,"GOCHECO, William Vicson T.",242101
-2025-2026-253541,michael.angelo.mabanag@student.ateneo.edu,"MABANAG, Michael Angelo",253541
-2025-2026-253007,cyrill.shane.jesalva@student.ateneo.edu,"JESALVA, Cyrill Shane C.",253007
-2025-2026-232224,madieline.nicole.dini-ay@student.ateneo.edu,"DINI-AY, Madieline Nicole S. ",232224
-2025-2026-233837,christian.madariaga@student.ateneo.edu,"MADARIAGA, Christian James S.",233837
-2025-2026-256901,nikolai.marcus.minor@student.ateneo.edu,"Minor, Nikolai Marcus G.",256901
-2025-2026-232143,erica.deliguer@student.ateneo.edu,"DELIGUER, Erica B.",232143
-2025-2026-233958,sofia.manding@student.ateneo.edu,"MANDING, Sofia C",233958
-2025-2026-241816,gian.kirby.falogme@student.ateneo.edu,"FALOGME, Gian Kirby G.",241816
-2025-2026-224595,ediel.oliva@student.ateneo.edu,"OLIVA, Ediel Mei B.",224595
-2025-2026-232183,carmela.deveras@student.ateneo.edu,"DEVERAS, Carmela Jane L.",232183
-2025-2026-242524,tim.aiken.leang@student.ateneo.edu,"LEANG, Tim Aiken M.",242524
-2025-2026-246039,ashley.anne.malonzo@student.ateneo.edu,"MALONZO, Ashley Anne A.",246039
-2025-2026-225417,clarence.rodriguez@student.ateneo.edu,"RODRIGUEZ, Mark Clarence G.",225417
-2025-2026-252401,samantha.mykhyle.francisco@student.ateneo.edu,"FRANCISCO, Samantha Mykhyle S.",252401
-2025-2026-225679,mikayla.anya.santiago@student.ateneo.edu,"SANTIAGO, Mikayla Anya A.",225679
-2025-2026-250414,allysa.camille.arellano@student.ateneo.edu,"ARELLANO, Allysa Camille",250414
-2025-2026-252659,ver.angeli.gomez@student.ateneo.edu,"GOMEZ, Ver Angeli Casey N.",252659
-2025-2026-243612,beatrice.pilar@student.ateneo.edu,"PILAR, Ma. Beatrice P. ",243612
-2025-2026-244570,zia.juliana.trestiza@student.ateneo.edu,"TRESTIZA, Zia Juliana E.",244570
-2025-2026-231672,akbar.comedoy@student.ateneo.edu,"COMEDOY, Akbar Semaj Ioger D.",231672
-2025-2026-230350,rysa.ang@student.ateneo.edu,"ANG, Rysa Antonette H.",230350
-2025-2026-241465,antonie.ivette.degala@student.ateneo.edu,"DEGALA, Antonie Ivette B.",241465
-2025-2026-234476,samantha.nobleza@student.ateneo.edu,"NOBLEZA, Samantha Marie A. ",234476
-2025-2026-234887,jilliane.margaux.pedrosa@student.ateneo.edu,"PEDROSA, Jilliane Margaux S.",234887
-2025-2026-241582,alexa.amaya.dimapilis@student.ateneo.edu,"DIMAPILIS, Alexa Amaya L.",241582
-2025-2026-244028,enrico.miguel.salvador@student.ateneo.edu,"SALVADOR, Enrico Miguel N.",244028
-2025-2026-251633,reinaliz.mae.dadulo@student.ateneo.edu,"DADULO, Reinaliz Mae Y.",251633
-2025-2026-236069,kirsten.tallador@student.ateneo.edu,"TALLADOR, Kirsten Danielle C.",236069
-2025-2026-255705,angelina.margareth.tancontian@student.ateneo.edu,"TANCONTIAN, Angelina Margareth M.",255705
-2025-2026-222562,kim.falogme@student.ateneo.edu,"FALOGME, Kim Isiah M.",222562
-2025-2026-240702,sean.jharod.bolofer@student.ateneo.edu,"BOLOFER, Sean Jharod C.",240702
-2025-2026-251239,ronan.kaiser.julian.castro@student.ateneo.edu,"CASTRO, Ronan Kaiser Julian A.",251239
-2025-2026-232046,railee.devera@student.ateneo.edu,"DE VERA, Railee Seantel M.",232046
-2025-2026-254412,kisha.joy.pallones@student.ateneo.edu,"PALLONES, Kisha Joy O.",254412
-2025-2026-255743,gabrielle.stephanie.tano@student.ateneo.edu,"TAÑO, Gabrielle Stephanie Y.",255743
-2025-2026-234126,jairon.mejia@student.ateneo.edu,"MEJIA, Jairon Lee Vienne N.",234126
-2025-2026-235237,jeanne.regala@student.ateneo.edu,"REGALA, Jeanne Cher R.",235237
-2025-2026-240861,kamille.faith.revelina.calaycay@student.ateneo.edu,"CALAYCAY, Kamille Faith Revelina L. ",240861
-2025-2026-201868,jenine.dy@student.ateneo.edu,"DY, Jenine Rose L.",201868
-2025-2026-254195,ashley.allyza.rish.nowaim@student.ateneo.edu,"NOWAIM, Ashley Allyza Rish A.",254195
-2025-2026-253902,jacob.miguel.mendoza@student.ateneo.edu,"MENDOZA, Jacob Miguel P.",253902
-2025-2026-240121,rob.ryan.aguilar@student.ateneo.edu,"AGUILAR, Rob Ryan S.",240121
-2025-2026-241169,paula.isabelle.chung@student.ateneo.edu,"CHUNG, Paula Isabelle A.",241169
-2025-2026-243200,mark.christian.navarra@student.ateneo.edu,"NAVARRA, Mark Christian M.",243200
-2025-2026-244626,glenn.mitchell.unabia@student.ateneo.edu,"UNABIA, Glenn Mitchell V.",244626
-2025-2026-244911,myka.angelyn.ylarde@student.ateneo.edu,"YLARDE, Myka Angelyn S.",244911
-2025-2026-257252,michael.jr.cabaluna@student.ateneo.edu,"CABALUNA JR., Michael N.",257252
-2025-2026-224340,maria.montana@student.ateneo.edu,"MONTAÑA, Maria Francesca B.",224340
-2025-2026-243057,john.lorenze.mercado@student.ateneo.edu,"MERCADO, John Lorenze G.",243057
-2025-2026-247709,ryle.nathaniel.tuazon@student.ateneo.edu,"TUAZON, Ryle Nathaniel S.",247709
-2025-2026-234673,arjane.paala@student.ateneo.edu,"PAALA, Arjane Faith C.",234673
-2025-2026-247639,wreily.canao@student.ateneo.edu,"CANAO, Wreily L.",247639
-2025-2026-256069,maxene.phoebe.verzosa@student.ateneo.edu,"VERZOSA, Maxene Phoebe D.",256069
-2025-2026-223004,justine.gono@student.ateneo.edu,"GOÑO, Justine Diane Y.",223004
-2025-2026-241884,janelle.dzane.fornea@student.ateneo.edu,"FORNEA, Janelle Dzane H.",241884
-2025-2026-230040,sophia.abejuela@student.ateneo.edu,"ABEJUELA, Sophia Isabel A.",230040
-2025-2026-233334,chelsea.kakuda@student.ateneo.edu,"KAKUDA, Chelsea Dainelle O.",233334
-2025-2026-246189,cassandra.khaine.odanga@student.ateneo.edu,"ODANGA, Cassandra Khaine L. ",246189
-2025-2026-244304,helaina.gabrielle.sy@student.ateneo.edu,"SY, Helaina Gabrielle B.",244304
-2025-2026-247722,jemima.sarah.bitancor@student.ateneo.edu,"BITANCOR, Jemima Sarah",247722
-2025-2026-254051,anne.dee.murillo@student.ateneo.edu,"MURILLO, Anne Dee M.",254051
-2025-2026-192053,micah.flores@student.ateneo.edu,"FLORES, Micah Angelie P.",192053
-2025-2026-240108,johanna.marie.agriam@student.ateneo.edu,"AGRIAM, Johanna Marie P.",240108
-2025-2026-232313,andrew.dumangas@student.ateneo.edu,"DUMANGAS, Andrew G. ",232313
-2025-2026-250030,gecille.abelada@student.ateneo.edu,"ABELADA, Gecille T.",250030
-2025-2026-246807,rhyme.andrei.bolintiam@student.ateneo.edu,"BOLINTIAM, Rhyme Andrei",246807
-2025-2026-252650,kimber.lhyn.golez@student.ateneo.edu,"GOLEZ, Kimber Lhyn C.",252650
-2025-2026-220602,arianne.bacolod@student.ateneo.edu,"BACOLOD, Arianne May P.",220602
-2025-2026-250175,leijannah.rebecca.alberto@student.ateneo.edu,"ALBERTO, Leijannah Rebecca Q.",250175
-2025-2026-253619,andrea.sophia.maiquez@student.ateneo.edu,"MAIQUEZ, Andrea F",253619
-2025-2026-243735,casie.denise.ramayan@student.ateneo.edu,"RAMAYAN, Casie Denise R.",243735
-2025-2026-253532,shannen.therese.lupena@student.ateneo.edu,"LUPENA, Shannen Therese T.",253532
-2025-2026-244049,travis.gregory.sanagustin@student.ateneo.edu,"SAN AGUSTIN, Travis Gregory D.",244049
-2025-2026-231935,nicole.deasis@student.ateneo.edu,"DE ASIS, Nicole Joy A.",231935
-2025-2026-252406,stephanie.joy.frane@student.ateneo.edu,"FRANE, Stephanie Joy D.",252406
-2025-2026-223429,teresa.ladines@student.ateneo.edu,"LADINES, Teresa Gayle A.",223429
-2025-2026-246957,adriana.janine.cabahug@student.ateneo.edu,"CABAHUG, Adriana Janine D.",246957
-2025-2026-252218,shyrelle.kate.estrada@student.ateneo.edu,"ESTRADA, Shyrelle Kate A.",252218
-2025-2026-242669,lance.dencel.londres@student.ateneo.edu,"LONDRES, Lance Dencel I.",242669
-2025-2026-242359,robbie.kryzz.zeus.jimenez@student.ateneo.edu,"JIMENEZ, Robbie Kryzz Zeus D.",242359
-2025-2026-224566,joie.ocampo@student.ateneo.edu,"Ocampo, Joie Melissande A. ",224566
-2025-2026-233007,samantha.guillermo@student.ateneo.edu,"GUILLERMO, Samantha Denise O.",233007
-2025-2026-247095,maxine.clarice.lo@student.ateneo.edu,"LO, Maxine Clarice S.",247095
-2025-2026-253880,rachel.marie.grace.mejorada@student.ateneo.edu,"MEJORADA, Rachel Marie Grace D.",253880
-2025-2026-241314,walter.cunanan@student.ateneo.edu,"CUNANAN, Walter Miguel S.",241314
-2025-2026-234208,fiona.metran@student.ateneo.edu,"METRAN, Fiona Nicolette C.",234208
-2025-2026-234474,alexandra.noble@student.ateneo.edu,"NOBLE, Alexandra Kaye L.",234474
-2025-2026-232324,marc.dungo@student.ateneo.edu,"DUNGO, Marc Audryn A.",232324
-2025-2026-225618,nicholas.sampang@student.ateneo.edu,"SAMPANG, Nicholas G.",225618
-2025-2026-253794,gian.andrei.martin@student.ateneo.edu,"Martin, Gian Andrei G. ",253794
-2025-2026-246261,maria.nyah.louise.panahon@student.ateneo.edu,"PANAHON, Maria Nyah Louise M.",246261
-2025-2026-255931,gabriel.tracy.corbari.uddi@student.ateneo.edu,"UDDI, Gabriel Tracy Corbari P.",255931
-2025-2026-246166,ivan.nite@student.ateneo.edu,"NITE, Ivan B.",246166
-2025-2026-240068,maureen.dale.acibar@student.ateneo.edu,"ACIBAR, Maureen Dale T.",240068
-2025-2026-251553,avaraine.marie.cruz@student.ateneo.edu,"Cruz, Avaraine Marie L.",251553
-2025-2026-245969,allyssa.ann.llanera@student.ateneo.edu,"LLANERA, Allyssa Ann C.",245969
-2025-2026-242891,aura.clareize.manjuyod@student.ateneo.edu,"MANJUYOD, Aura Clareize A. ",242891
-2025-2026-252111,clair.princess.jamzelle.elizalde@student.ateneo.edu,"ELIZALDE, Clair Princess Jamzelle D.",252111
-2025-2026-243715,rod.vaughn.quinto@student.ateneo.edu,"QUINTO, Rod Vaughn B.",243715
-2025-2026-232077,henri.delprado@student.ateneo.edu,"DEL PRADO, Henri Louis D.",232077
-2025-2026-256316,shine.yu@student.ateneo.edu,"YU, Shine M.",256316
-2025-2026-254702,dhenri.fathma.nicole.pura@student.ateneo.edu,"PURA, Dhenri Fathma Nicole G.",254702
-2025-2026-236024,danielle.taan@student.ateneo.edu,"TAAN, Danielld Sophia S.",236024
-2025-2026-234269,matt.molino@student.ateneo.edu,"MOLINO, Matt Giancarlo P.",234269
-2025-2026-254277,kayla.angela.ong@student.ateneo.edu,"ONG, Kayla Angela L.",254277
-2025-2026-241770,chloe.mae.estanislao@student.ateneo.edu,"ESTANISLAO, Chloe Mae B.",241770
-2025-2026-244270,erin.summer.sotin@student.ateneo.edu,"SOTIN, Erin T.",244270
-2025-2026-247128,alitheia.sofia.mercado@student.ateneo.edu,"MERCADO, Alitheia Sofia A.",247128
-2025-2026-252033,manuel.antonio.dugan@student.ateneo.edu,"DUGAN, Manuel Antonio R.",252033
-2025-2026-242657,frances.claire.lo@student.ateneo.edu,"LO, Frances Claire S.",242657
-2025-2026-253867,reynaldo.dave.medina@student.ateneo.edu,"MEDINA, Reynaldo Dave Y.",253867
-2025-2026-234716,jinah.pagcu@student.ateneo.edu,"PAGCU, Jinah P",234716
-2025-2026-230480,angelyn.arriola@student.ateneo.edu,"ARRIOLA, Angelyn Joyce k",230480
-2025-2026-254882,sir.revilla@student.ateneo.edu,"REVILLA, Sir Kevin S.",254882
-2025-2026-243450,althea.denise.palces@student.ateneo.edu,"PALCES, Althea Denise A.",243450
-2025-2026-256272,hilary.ybanez@student.ateneo.edu,"YBAÑEZ, Hilary D.",256272
-2025-2026-221045,mikaela.bringula@student.ateneo.edu,"BRINGULA, Mikaela A.",221045
-2025-2026-253110,bryle.adrian.lacabe@student.ateneo.edu,"LACABE, Bryle Adrian P.",253110
-2025-2026-242643,dion.james.llacuna@student.ateneo.edu,"LLACUNA, Dion James D.",242643
-2025-2026-257267,zyrah.kylie.deguzman@student.ateneo.edu,"De Guzman, Zyrah Kylie L.",257267
-2025-2026-233322,jhon.jumaquio@student.ateneo.edu,"JUMAQUIO, Jhon Crist V.",233322
-2025-2026-241603,erika.laurice.dizon@student.ateneo.edu,"DIZON, Erika Laurice P.",241603
-2025-2026-242648,martina.amale.llamas@student.ateneo.edu,"LLAMAS, Martina Amale M.",242648
-2025-2026-240623,a.belda@student.ateneo.edu,"BELDA, Audrey Jezreel B.",240623
-2025-2026-204435,jirah.rucio@student.ateneo.edu,"RUCIO, Jirah Mae B. ",204435
-2025-2026-226984,althea.bunquin@student.ateneo.edu,"BUNQUIN, Althea Kyla S.",226984
-2025-2026-252104,trish.elardo@student.ateneo.edu,"ELARDO, Trish F.",252104
-2025-2026-252941,juan.isabelo@student.ateneo.edu,"ISABELO, Juan Philippe V.",252941
-2025-2026-234564,joshua.olmos@student.ateneo.edu,"OLMOS, Joshua Eitan L.",234564
-2025-2026-230478,chenille.arquero@student.ateneo.edu,"ARQUERO, Chenille Aeree T.",230478
-2025-2026-240283,anika.anzano@student.ateneo.edu,"ANZANO, Anika F.",240283
-2025-2026-240043,andrea.leigh.abril@student.ateneo.edu,"ABRIL, Andrea Leigh A.",240043
-2025-2026-237431,kristine.napoles@student.ateneo.edu,"NAPOLES, Kristine Andrea R.",237431
-2025-2026-230733,daniella.louise.barbacena@student.ateneo.edu,"BARBACENA, Daniella Louise S.",230733
-2025-2026-226512,sophia.unson@student.ateneo.edu,"UNSON, Sophia Therese C.",226512
-2025-2026-236946,willis.co@student.ateneo.edu,"Co, Willis Martin G.",236946
-2025-2026-254835,matt.aidan.rebadomia@student.ateneo.edu,"REBADOMIA, Matt Aidan R.",254835
-2025-2026-225758,charles.saulog@student.ateneo.edu,"SAULOG, Charles Dominic B.",225758
-2025-2026-236314,baby.toling@student.ateneo.edu,"TOLING, Baby Jane",236314
-2025-2026-225987,anika.sulit@student.ateneo.edu,"SULIT, Anika L.",225987
-2025-2026-234503,ralph.nunez@student.ateneo.edu,"NUNEZ, Ralph Andrei S.",234503
-2025-2026-206216,ranzthine.santos@student.ateneo.edu,"SANTOS, Thomas Ranzthine D.",206216
-2025-2026-231452,mary.marcian.cerna@student.ateneo.edu,"CERNA, Mary Marcian Prienne Gl",231452
-2025-2026-237408,mariea.komicho@student.ateneo.edu,"KOMICHO, Mariea Elyja A.",237408
-2025-2026-234221,francis.mijares@student.ateneo.edu,"MIJARES, Francis Isaac S.",234221
-2025-2026-256189,john.rainier.virtucio@student.ateneo.edu,"VIRTUCIO, John Rainier A.",256189
-2025-2026-241889`,beatriz.gillana.francisco@student.ateneo.edu,"FRANCISCO, Beatriz Gillana S.",241889`
-2025-2026-222607,shaine.fernandez@student.ateneo.edu,"FERNANDEZ, Shaine Loise D. ",222607
-2025-2026-216012,john.torricer@student.ateneo.edu,"TORRICER, John Paul L.",216012
-2025-2026-246916,erica.mae.alicante@student.ateneo.edu,"ALICANTE, Erica Mae M.",246916
-2025-2026-233823,atasha.macarubbo@student.ateneo.edu,"MACARUBBO, Atasha Denisse S.",233823
-2025-2026-244970,gabriel.zerna@student.ateneo.edu,"ZERNA, Gabriel D.",244970
-2025-2026-233783,alexandra.lumbis@student.ateneo.edu,"LUMBIS, Alexandra Marie G.",233783
-2025-2026-225479,archimedes.rosete@student.ateneo.edu,"ROSETE, Archimedes III P.",225479
-2025-2026-230813,jerome.bautista@student.ateneo.edu,"BAUTISTA, Jerome",230813
-2025-2026-246024,princess.marithea.magno@student.ateneo.edu,"MAGNO, Princess Marithea G.",246024
-2025-2026-222166,tracy.descallar@student.ateneo.edu,"DESCALLAR, Tracy Nicole P. ",222166
-2025-2026-230144,karl.agudong@student.ateneo.edu,"AGUDONG, Karl Francois Dwayne N.",230144
-2025-2026-242864,charlisze.manansala@student.ateneo.edu,"MANANSALA, Charlisze C.",242864
-2025-2026-227118,trisha.loise.uy@student.ateneo.edu,"UY, Trisha Loise D.",227118
-2025-2026-255243,jian.santos@student.ateneo.edu,"SANTOS, Jian C.",255243
-2025-2026-247269,jhamie.rosellah.aranzanso@student.ateneo.edu,"ARANZANSO, Jhamie Rosellah S.",247269
-2025-2026-232652,leanne.frago@student.ateneo.edu,"FRAGO, Leanne Elyssa Beatrice S.",232652
-2025-2026-241203,sophia.janelle.co@student.ateneo.edu,"CO, Sophia Janelle Y.",241203
-2025-2026-243069,kimberly.mesina@student.ateneo.edu,"MESINA, Kimberly K.",243069
-2025-2026-244954,miguel.antonio.zaballero@student.ateneo.edu,"ZABALLERO, Miguel Antonio E.",244954
-2025-2026-243568,sofia.theresa.pequieras@student.ateneo.edu,"PEQUIERAS, Sofia Theresa A",243568
-2025-2026-253771,precious.clara.mariano@student.ateneo.edu,"MARIANO, Precious Clara C.",253771
-2025-2026-254192,mayven.norberte@student.ateneo.edu,"NORBERTE, Mayven G.",254192
-2025-2026-232422,sheree.espanillo@student.ateneo.edu,"ESPANILLO, Sheree Anne A.",232422
-2025-2026-250264,czar.nicolai.altobano@student.ateneo.edu,"ALTOBANO, Czar Nicolai",250264
-2025-2026-242650,mary.kate.llanos@student.ateneo.edu,"LLANOS, Mary Kate B.",242650
-2025-2026-246183,jankrzysztofobra1@gmail.com,"OBRA, Jan Krzysztof R.",246183
-2025-2026-232626,kim.flores@student.ateneo.edu,"FLORES, Kim Dexter R.",232626
-2025-2026-244366,bianca.louise.tan@student.ateneo.edu,"TAN, Bianca Louise G.",244366
-2025-2026-234911,gilianne.perez@student.ateneo.edu,"PEREZ, Gilianne D. ",234911
-2025-2026-241362,rei.daryl.dapula@student.ateneo.edu,"DAPULA, Rei Daryl D.",241362
-2025-2026-254743,julianne.frances.rabago@student.ateneo.edu,"RABAGO, Julianne Frances F.",254743
-2025-2026-242674,casey.alexandra.mae.lontoc@student.ateneo.edu,"LONTOC, Casey Alexandra Mae A.",242674
-2025-2026-235482,jedale.sabio@student.ateneo.edu,"SABIO, Jedale G.",235482
-2025-2026-250624,kimberly.banaag@student.ateneo.edu,"Banaag, Kimberly C.",250624
-2025-2026-252686,marian.andriel.gonzales@student.ateneo.edu,"GONZALES, Marian Andriel P.",252686
-2025-2026-252674,jacy.danielle.gonzales@student.ateneo.edu,"GONZALES, Jacy Danielle I.",252674
-2025-2026-256097,evrald.keinth.villaflor@student.ateneo.edu,"VILLAFLOR, Evrald Keinth G.",256097
-2025-2026-257307,francine.elaine.magpily@student.ateneo.edu,"Magpily, Francine Elaine E.",257307
-2025-2026-246998,dahayallan5@gmail.com,"DAHAY, Allan Jr. B.",246998
-2025-2026-246998,allan.jr.dahay@student.ateneo.edu,"DAHAY, Allan Jr. B.",246998
-2025-2026-234993,johannes.piscasio@student.ateneo.edu,"PISCASIO, Johannes Martin G.",234993
-2025-2026-241743,analisa.escandor@student.ateneo.edu,"ESCANDOR, Analisa C.",241743
-2025-2026-240532,k.barez@student.ateneo.edu,"BAREZ, Katrina Ysabelle B.",240532
-2025-2026-250148,joannah.mae.aguinaldo@student.ateneo.edu,"AGUINALDO, Joannah Mae F.",250148
-2025-2026-232289,andre.dorde@student.ateneo.edu,"DORDE, Andre Benedict A.",232289
-2025-2026-242797,mikayla.magistrado@student.ateneo.edu,"MAGISTRADO, Mikayla C.",242797
-2025-2026-220301,maria.anabeza@student.ateneo.edu,"ANABEZA, Maria Chanel C.",220301
-2025-2026-246589,seanne.michael.talingting@student.ateneo.edu,"TALINGTING, Seanne Michael ",246589
-2025-2026-251844,jan.isiah.delacruz@student.ateneo.edu,"DELA CRUZ, Jan Isiah S.",251844
-2025-2026-253016,jhenica.marie.jison@student.ateneo.edu,"JISON, Jhenica Marie J.",253016
-2025-2026-242316,danielle.ira.jacoba@student.ateneo.edu,"JACOBA, Danielle Ira P.",242316
-2025-2026-225031,ada.plata@student.ateneo.edu,"PLATA, Ada Jemina T.",225031
-2025-2026-256234,carla.helene.yalung@student.ateneo.edu,"YALUNG, Carla Helene L.",256234
-2025-2026-241858,justin.edward.figuerres@student.ateneo.edu,"FIGUERRES, Justin Edward G.",241858
-2025-2026-225198,jade.ramos@student.ateneo.edu,"RAMOS, Jade Connery B.",225198
-2025-2026-226612,phoebe.valle@student.ateneo.edu,"VALLE, Phoebe Angela J.",226612
-2025-2026-257364,mary.jane.delacruz@student.ateneo.edu,"DELA CRUZ, Mary Jane A.",257364
-2025-2026-250968,sophia.caballero@student.ateneo.edu,"CABALLERO, Sophia D.",250968
-2025-2026-232031,cayla.deramos@student.ateneo.edu,"DE RAMOS, Cayla Mirielle L.",232031
-2025-2026-233792,mikaella.luna@student.ateneo.edu,"LUNA, Mikaella Luisa M.",233792
-2025-2026-254933,sophia.isabella.reyes@student.ateneo.edu,"REYES, Sophia Isabella V.",254933
-2025-2026-233441,courtney.mae.langit@student.ateneo.edu,"LANGIT, Courtney Mae G. ",233441
-2025-2026-247620,cieli.joyce.gonzaga@student.ateneo.edu,"GONZAGA, Cieli Joyce P.",247620
-2025-2026-241396,ian.charles.decastro@student.ateneo.edu,"DE CASTRO, Ian Charles D.",241396
-2025-2026-241759,andrew.eric.espino@student.ateneo.edu,"ESPINO, Andrew Eric P.",241759
-2025-2026-233356,chelsie.kiak@student.ateneo.edu,"KIAK, Chelsie Joie S.",233356
-2025-2026-251015,gabrielle.lyanne.cadiz@student.ateneo.edu,"CADIZ, Gabrielle Lyanne C.",251015
-2025-2026-250276,raleigh.amante@student.ateneo.edu,"AMANTE, Raleigh T. ",250276
-2025-2026-231322,akeezia.carreon@student.ateneo.edu,"CARREON, Akeezia Fia A.",231322
-2025-2026-213753,stephanie.manantan@student.ateneo.edu,"MANANTAN, Stephanie B.",213753
-2025-2026-225598,rein.salvador@student.ateneo.edu,"SALVADOR, Rein Selen C.",225598
-2025-2026-253608,chloe.junivere.magpantay@student.ateneo.edu,"MAGPANTAY, Chloe Junivere D.",253608
-2025-2026-220243,kimberly.alon@student.ateneo.edu,"ALON, Kimberly Venice H.",220243
-2025-2026-224728,aaron.pacis@student.ateneo.edu,"PACIS, Aaron John C.",224728
-2025-2026-253836,justine.mationg@student.ateneo.edu,"MATIONG, Justine T ",253836
-2025-2026-226644,madison.velasco@student.ateneo.edu,"VELASCO, Madison Alyssa B.",226644
-2025-2026-220969,caryl.binangbang@student.ateneo.edu,"BINANGBANG, Caryl Ann P.",220969
-2025-2026-252245,zyrx.mylz.evangelista@student.ateneo.edu,"EVANGELISTA, Zyrx Mylz V.",252245
-2025-2026-226334,calista.tiu@student.ateneo.edu,"TIU, Calista Lianna T.",226334
-2025-2026-225507,leilanie.saballa@student.ateneo.edu,"SABALLA, Leilanie D.",225507
-2025-2026-254815,john.carlo.ranario@student.ateneo.edu,"RANARIO, John Carlo T.",254815
-2025-2026-243728,reese.leighann.rabulan@student.ateneo.edu,"RABULAN, Reese Leighann E.",243728
-2025-2026-242243,paolo.niccolo.hocchuan@student.ateneo.edu,"HOCCHUAN, Paolo Niccolo L.",242243
-2025-2026-234207,gabrielle.meteoro@student.ateneo.edu,"METEORO, Gabrielle M.",234207
-2025-2026-233848,jaybby.magallanes@student.ateneo.edu,"MAGALLANES, Jaybby I.",233848
-2025-2026-244145,kristine.jane.sayson@student.ateneo.edu,"SAYSON, Kristine Jane",244145
-2025-2026-212792,andrew.goalcantara@student.ateneo.edu,"GO ALCANTARA, Andrew C.",212792
-2025-2026-242822,knights.malacad@student.ateneo.edu,"MALACAD, Knights ",242822
-2025-2026-252744,jerucel.joyce.guarino@student.ateneo.edu,"GUARINO, Jerucel Joyce A.",252744
-2025-2026-240087,rey.christian.adviento@student.ateneo.edu,"ADVIENTO, Rey Christian F.",240087
-2025-2026-256985,hynz.kristian.reotutar@student.ateneo.edu,"REOTUTAR, Hynz Kristian T.",256985
-2025-2026-236073,hayden.tam@student.ateneo.edu,"TAM, Hayden H.",236073
-2025-2026-224667,joanna.ordona@student.ateneo.edu,"ORDOÑA, Joanna Marie",224667
-2025-2026-230940,neil.biason@student.ateneo.edu,"BIASON, Neil Aldous A.",230940
-2025-2026-247119,karelle.vanessa.martinez@student.ateneo.edu,"MARTINEZ, Karelle Vanessa A. ",247119
-2025-2026-224038,anina.manuel@student.ateneo.edu,"MANUEL, Anina Jiliana A. ",224038
-2025-2026-243693,khurt.denzel.querubin@student.ateneo.edu,"QUERUBIN, Khurt Denzel R.",243693
-2025-2026-255770,althea.nicole.teodosio@student.ateneo.edu,"TEODOSIO, Althea Nicole P.",255770
-2025-2026-234598,kendrick.nathan.ong@student.ateneo.edu,"ONG, Kendrick Nathan W. ",234598
-2025-2026-257355,maria.dana.candelaria@student.ateneo.edu,"CANDELARIA, Maria Dana L.",257355
-2025-2026-234650,celver.ortiz@student.ateneo.edu,"ORTIZ, Celver Zitro Huerte",234650
-2025-2026-220238,hxyll.almonguera@student.ateneo.edu,"ALMONGUERA, Hxyll N. ",220238
-2025-2026-222983,princess.gonzales@student.ateneo.edu,"GONZALES, Princess Kate P.",222983
-2025-2026-255111,mariel.anne.salcedo@student.ateneo.edu,"SALCEDO, Mariel Anne A.",255111
-2025-2026-250475,zlynn.anne.asuncion@student.ateneo.edu,"ASUNCION, Zlynn Anne A.",250475
-2025-2026-233857,jan.carlo.magcalas@student.ateneo.edu,"MAGCALAS, Jan Carlo V.",233857
-2025-2026-241722,marian.kate.encarnacion@student.ateneo.edu,"ENCARNACION, Marian Kate M.",241722
-2025-2026-243626,john.steven.pioquid@student.ateneo.edu,"PIOQUID, John Steven G.",243626
-2025-2026-255002,sarah.angelyn.rollan@student.ateneo.edu,"ROLLAN, Sarah Angelyn R. ",255002
-2025-2026-224188,harket.medina@student.ateneo.edu,"MEDINA, Harket R.",224188
-2025-2026-230853,judd.banas@student.ateneo.edu,"BANAS, Judd Christian F.",230853
-2025-2026-232365,linang.echanis@student.ateneo.edu,"ECHANIS, Linang Lumari N.",232365
-2025-2026-243870,czairra.paulette.ricamata@student.ateneo.edu,"RICAMATA, Czairra Paulette R.",243870
-2025-2026-246020,kim.marielle.maghirang@student.ateneo.edu,"MAGHIRANG, Kim Marielle S.",246020
-2025-2026-230181,,"ALBANO, Jhared",230181
-2025-2026-241764,,"ESPIRITU, Eulalia Naomi",241764
-2025-2026-232224,,"DINI-AY, Madieline Nicole",232224
-2025-2026-232612,,"FLORANO, Bryan Jenniel",232612
-2025-2026-231519,,"CHING, Viktoria Jane",231519
-2025-2026-235643,,"SANTOS, Anne Chezka",235643
-2025-2026-247369,,"BOY, Maiev Tyrande",247369
-2025-2026-235705,,"Sarmiento, Alyssa Beatrice",235705
-2025-2026-243820,,"Rentoza, Mary Angela",243820
-2025-2026-231235,,"Caminong, Adrian Sean",231235
-2025-2026-255931,,"Uddi, Gabriel Tracy Corbari P.",255931
-2025-2026-252861,,"Hilario, Kristel Mae",252861
-2025-2026-254356,,"Pacson, Crysch Ericah",254356
-2025-2026-253146,,"Lagunsad, Mark Russell",253146
-2025-2026-254872,,"Repe, Antonio Gabriel",254872
-2025-2026-246235,,"Paches, Joeie Denielle",246235
-2025-2026-243693,,"Querubi, Khurt Denzel",243693
-2025-2026-254384,,"Pahunang, Allainah Jade",254384
-2025-2026-230588,,"Bacani, Lian Ehren",230588
-2025-2026-243682,,"Purisima, Miguel Antonio",243682
-2025-2026-240499,,"Bandola, Joshua Patrick",240499
-2025-2026-226644,,"Velasco, Madison Alyssa",226644
-2025-2026-234509,,"Obos, Juliana Roxcel",234509
-2025-2026-246341,,"Ramirez, Aldy Ezekiel",246341
+Card Number,Email Address,Full Name,ID Number,,
+2025-2026-253056,mervie.juros@student.ateneo.edu,"JUROS, Mervie T.",253056,TRUE,
+2025-2026-220656,selwyn.baldonado@student.ateneo.edu,"BALDONADO, Selwyn Matthew F.",220656,TRUE,
+2025-2026-255384,kezia.thea.franchesca.silang@student.ateneo.edu,"SILANG, Kezia Thea Franchesca M.",255384,TRUE,
+2025-2026-253146,mark.russell.lagunsad@student.ateneo.edu,"LAGUNSAD, Mark Russell A.",253146,TRUE,
+2025-2026-250856,rainfiala.daxen.boltiador@student.ateneo.edu,"BOLTIADOR, Rainfiala Daxen D. ",250856,TRUE,
+2025-2026-234239,rynel.mirallo@student.ateneo.edu,"MIRALLO, Rynel T.",234239,TRUE,
+2025-2026-247420,francis.roi.manimtim@student.ateneo.edu,"MANIMTIM, Francis Roi T.",247420,TRUE,
+2025-2026-226675,sean.vergara@student.ateneo.edu,"VERGARA, Sean Edward",226675,TRUE,
+2025-2026-250036,gabriel.abes@student.ateneo.edu,"ABES, Gabriel C.",250036,TRUE,
+2025-2026-241997,jeffrey.garcia@student.ateneo.edu,"GARCIA, JEFFREY S.",241997,TRUE,
+2025-2026-221413,joaquin.castillejos@student.ateneo.edu,"CASTILLEJOS, Joaquin Iñigo G.",221413,TRUE,
+2025-2026-242490,nina.angela.lardizabal@student.ateneo.edu,"LARDIZABAL, Niña Angela G.",242490,TRUE,
+2025-2026-255988,ashley.nicole.uygongco@student.ateneo.edu,"UYGONGCO, Ashley Nicole U.",255988,TRUE,
+2025-2026-254879,kirsteen.simoene.stacianne.retes@student.ateneo.edu,"RETES, Kirsteen Simoene Stacianne G.",254879,TRUE,
+2025-2026-246136,clarise.nicole.monteagudo@student.ateneo.edu,"MONTEAGUDO, Clarise Nicole A.",246136,TRUE,
+2025-2026-234509,juliana.obos@student.ateneo.edu,"OBOS, Juliana Roxcel B.",234509,TRUE,
+2025-2026-224103,lawrence.marino@student.ateneo.edu,MARINO,224103,TRUE,
+2025-2026-245844,lindsay.clarabelle.joring@student.ateneo.edu,"JORING, Lindsay Clarabelle M.",245844,TRUE,
+2025-2026-252861,kristel.mae.hilario@student.ateneo.edu,"HILARIO, Kristel Mae",252861,TRUE,
+2025-2026-256390,reigne.ysabella.castillo@student.ateneo.edu,"CASTILLO, Reigne Ysabella O.",256390,TRUE,
+2025-2026-257260,allison.chen@student.ateneo.edu,"CHEN, Allison N.",257260,TRUE,
+2025-2026-242335,princess.natalie.jaramilla@student.ateneo.edu,"JARAMILLA, Princess Natalie D.",242335,TRUE,
+2025-2026-231804,rhona.cruz@student.ateneo.edu,"CRUZ, Rhona Angela P.",231804,TRUE,
+2025-2026-240022,james.timothy.abejar@student.ateneo.edu,"ABEJAR, James Timothy H.",240022,TRUE,
+2025-2026-235282,gwyneth.reyes@student.ateneo.edu,"REYES, Gwyneth Erin M.",235282,TRUE,
+2025-2026-253037,gericho.miguel.juan@student.ateneo.edu,"Juan, Gericho Miguel C",253037,TRUE,
+2025-2026-255620,mary.seg.helena.talam@student.ateneo.edu,"TALAM, Mary Seg Helena C.",255620,TRUE,
+2025-2026-250813,jasel.angela.berones@student.ateneo.edu,"BERONES, Jasel Angela S. ",250813,TRUE,
+2025-2026-253536,jenkin.mosiah.luyun@student.ateneo.edu,"LUYUN, Jenkin Mosiah A.",253536,TRUE,
+2025-2026-232135,john.gabriel.delarosa@student.ateneo.edu,"DELA ROSA, John Gabriel V.",232135,TRUE,
+2025-2026-247113,jophiel.isaiah.mangulad@student.ateneo.edu,"MANGULAD, Jophiel Isaiah L.",247113,TRUE,
+2025-2026-253238,audrey.jae.lee@student.ateneo.edu,"LEE, Audrey Jae N.",253238,TRUE,
+2025-2026-244048,j.sanagustin@student.ateneo.edu,"SAN AGUSTIN, Joan A.",244048,TRUE,
+2025-2026-254510,reese.leanne.pastrana@student.ateneo.edu,"PASTRANA, Reese Leanne G.",254510,TRUE,
+2025-2026-255256,nathan.anthony.santos@student.ateneo.edu,"SANTOS, Nathan Anthony O.",255256,TRUE,
+2025-2026-250836,joshua.birco@student.ateneo.edu,"BIRCO, Joshua H.",250836,TRUE,
+2025-2026-221473,anasel-ace.caneso@student.ateneo.edu,"CAÑESO, Anasel-Ace M.",221473,TRUE,
+2025-2026-224933,christhia.pelago@student.ateneo.edu,"PELAGO, Ma. Christhia Eliz G.",224933,TRUE,
+2025-2026-257359,zaira.yuki.takahashi@student.ateneo.edu,"Takahashi, Zaira Yuki B.",257359,TRUE,
+2025-2026-22846,zanti.gayares@student.ateneo.edu,"GAYARES, Zanti Alfonzo C. ",22846,TRUE,
+2025-2026-241038,lance.jared.cayabyab@student.ateneo.edu,"CAYABYAB, Lance Jared S.",241038,TRUE,
+2025-2026-234723,kijrl.pagtulon-an@student.ateneo.edu,"PAGTULON-AN, Kijrl Cyrij D.",234723,TRUE,
+2025-2026-242494,zale.sebastian.latonio@student.ateneo.edu,"LATONIO, Zale Sebastian S.",242494,TRUE,
+2025-2026-251182,cherygail.cartajenas@student.ateneo.edu,"CARTAJENAS, Cherygail P.",251182,TRUE,
+2025-2026-220154,romina.aguilar@student.ateneo.edu,"AGUILAR, Romina Kei E.",220154,TRUE,
+2025-2026-231765,strawberry.cruel@student.ateneo.edu,"CRUEL, Strawberry Czamme C.",231765,TRUE,
+2025-2026-255043,yasmine.resse.rosel@student.ateneo.edu,"ROSEL, Yasmine Resse B.",255043,TRUE,
+2025-2026-232166,anthony.deocadiz@student.ateneo.edu,"DEOCADIZ, Anthony Jr. B.",232166,TRUE,
+2025-2026-254384,allainah.jade.pahunang@student.ateneo.edu,"PAHUNANG, Allainah Jade P.",254384,TRUE,
+2025-2026-251697,ian.carlo.decastro@student.ateneo.edu,"DE CASTRO, Ian Carlo B.",251697,TRUE,
+2025-2026-230748,karina.barona@student.ateneo.edu,"BAROÑA, Karina Angelie G.",230748,TRUE,
+2025-2026-233040,morella.guzon@student.ateneo.edu,"GUZON, Morella Joanna E.",233040,TRUE,
+2025-2026-252503,andy.krishane.garcia@student.ateneo.edu,"GARCIA, Andy Krishane F.",252503,TRUE,
+2025-2026-242516,christine.nicole.laza@student.ateneo.edu,"LAZA, Christine Nicole C. ",242516,TRUE,
+2025-2026-250811,keith.bernas@student.ateneo.edu,"BERNAS, Keith B.",250811,TRUE,
+2025-2026-252430,francezka.bossa.gabriel@student.ateneo.edu,"GABRIEL, Francezka Bossa M.",252430,TRUE,
+2025-2026-256450,marlon.angelo.macatantan@student.ateneo.edu,"MACATANTAN, Marlon Angelo B.",256450,TRUE,
+2025-2026-253309,john.mathew.librano@student.ateneo.edu,"LIBRANO, John Mathew S.",253309,TRUE,
+2025-2026-255902,genesis.tuazon@student.ateneo.edu,"TUAZON, Genesis B.",255902,TRUE,
+2025-2026-241585,armea.helena.sien.dimayacyac@student.ateneo.edu,"DIMAYACYAC, Armea Helena Sien G.",241585,TRUE,
+2025-2026-241379,brent.matthew.david@student.ateneo.edu,"DAVID, Brent Matthew T.",241379,TRUE,
+2025-2026-253729,johann.karol.benedict.manulat@student.ateneo.edu,"MANULAT, Johann Karol Benedict O.",253729,TRUE,
+2025-2026-254651,divine.rose.polido@student.ateneo.edu,"POLIDO, Divine Rose G.",254651,TRUE,
+2025-2026-255098,glaiza.salanio@student.ateneo.edu,"SALANIO, Glaiza L.",255098,TRUE,
+2025-2026-254082,finn.romeo.narita@student.ateneo.edu,"NARITA, Finn Romeo T.",254082,TRUE,
+2025-2026-253817,maria.dennise.masibag@student.ateneo.edu,"MASIBAG, Maria Dennise C.",253817,TRUE,
+2025-2026-241200,kyle.dominic.co@student.ateneo.edu,"CO, Kyle Dominic G.",241200,TRUE,
+2025-2026-255335,miel.nico.serdenia@student.ateneo.edu,"SERDENIA, Miel Nico S.",255335,TRUE,
+2025-2026-254554,kirby.peralta@student.ateneo.edu,"PERALTA, Kirby M.",254554,TRUE,
+2025-2026-257311,marie.angela.gabrielle.navarro@student.ateneo.edu,"NAVARRO, Marie Angela Gabrielle P.",257311,TRUE,
+2025-2026-242466,nicole.emanuelle.landicho@student.ateneo.edu,"LANDICHO, Nicole Emanuelle R.",242466,TRUE,
+2025-2026-220223,armand.aliman@student.ateneo.edu,"ALIMAN, Armand Chino T.",220223,TRUE,
+2025-2026-251020,janelle.caguioa@student.ateneo.edu,"CAGUIOA, Janelle S.",251020,TRUE,
+2025-2026-230827,joel.bautista@student.ateneo.edu,"BAUTISTA, Robert Joel C.",230827,TRUE,
+2025-2026-243900,ralph.dominic.rockwell@student.ateneo.edu,"ROCKWELL, Ralph Dominic T.",243900,TRUE,
+2025-2026-241502,maria.angeline.delacruz@student.ateneo.edu,"DELA CRUZ, Maria Angeline P.",241502,TRUE,
+2025-2026-233636,kendrick.lim@student.ateneo.edu,"LIM, Marc Kendrick A.",233636,TRUE,
+2025-2026-253998,leia.yzabel.monteclar@student.ateneo.edu,"MONTECLAR, Leia Yzabel Y.",253998,TRUE,
+2025-2026-254101,angela.patrice.navarrete@student.ateneo.edu,"NAVARRETE, Angela Patrice G.",254101,TRUE,
+2025-2026-254600,antonio.raul.penaranda@student.ateneo.edu,"PEÑARANDA, Antonio Raul L.",254600,TRUE,
+2025-2026-244886,henry.iii.yap@student.ateneo.edu,"YAP, Henry III T.",244886,TRUE,
+2025-2026-252422,karlo.keith.fulgar@student.ateneo.edu,"FULGAR, Karlo Keith M.",252422,TRUE,
+2025-2026-230970,sybrene.boaquena@student.ateneo.edu,"BOAQUEÑA, Sybrene Gabrielle A. ",230970,TRUE,
+2025-2026-224258,isabel.mercado@student.ateneo.edu,"MERCADO, Isabel Joy D.",224258,TRUE,
+2025-2026-242531,annika.joan.lee@student.ateneo.edu,LEEm Annika Joan O.,242531,TRUE,
+2025-2026-226789,jeansha.viray@student.ateneo.edu,"VIRAY, Jeansha Mae M.",226789,TRUE,
+2025-2026-253111,pia.lacanaria@student.ateneo.edu,"LACANARIA, Pia M. ",253111,TRUE,
+2025-2026-255308,xam.cheska.sanosa@student.ateneo.edu,"SAÑOSA, Xam Cheska G.",255308,TRUE,
+2025-2026-230623,fiona.baguiwet@student.ateneo.edu,"BAGUIWET, Fiona B.",230623,TRUE,
+2025-2026-251749,hannah.sofia.delara@student.ateneo.edu,"DE LARA, Hannah Sofia",251749,TRUE,
+2025-2026-Ciarah Olen,ciarah.olen.salac@student.ateneo.edu,SALAC,Ciarah Olen,TRUE,
+2025-2026-224062,rafaella.mapilisan@student.ateneo.edu,"MAPILISAN, Rafaella Margarette M.",224062,TRUE,
+2025-2026-233933,matthew.manalili@student.ateneo.edu,"MANALILI, Matthew T.",233933,TRUE,
+2025-2026-251728,justin.carl.deguzman@student.ateneo.edu,"DE GUZMAN, Justin Carl C.",251728,TRUE,
+2025-2026-250993,cabrerajustinbeaver@gmail.com,"CABRERA, Justin Beaver R.",250993,TRUE,
+2025-2026-250953,anne.charlize.burdeos@student.ateneo.edu,"BURDEOS, Anne Charlize L.",250953,TRUE,
+2025-2026-250904,edralyne.brigola@student.ateneo.edu,"BRIGOLA, Edralyne P.",250904,TRUE,
+2025-2026-256351,simone.antoinette.marie.zuniga@student.ateneo.edu,"ZUÑIGA, Simone Antoinette Marie L.",256351,TRUE,
+2025-2026-240991,naomi.kleah.casio@student.ateneo.edu,"CASIO, Naomi Kleah J.",240991,TRUE,
+2025-2026-255371,lester.sibaen@student.ateneo.edu,"SIBAEN, Lester C.",255371,TRUE,
+2025-2026-224056,jan.manzano@student.ateneo.edu,"MANZANO, Jan Gabriel N.",224056,TRUE,
+2025-2026-242330,elemiah.jarsi.japitana@student.ateneo.edu,"JAPITANA, Elemiah Jarsi Ann C.",242330,TRUE,
+2025-2026-254675,kathlyn.mae.postrado@student.ateneo.edu,"POSTRADO, Kathlyn Mae S.",254675,TRUE,
+2025-2026-223735,isabela.lomibao@student.ateneo.edu,"LOMIBAO, Isabela Gabrielle P.",223735,TRUE,
+2025-2026-235705,alyssa.sarmiento@student.ateneo.edu,"SARMIENTO, Alyssa Beatrice M. ",235705,TRUE,
+2025-2026-250685,jolo.bartolome@student.ateneo.edu,BARTOLOME,250685,TRUE,
+2025-2026-255275,charlene.angel.santosildes@student.ateneo.edu,"SANTOSILDES, Charlene Angel G.",255275,TRUE,
+2025-2026-230290,yohan.ambal@student.ateneo.edu,"AMBAL, Yohan Miguel F.",230290,TRUE,
+2025-2026-250616,cris.jillian.baltazar@student.ateneo.edu,"BALTAZAR, Cris Jillian P.",250616,TRUE,
+2025-2026-254464,keara.dannelle.pantalunan@student.ateneo.edu,"PANTALUNAN, Keara Dannelle M.",254464,TRUE,
+2025-2026-256202,ven.amabelle.vivar@student.ateneo.edu,"VIVAR, Ven Amabelle S.",256202,TRUE,
+2025-2026-251215,monica.castillo@student.ateneo.edu,"CASTILLO, Monica A.",251215,TRUE,
+2025-2026-255412,sophia.margarette.sison@student.ateneo.edu,"SISON, Sophia Margarette A.",255412,TRUE,
+2025-2026-242949,kendra.anne.cloei.marquez@student.ateneo.edu,"MARQUEZ, Kendra Anne Cloei T.",242949,TRUE,
+2025-2026-246303,precious.sabine.pinto@student.ateneo.edu,"PINTO, Precious Sabine C.",246303,TRUE,
+2025-2026-255338,jhian.brian.serna@student.ateneo.edu,"SERNA, Jhian Brian P.",255338,TRUE,
+2025-2026-250938,marion.benj.buencamino@student.ateneo.edu,"BUENCAMINO, Marion Benj D.",250938,TRUE,
+2025-2026-240815,marvey.cabarles@student.ateneo.edu,"CABARLES, Marvey T.",240815,TRUE,
+2025-2026-255833,chelsea.heart.toledo@student.ateneo.edu,"TOLEDO, Chelsea Heart B.",255833,TRUE,
+2025-2026-254677,ayezza.andronica.prado@student.ateneo.edu,"PRADO, Ayezza Andronica Faith B.",254677,TRUE,
+2025-2026-222765,anne.gamboa@student.ateneo.edu,"GAMBOA, Ma. Anne Jade R.",222765,TRUE,
+2025-2026-214688,christian.pitogo@student.ateneo.edu,"PITOGO, Christian Andre T.",214688,TRUE,
+2025-2026-235778,alexandra.sevilla@student.ateneo.edu,"SEVILLA, Alexandra Nicole P.",235778,TRUE,
+2025-2026-243658,martin.luigi.pontigon@student.ateneo.edu,"PONTIGON, Martin",243658,TRUE,
+2025-2026-245510,jhoyce.mariel.delacueva@student.ateneo.edu,"DELA CUEVA, Jhoyce Mariel C.",245510,TRUE,
+2025-2026-255591,janelle.ayessah.tabano@student.ateneo.edu,"TABANO, Janelle Ayessah A.",255591,TRUE,
+2025-2026-230942,jamie.bico@student.ateneo.edu,"BICO, Jamie Rose D.",230942,TRUE,
+2025-2026-240558,carl.basco@student.ateneo.edu,"BASCO, Carl A.",240558,TRUE,
+2025-2026-242799,john.david.magnaye@student.ateneo.edu,"MAGNAYE, John David F.",242799,TRUE,
+2025-2026-243837,carlos.gabriel.reyes@student.ateneo.edu,"REYES, Carlos Gabriel E.",243837,TRUE,
+2025-2026-243480,karel.ayesa.panghulan@student.ateneo.edu,"PANGHULAN, Karel Ayesa M.",243480,TRUE,
+2025-2026-222793,atasha.garcia@student.ateneo.edu,"GARCIA, Atasha Adrienne A.",222793,TRUE,
+2025-2026-225955,armand.sotelo@student.ateneo.edu,"SOTELO, Armand Joseph R.",225955,TRUE,
+2025-2026-245673,martin.paolo.gamosa@student.ateneo.edu,"GAMOSA, Martin Paolo S.",245673,TRUE,
+2025-2026-241764,eulalia.naomi.espiritu@student.ateneo.edu,"ESPIRITU, Eulalia Naomi J.",241764,TRUE,
+2025-2026-251147,carl.patrick.carandang@student.ateneo.edu,"CARANDANG, Carl Patrick V.",251147,TRUE,
+2025-2026-246128,joshua.lyndon.miranda@student.ateneo.edu,"MIRANDA, Joshua Lyndon S. ",246128,TRUE,
+2025-2026-252037,phoebe.duldulao@student.ateneo.edu,"DULDULAO, Phoebe C.",252037,TRUE,
+2025-2026-225734,prinze.sarical@student.ateneo.edu,"SARICAL, Prinze Dane D.",225734,TRUE,
+2025-2026-252049,aldren.immanuel.dungo@student.ateneo.edu,"DUNGO, Aldren Immanuel D. ",252049,TRUE,
+2025-2026-233891,john.malabuyo@student.ateneo.edu,"MALABUYO, John Edwin A.",233891,TRUE,
+2025-2026-255939,yohan.andrei.keisser.umbao@student.ateneo.edu,"UMBAO, Yohan Andrei Keisser N. ",255939,TRUE,
+2025-2026-251060,krizdarl.eurenz.callo@student.ateneo.edu,"CALLO, Krizdarl Eurenz S. ",251060,TRUE,
+2025-2026-255053,svetlana.viktoria.roxas@student.ateneo.edu,"ROXAS, Svetlana Viktoria C.",255053,TRUE,
+2025-2026-233666,eloisa.lingcod@student.ateneo.edu,"LINGCOD, Eloisa Belle E.",233666,TRUE,
+2025-2026-245972,jaybe.llante@student.ateneo.edu,"LLANTE, Jaybe M.",245972,TRUE,
+2025-2026-241036,sophia.aliza.caverte@student.ateneo.edu,"CAVERTE, Sophia Aliza B.",241036,TRUE,
+2025-2026-235831,dean.siman@student.ateneo.edu,"SIMAN, Dean Andrei N.",235831,TRUE,
+2025-2026-243267,janelle.fem.novelas@student.ateneo.edu,"NOVELAS, Janelle Fem M.",243267,TRUE,
+2025-2026-235353,annika.rivera@student.ateneo.edu,"RIVERA, Ma. Annika Angelin D.",235353,TRUE,
+2025-2026-231411,romulo.catindig@student.ateneo.edu,"CATINDIG, Romulo Martin T.",231411,TRUE,
+2025-2026-250686,marieselle.bartolome@student.ateneo.edu,"BARTOLOME, Marieselle V.",250686,TRUE,
+2025-2026-251526,carl.jhenkinz.cortez@student.ateneo.edu,"CORTEZ, Carl Jhenkinz",251526,TRUE,
+2025-2026-256040,kali.velasco@student.ateneo.edu,"VELASCO, Kali L.",256040,TRUE,
+2025-2026-241969,andrea.margarette.ganancial@student.ateneo.edu,"GANANCIAL, Andrea Margarette Y.",241969,TRUE,
+2025-2026-235274,josef.reycruz@student.ateneo.edu,"REY CRUZ, Josef James C. ",235274,TRUE,
+2025-2026-242101,william.vicson.gocheco@student.ateneo.edu,"GOCHECO, William Vicson T.",242101,TRUE,
+2025-2026-253541,michael.angelo.mabanag@student.ateneo.edu,"MABANAG, Michael Angelo",253541,TRUE,
+2025-2026-253007,cyrill.shane.jesalva@student.ateneo.edu,"JESALVA, Cyrill Shane C.",253007,TRUE,
+2025-2026-232224,madieline.nicole.dini-ay@student.ateneo.edu,"DINI-AY, Madieline Nicole S. ",232224,TRUE,
+2025-2026-233837,christian.madariaga@student.ateneo.edu,"MADARIAGA, Christian James S.",233837,TRUE,
+2025-2026-256901,nikolai.marcus.minor@student.ateneo.edu,"Minor, Nikolai Marcus G.",256901,TRUE,
+2025-2026-232143,erica.deliguer@student.ateneo.edu,"DELIGUER, Erica B.",232143,TRUE,
+2025-2026-233958,sofia.manding@student.ateneo.edu,"MANDING, Sofia C",233958,TRUE,
+2025-2026-241816,gian.kirby.falogme@student.ateneo.edu,"FALOGME, Gian Kirby G.",241816,TRUE,
+2025-2026-224595,ediel.oliva@student.ateneo.edu,"OLIVA, Ediel Mei B.",224595,TRUE,
+2025-2026-232183,carmela.deveras@student.ateneo.edu,"DEVERAS, Carmela Jane L.",232183,TRUE,
+2025-2026-242524,tim.aiken.leang@student.ateneo.edu,"LEANG, Tim Aiken M.",242524,TRUE,
+2025-2026-246039,ashley.anne.malonzo@student.ateneo.edu,"MALONZO, Ashley Anne A.",246039,TRUE,
+2025-2026-225417,clarence.rodriguez@student.ateneo.edu,"RODRIGUEZ, Mark Clarence G.",225417,TRUE,
+2025-2026-252401,samantha.mykhyle.francisco@student.ateneo.edu,"FRANCISCO, Samantha Mykhyle S.",252401,TRUE,
+2025-2026-225679,mikayla.anya.santiago@student.ateneo.edu,"SANTIAGO, Mikayla Anya A.",225679,TRUE,
+2025-2026-250414,allysa.camille.arellano@student.ateneo.edu,"ARELLANO, Allysa Camille",250414,TRUE,
+2025-2026-252659,ver.angeli.gomez@student.ateneo.edu,"GOMEZ, Ver Angeli Casey N.",252659,TRUE,
+2025-2026-243612,beatrice.pilar@student.ateneo.edu,"PILAR, Ma. Beatrice P. ",243612,TRUE,
+2025-2026-244570,zia.juliana.trestiza@student.ateneo.edu,"TRESTIZA, Zia Juliana E.",244570,TRUE,
+2025-2026-231672,akbar.comedoy@student.ateneo.edu,"COMEDOY, Akbar Semaj Ioger D.",231672,TRUE,
+2025-2026-230350,rysa.ang@student.ateneo.edu,"ANG, Rysa Antonette H.",230350,TRUE,
+2025-2026-241465,antonie.ivette.degala@student.ateneo.edu,"DEGALA, Antonie Ivette B.",241465,TRUE,
+2025-2026-234476,samantha.nobleza@student.ateneo.edu,"NOBLEZA, Samantha Marie A. ",234476,TRUE,
+2025-2026-234887,jilliane.margaux.pedrosa@student.ateneo.edu,"PEDROSA, Jilliane Margaux S.",234887,TRUE,
+2025-2026-241582,alexa.amaya.dimapilis@student.ateneo.edu,"DIMAPILIS, Alexa Amaya L.",241582,TRUE,
+2025-2026-244028,enrico.miguel.salvador@student.ateneo.edu,"SALVADOR, Enrico Miguel N.",244028,TRUE,
+2025-2026-251633,reinaliz.mae.dadulo@student.ateneo.edu,"DADULO, Reinaliz Mae Y.",251633,TRUE,
+2025-2026-236069,kirsten.tallador@student.ateneo.edu,"TALLADOR, Kirsten Danielle C.",236069,TRUE,
+2025-2026-255705,angelina.margareth.tancontian@student.ateneo.edu,"TANCONTIAN, Angelina Margareth M.",255705,TRUE,
+2025-2026-222562,kim.falogme@student.ateneo.edu,"FALOGME, Kim Isiah M.",222562,TRUE,
+2025-2026-240702,sean.jharod.bolofer@student.ateneo.edu,"BOLOFER, Sean Jharod C.",240702,TRUE,
+2025-2026-251239,ronan.kaiser.julian.castro@student.ateneo.edu,"CASTRO, Ronan Kaiser Julian A.",251239,TRUE,
+2025-2026-232046,railee.devera@student.ateneo.edu,"DE VERA, Railee Seantel M.",232046,TRUE,
+2025-2026-254412,kisha.joy.pallones@student.ateneo.edu,"PALLONES, Kisha Joy O.",254412,TRUE,
+2025-2026-255743,gabrielle.stephanie.tano@student.ateneo.edu,"TAÑO, Gabrielle Stephanie Y.",255743,TRUE,
+2025-2026-234126,jairon.mejia@student.ateneo.edu,"MEJIA, Jairon Lee Vienne N.",234126,TRUE,
+2025-2026-235237,jeanne.regala@student.ateneo.edu,"REGALA, Jeanne Cher R.",235237,TRUE,
+2025-2026-240861,kamille.faith.revelina.calaycay@student.ateneo.edu,"CALAYCAY, Kamille Faith Revelina L. ",240861,TRUE,
+2025-2026-201868,jenine.dy@student.ateneo.edu,"DY, Jenine Rose L.",201868,TRUE,
+2025-2026-254195,ashley.allyza.rish.nowaim@student.ateneo.edu,"NOWAIM, Ashley Allyza Rish A.",254195,TRUE,
+2025-2026-253902,jacob.miguel.mendoza@student.ateneo.edu,"MENDOZA, Jacob Miguel P.",253902,TRUE,
+2025-2026-240121,rob.ryan.aguilar@student.ateneo.edu,"AGUILAR, Rob Ryan S.",240121,TRUE,
+2025-2026-241169,paula.isabelle.chung@student.ateneo.edu,"CHUNG, Paula Isabelle A.",241169,TRUE,start ni jade
+2025-2026-243200,mark.christian.navarra@student.ateneo.edu,"NAVARRA, Mark Christian M.",243200,TRUE,
+2025-2026-244626,glenn.mitchell.unabia@student.ateneo.edu,"UNABIA, Glenn Mitchell V.",244626,TRUE,
+2025-2026-244911,myka.angelyn.ylarde@student.ateneo.edu,"YLARDE, Myka Angelyn S.",244911,TRUE,
+2025-2026-257252,michael.jr.cabaluna@student.ateneo.edu,"CABALUNA JR., Michael N.",257252,TRUE,
+2025-2026-224340,maria.montana@student.ateneo.edu,"MONTAÑA, Maria Francesca B.",224340,TRUE,
+2025-2026-243057,john.lorenze.mercado@student.ateneo.edu,"MERCADO, John Lorenze G.",243057,TRUE,
+2025-2026-247709,ryle.nathaniel.tuazon@student.ateneo.edu,"TUAZON, Ryle Nathaniel S.",247709,TRUE,
+2025-2026-234673,arjane.paala@student.ateneo.edu,"PAALA, Arjane Faith C.",234673,TRUE,
+2025-2026-247639,wreily.canao@student.ateneo.edu,"CANAO, Wreily L.",247639,TRUE,
+2025-2026-256069,maxene.phoebe.verzosa@student.ateneo.edu,"VERZOSA, Maxene Phoebe D.",256069,TRUE,
+2025-2026-223004,justine.gono@student.ateneo.edu,"GOÑO, Justine Diane Y.",223004,TRUE,
+2025-2026-241884,janelle.dzane.fornea@student.ateneo.edu,"FORNEA, Janelle Dzane H.",241884,TRUE,
+2025-2026-230040,sophia.abejuela@student.ateneo.edu,"ABEJUELA, Sophia Isabel A.",230040,TRUE,
+2025-2026-233334,chelsea.kakuda@student.ateneo.edu,"KAKUDA, Chelsea Dainelle O.",233334,TRUE,
+2025-2026-246189,cassandra.khaine.odanga@student.ateneo.edu,"ODANGA, Cassandra Khaine L. ",246189,TRUE,
+2025-2026-244304,helaina.gabrielle.sy@student.ateneo.edu,"SY, Helaina Gabrielle B.",244304,TRUE,
+2025-2026-247722,jemima.sarah.bitancor@student.ateneo.edu,"BITANCOR, Jemima Sarah",247722,TRUE,
+2025-2026-254051,anne.dee.murillo@student.ateneo.edu,"MURILLO, Anne Dee M.",254051,TRUE,
+2025-2026-192053,micah.flores@student.ateneo.edu,"FLORES, Micah Angelie P.",192053,TRUE,
+2025-2026-240108,johanna.marie.agriam@student.ateneo.edu,"AGRIAM, Johanna Marie P.",240108,TRUE,
+2025-2026-232313,andrew.dumangas@student.ateneo.edu,"DUMANGAS, Andrew G. ",232313,TRUE,
+2025-2026-250030,gecille.abelada@student.ateneo.edu,"ABELADA, Gecille T.",250030,TRUE,
+2025-2026-246807,rhyme.andrei.bolintiam@student.ateneo.edu,"BOLINTIAM, Rhyme Andrei",246807,TRUE,
+2025-2026-252650,kimber.lhyn.golez@student.ateneo.edu,"GOLEZ, Kimber Lhyn C.",252650,TRUE,
+2025-2026-220602,arianne.bacolod@student.ateneo.edu,"BACOLOD, Arianne May P.",220602,TRUE,
+2025-2026-250175,leijannah.rebecca.alberto@student.ateneo.edu,"ALBERTO, Leijannah Rebecca Q.",250175,TRUE,
+2025-2026-253619,andrea.sophia.maiquez@student.ateneo.edu,"MAIQUEZ, Andrea F",253619,TRUE,
+2025-2026-243735,casie.denise.ramayan@student.ateneo.edu,"RAMAYAN, Casie Denise R.",243735,TRUE,
+2025-2026-253532,shannen.therese.lupena@student.ateneo.edu,"LUPENA, Shannen Therese T.",253532,TRUE,
+2025-2026-244049,travis.gregory.sanagustin@student.ateneo.edu,"SAN AGUSTIN, Travis Gregory D.",244049,TRUE,
+2025-2026-231935,nicole.deasis@student.ateneo.edu,"DE ASIS, Nicole Joy A.",231935,TRUE,
+2025-2026-252406,stephanie.joy.frane@student.ateneo.edu,"FRANE, Stephanie Joy D.",252406,TRUE,
+2025-2026-223429,teresa.ladines@student.ateneo.edu,"LADINES, Teresa Gayle A.",223429,TRUE,
+2025-2026-246957,adriana.janine.cabahug@student.ateneo.edu,"CABAHUG, Adriana Janine D.",246957,TRUE,
+2025-2026-252218,shyrelle.kate.estrada@student.ateneo.edu,"ESTRADA, Shyrelle Kate A.",252218,TRUE,
+2025-2026-242669,lance.dencel.londres@student.ateneo.edu,"LONDRES, Lance Dencel I.",242669,TRUE,
+2025-2026-242359,robbie.kryzz.zeus.jimenez@student.ateneo.edu,"JIMENEZ, Robbie Kryzz Zeus D.",242359,TRUE,
+2025-2026-224566,joie.ocampo@student.ateneo.edu,"Ocampo, Joie Melissande A. ",224566,TRUE,
+2025-2026-233007,samantha.guillermo@student.ateneo.edu,"GUILLERMO, Samantha Denise O.",233007,TRUE,
+2025-2026-247095,maxine.clarice.lo@student.ateneo.edu,"LO, Maxine Clarice S.",247095,TRUE,
+2025-2026-253880,rachel.marie.grace.mejorada@student.ateneo.edu,"MEJORADA, Rachel Marie Grace D.",253880,TRUE,
+2025-2026-241314,walter.cunanan@student.ateneo.edu,"CUNANAN, Walter Miguel S.",241314,TRUE,
+2025-2026-234208,fiona.metran@student.ateneo.edu,"METRAN, Fiona Nicolette C.",234208,TRUE,
+2025-2026-234474,alexandra.noble@student.ateneo.edu,"NOBLE, Alexandra Kaye L.",234474,TRUE,
+2025-2026-232324,marc.dungo@student.ateneo.edu,"DUNGO, Marc Audryn A.",232324,TRUE,
+2025-2026-225618,nicholas.sampang@student.ateneo.edu,"SAMPANG, Nicholas G.",225618,TRUE,
+2025-2026-253794,gian.andrei.martin@student.ateneo.edu,"Martin, Gian Andrei G. ",253794,TRUE,
+2025-2026-246261,maria.nyah.louise.panahon@student.ateneo.edu,"PANAHON, Maria Nyah Louise M.",246261,TRUE,
+2025-2026-255931,gabriel.tracy.corbari.uddi@student.ateneo.edu,"UDDI, Gabriel Tracy Corbari P.",255931,TRUE,
+2025-2026-246166,ivan.nite@student.ateneo.edu,"NITE, Ivan B.",246166,TRUE,
+2025-2026-240068,maureen.dale.acibar@student.ateneo.edu,"ACIBAR, Maureen Dale T.",240068,TRUE,
+2025-2026-251553,avaraine.marie.cruz@student.ateneo.edu,"Cruz, Avaraine Marie L.",251553,TRUE,
+2025-2026-245969,allyssa.ann.llanera@student.ateneo.edu,"LLANERA, Allyssa Ann C.",245969,TRUE,
+2025-2026-242891,aura.clareize.manjuyod@student.ateneo.edu,"MANJUYOD, Aura Clareize A. ",242891,TRUE,
+2025-2026-252111,clair.princess.jamzelle.elizalde@student.ateneo.edu,"ELIZALDE, Clair Princess Jamzelle D.",252111,TRUE,
+2025-2026-243715,rod.vaughn.quinto@student.ateneo.edu,"QUINTO, Rod Vaughn B.",243715,TRUE,
+2025-2026-232077,henri.delprado@student.ateneo.edu,"DEL PRADO, Henri Louis D.",232077,TRUE,
+2025-2026-256316,shine.yu@student.ateneo.edu,"YU, Shine M.",256316,TRUE,
+2025-2026-254702,dhenri.fathma.nicole.pura@student.ateneo.edu,"PURA, Dhenri Fathma Nicole G.",254702,TRUE,
+2025-2026-236024,danielle.taan@student.ateneo.edu,"TAAN, Danielld Sophia S.",236024,TRUE,
+2025-2026-234269,matt.molino@student.ateneo.edu,"MOLINO, Matt Giancarlo P.",234269,TRUE,
+2025-2026-254277,kayla.angela.ong@student.ateneo.edu,"ONG, Kayla Angela L.",254277,TRUE,
+2025-2026-241770,chloe.mae.estanislao@student.ateneo.edu,"ESTANISLAO, Chloe Mae B.",241770,TRUE,
+2025-2026-244270,erin.summer.sotin@student.ateneo.edu,"SOTIN, Erin T.",244270,TRUE,
+2025-2026-247128,alitheia.sofia.mercado@student.ateneo.edu,"MERCADO, Alitheia Sofia A.",247128,TRUE,
+2025-2026-252033,manuel.antonio.dugan@student.ateneo.edu,"DUGAN, Manuel Antonio R.",252033,TRUE,
+2025-2026-242657,frances.claire.lo@student.ateneo.edu,"LO, Frances Claire S.",242657,TRUE,
+2025-2026-253867,reynaldo.dave.medina@student.ateneo.edu,"MEDINA, Reynaldo Dave Y.",253867,TRUE,
+2025-2026-234716,jinah.pagcu@student.ateneo.edu,"PAGCU, Jinah P",234716,TRUE,
+2025-2026-230480,angelyn.arriola@student.ateneo.edu,"ARRIOLA, Angelyn Joyce k",230480,TRUE,
+2025-2026-254882,sir.revilla@student.ateneo.edu,"REVILLA, Sir Kevin S.",254882,TRUE,
+2025-2026-243450,althea.denise.palces@student.ateneo.edu,"PALCES, Althea Denise A.",243450,TRUE,
+2025-2026-256272,hilary.ybanez@student.ateneo.edu,"YBAÑEZ, Hilary D.",256272,TRUE,
+2025-2026-221045,mikaela.bringula@student.ateneo.edu,"BRINGULA, Mikaela A.",221045,TRUE,
+2025-2026-253110,bryle.adrian.lacabe@student.ateneo.edu,"LACABE, Bryle Adrian P.",253110,TRUE,
+2025-2026-242643,dion.james.llacuna@student.ateneo.edu,"LLACUNA, Dion James D.",242643,TRUE,
+2025-2026-257267,zyrah.kylie.deguzman@student.ateneo.edu,"De Guzman, Zyrah Kylie L.",257267,TRUE,
+2025-2026-233322,jhon.jumaquio@student.ateneo.edu,"JUMAQUIO, Jhon Crist V.",233322,TRUE,
+2025-2026-241603,erika.laurice.dizon@student.ateneo.edu,"DIZON, Erika Laurice P.",241603,TRUE,
+2025-2026-242648,martina.amale.llamas@student.ateneo.edu,"LLAMAS, Martina Amale M.",242648,TRUE,
+2025-2026-240623,a.belda@student.ateneo.edu,"BELDA, Audrey Jezreel B.",240623,TRUE,
+2025-2026-204435,jirah.rucio@student.ateneo.edu,"RUCIO, Jirah Mae B. ",204435,TRUE,
+2025-2026-226984,althea.bunquin@student.ateneo.edu,"BUNQUIN, Althea Kyla S.",226984,TRUE,
+2025-2026-252104,trish.elardo@student.ateneo.edu,"ELARDO, Trish F.",252104,TRUE,
+2025-2026-252941,juan.isabelo@student.ateneo.edu,"ISABELO, Juan Philippe V.",252941,TRUE,
+2025-2026-234564,joshua.olmos@student.ateneo.edu,"OLMOS, Joshua Eitan L.",234564,TRUE,
+2025-2026-230478,chenille.arquero@student.ateneo.edu,"ARQUERO, Chenille Aeree T.",230478,TRUE,
+2025-2026-240283,anika.anzano@student.ateneo.edu,"ANZANO, Anika F.",240283,TRUE,
+2025-2026-240043,andrea.leigh.abril@student.ateneo.edu,"ABRIL, Andrea Leigh A.",240043,TRUE,
+2025-2026-237431,kristine.napoles@student.ateneo.edu,"NAPOLES, Kristine Andrea R.",237431,TRUE,
+2025-2026-230733,daniella.louise.barbacena@student.ateneo.edu,"BARBACENA, Daniella Louise S.",230733,TRUE,
+2025-2026-226512,sophia.unson@student.ateneo.edu,"UNSON, Sophia Therese C.",226512,TRUE,
+2025-2026-236946,willis.co@student.ateneo.edu,"Co, Willis Martin G.",236946,TRUE,
+2025-2026-254835,matt.aidan.rebadomia@student.ateneo.edu,"REBADOMIA, Matt Aidan R.",254835,TRUE,
+2025-2026-225758,charles.saulog@student.ateneo.edu,"SAULOG, Charles Dominic B.",225758,TRUE,
+2025-2026-236314,baby.toling@student.ateneo.edu,"TOLING, Baby Jane",236314,TRUE,
+2025-2026-225987,anika.sulit@student.ateneo.edu,"SULIT, Anika L.",225987,TRUE,
+2025-2026-234503,ralph.nunez@student.ateneo.edu,"NUNEZ, Ralph Andrei S.",234503,TRUE,
+2025-2026-206216,ranzthine.santos@student.ateneo.edu,"SANTOS, Thomas Ranzthine D.",206216,TRUE,
+2025-2026-231452,mary.marcian.cerna@student.ateneo.edu,"CERNA, Mary Marcian Prienne Gl",231452,TRUE,start ni khurt
+2025-2026-237408,mariea.komicho@student.ateneo.edu,"KOMICHO, Mariea Elyja A.",237408,TRUE,
+2025-2026-234221,francis.mijares@student.ateneo.edu,"MIJARES, Francis Isaac S.",234221,TRUE,
+2025-2026-256189,john.rainier.virtucio@student.ateneo.edu,"VIRTUCIO, John Rainier A.",256189,TRUE,
+2025-2026-241889`,beatriz.gillana.francisco@student.ateneo.edu,"FRANCISCO, Beatriz Gillana S.",241889`,TRUE,
+2025-2026-222607,shaine.fernandez@student.ateneo.edu,"FERNANDEZ, Shaine Loise D. ",222607,TRUE,
+2025-2026-216012,john.torricer@student.ateneo.edu,"TORRICER, John Paul L.",216012,TRUE,
+2025-2026-246916,erica.mae.alicante@student.ateneo.edu,"ALICANTE, Erica Mae M.",246916,TRUE,
+2025-2026-233823,atasha.macarubbo@student.ateneo.edu,"MACARUBBO, Atasha Denisse S.",233823,TRUE,
+2025-2026-244970,gabriel.zerna@student.ateneo.edu,"ZERNA, Gabriel D.",244970,TRUE,
+2025-2026-233783,alexandra.lumbis@student.ateneo.edu,"LUMBIS, Alexandra Marie G.",233783,TRUE,
+2025-2026-225479,archimedes.rosete@student.ateneo.edu,"ROSETE, Archimedes III P.",225479,TRUE,
+2025-2026-230813,jerome.bautista@student.ateneo.edu,"BAUTISTA, Jerome",230813,TRUE,
+2025-2026-246024,princess.marithea.magno@student.ateneo.edu,"MAGNO, Princess Marithea G.",246024,TRUE,
+2025-2026-222166,tracy.descallar@student.ateneo.edu,"DESCALLAR, Tracy Nicole P. ",222166,TRUE,
+2025-2026-230144,karl.agudong@student.ateneo.edu,"AGUDONG, Karl Francois Dwayne N.",230144,TRUE,
+2025-2026-242864,charlisze.manansala@student.ateneo.edu,"MANANSALA, Charlisze C.",242864,TRUE,
+2025-2026-227118,trisha.loise.uy@student.ateneo.edu,"UY, Trisha Loise D.",227118,TRUE,
+2025-2026-255243,jian.santos@student.ateneo.edu,"SANTOS, Jian C.",255243,TRUE,
+2025-2026-247269,jhamie.rosellah.aranzanso@student.ateneo.edu,"ARANZANSO, Jhamie Rosellah S.",247269,TRUE,
+2025-2026-232652,leanne.frago@student.ateneo.edu,"FRAGO, Leanne Elyssa Beatrice S.",232652,TRUE,
+2025-2026-241203,sophia.janelle.co@student.ateneo.edu,"CO, Sophia Janelle Y.",241203,TRUE,
+2025-2026-243069,kimberly.mesina@student.ateneo.edu,"MESINA, Kimberly K.",243069,TRUE,
+2025-2026-244954,miguel.antonio.zaballero@student.ateneo.edu,"ZABALLERO, Miguel Antonio E.",244954,TRUE,
+2025-2026-243568,sofia.theresa.pequieras@student.ateneo.edu,"PEQUIERAS, Sofia Theresa A",243568,TRUE,
+2025-2026-253771,precious.clara.mariano@student.ateneo.edu,"MARIANO, Precious Clara C.",253771,TRUE,
+2025-2026-254192,mayven.norberte@student.ateneo.edu,"NORBERTE, Mayven G.",254192,TRUE,
+2025-2026-232422,sheree.espanillo@student.ateneo.edu,"ESPANILLO, Sheree Anne A.",232422,TRUE,
+2025-2026-250264,czar.nicolai.altobano@student.ateneo.edu,"ALTOBANO, Czar Nicolai",250264,TRUE,
+2025-2026-242650,mary.kate.llanos@student.ateneo.edu,"LLANOS, Mary Kate B.",242650,TRUE,
+2025-2026-246183,jan.krzysztof.obra@student.ateneo.edu,"OBRA, Jan Krzysztof R.",246183,TRUE,
+2025-2026-232626,kim.flores@student.ateneo.edu,"FLORES, Kim Dexter R.",232626,TRUE,
+2025-2026-244366,bianca.louise.tan@student.ateneo.edu,"TAN, Bianca Louise G.",244366,TRUE,
+2025-2026-234911,gilianne.perez@student.ateneo.edu,"PEREZ, Gilianne D. ",234911,TRUE,
+2025-2026-241362,rei.daryl.dapula@student.ateneo.edu,"DAPULA, Rei Daryl D.",241362,TRUE,
+2025-2026-254743,julianne.frances.rabago@student.ateneo.edu,"RABAGO, Julianne Frances F.",254743,TRUE,
+2025-2026-242674,casey.alexandra.mae.lontoc@student.ateneo.edu,"LONTOC, Casey Alexandra Mae A.",242674,TRUE,
+2025-2026-235482,jedale.sabio@student.ateneo.edu,"SABIO, Jedale G.",235482,TRUE,
+2025-2026-250624,kimberly.banaag@student.ateneo.edu,"Banaag, Kimberly C.",250624,TRUE,
+2025-2026-252686,marian.andriel.gonzales@student.ateneo.edu,"GONZALES, Marian Andriel P.",252686,TRUE,
+2025-2026-252674,jacy.danielle.gonzales@student.ateneo.edu,"GONZALES, Jacy Danielle I.",252674,TRUE,
+2025-2026-256097,evrald.keinth.villaflor@student.ateneo.edu,"VILLAFLOR, Evrald Keinth G.",256097,TRUE,
+2025-2026-257307,francine.elaine.magpily@student.ateneo.edu,"Magpily, Francine Elaine E.",257307,TRUE,
+2025-2026-246998,dahayallan5@gmail.com,"DAHAY, Allan Jr. B.",246998,FALSE,answered twice
+2025-2026-246998,allan.jr.dahay@student.ateneo.edu,"DAHAY, Allan Jr. B.",246998,TRUE,
+2025-2026-234993,johannes.piscasio@student.ateneo.edu,"PISCASIO, Johannes Martin G.",234993,TRUE,
+2025-2026-241743,analisa.escandor@student.ateneo.edu,"ESCANDOR, Analisa C.",241743,TRUE,pending invite starts here
+2025-2026-240532,k.barez@student.ateneo.edu,"BAREZ, Katrina Ysabelle B.",240532,TRUE,
+2025-2026-250148,joannah.mae.aguinaldo@student.ateneo.edu,"AGUINALDO, Joannah Mae F.",250148,TRUE,
+2025-2026-232289,andre.dorde@student.ateneo.edu,"DORDE, Andre Benedict A.",232289,TRUE,
+2025-2026-242797,mikayla.magistrado@student.ateneo.edu,"MAGISTRADO, Mikayla C.",242797,TRUE,
+2025-2026-220301,maria.anabeza@student.ateneo.edu,"ANABEZA, Maria Chanel C.",220301,TRUE,
+2025-2026-246589,seanne.michael.talingting@student.ateneo.edu,"TALINGTING, Seanne Michael ",246589,TRUE,
+2025-2026-251844,jan.isiah.delacruz@student.ateneo.edu,"DELA CRUZ, Jan Isiah S.",251844,TRUE,
+2025-2026-253016,jhenica.marie.jison@student.ateneo.edu,"JISON, Jhenica Marie J.",253016,TRUE,
+2025-2026-242316,danielle.ira.jacoba@student.ateneo.edu,"JACOBA, Danielle Ira P.",242316,TRUE,
+2025-2026-225031,ada.plata@student.ateneo.edu,"PLATA, Ada Jemina T.",225031,TRUE,
+2025-2026-256234,carla.helene.yalung@student.ateneo.edu,"YALUNG, Carla Helene L.",256234,TRUE,
+2025-2026-241858,justin.edward.figuerres@student.ateneo.edu,"FIGUERRES, Justin Edward G.",241858,TRUE,
+2025-2026-225198,jade.ramos@student.ateneo.edu,"RAMOS, Jade Connery B.",225198,TRUE,
+2025-2026-226612,phoebe.valle@student.ateneo.edu,"VALLE, Phoebe Angela J.",226612,TRUE,
+2025-2026-257364,mary.jane.delacruz@student.ateneo.edu,"DELA CRUZ, Mary Jane A.",257364,TRUE,
+2025-2026-250968,sophia.caballero@student.ateneo.edu,"CABALLERO, Sophia D.",250968,TRUE,
+2025-2026-232031,cayla.deramos@student.ateneo.edu,"DE RAMOS, Cayla Mirielle L.",232031,TRUE,
+2025-2026-233792,mikaella.luna@student.ateneo.edu,"LUNA, Mikaella Luisa M.",233792,TRUE,
+2025-2026-254933,sophia.isabella.reyes@student.ateneo.edu,"REYES, Sophia Isabella V.",254933,TRUE,
+2025-2026-233441,courtney.mae.langit@student.ateneo.edu,"LANGIT, Courtney Mae G. ",233441,TRUE,
+2025-2026-247620,cieli.joyce.gonzaga@student.ateneo.edu,"GONZAGA, Cieli Joyce P.",247620,TRUE,
+2025-2026-241396,ian.charles.decastro@student.ateneo.edu,"DE CASTRO, Ian Charles D.",241396,TRUE,
+2025-2026-241759,andrew.eric.espino@student.ateneo.edu,"ESPINO, Andrew Eric P.",241759,TRUE,
+2025-2026-233356,chelsie.kiak@student.ateneo.edu,"KIAK, Chelsie Joie S.",233356,TRUE,
+2025-2026-251015,gabrielle.lyanne.cadiz@student.ateneo.edu,"CADIZ, Gabrielle Lyanne C.",251015,TRUE,
+2025-2026-250276,raleigh.amante@student.ateneo.edu,"AMANTE, Raleigh T. ",250276,TRUE,
+2025-2026-231322,akeezia.carreon@student.ateneo.edu,"CARREON, Akeezia Fia A.",231322,TRUE,
+2025-2026-213753,stephanie.manantan@student.ateneo.edu,"MANANTAN, Stephanie B.",213753,TRUE,
+2025-2026-225598,rein.salvador@student.ateneo.edu,"SALVADOR, Rein Selen C.",225598,TRUE,
+2025-2026-253608,chloe.junivere.magpantay@student.ateneo.edu,"MAGPANTAY, Chloe Junivere D.",253608,TRUE,
+2025-2026-220243,kimberly.alon@student.ateneo.edu,"ALON, Kimberly Venice H.",220243,TRUE,
+2025-2026-224728,aaron.pacis@student.ateneo.edu,"PACIS, Aaron John C.",224728,TRUE,
+2025-2026-253836,justine.mationg@student.ateneo.edu,"MATIONG, Justine T ",253836,TRUE,
+2025-2026-226644,madison.velasco@student.ateneo.edu,"VELASCO, Madison Alyssa B.",226644,TRUE,
+2025-2026-220969,caryl.binangbang@student.ateneo.edu,"BINANGBANG, Caryl Ann P.",220969,TRUE,
+2025-2026-252245,zyrx.mylz.evangelista@student.ateneo.edu,"EVANGELISTA, Zyrx Mylz V.",252245,TRUE,
+2025-2026-226334,calista.tiu@student.ateneo.edu,"TIU, Calista Lianna T.",226334,TRUE,
+2025-2026-225507,leilanie.saballa@student.ateneo.edu,"SABALLA, Leilanie D.",225507,TRUE,
+2025-2026-254815,john.carlo.ranario@student.ateneo.edu,"RANARIO, John Carlo T.",254815,TRUE,
+2025-2026-243728,reese.leighann.rabulan@student.ateneo.edu,"RABULAN, Reese Leighann E.",243728,TRUE,directly adding members here
+2025-2026-242243,paolo.niccolo.hocchuan@student.ateneo.edu,"HOCCHUAN, Paolo Niccolo L.",242243,TRUE,
+2025-2026-234207,gabrielle.meteoro@student.ateneo.edu,"METEORO, Gabrielle M.",234207,TRUE,
+2025-2026-233848,jaybby.magallanes@student.ateneo.edu,"MAGALLANES, Jaybby I.",233848,TRUE,
+2025-2026-244145,kristine.jane.sayson@student.ateneo.edu,"SAYSON, Kristine Jane",244145,TRUE,
+2025-2026-212792,andrew.goalcantara@student.ateneo.edu,"GO ALCANTARA, Andrew C.",212792,TRUE,
+2025-2026-242822,knights.malacad@student.ateneo.edu,"MALACAD, Knights ",242822,TRUE,
+2025-2026-252744,jerucel.joyce.guarino@student.ateneo.edu,"GUARINO, Jerucel Joyce A.",252744,TRUE,
+2025-2026-240087,rey.christian.adviento@student.ateneo.edu,"ADVIENTO, Rey Christian F.",240087,TRUE,
+2025-2026-256985,hynz.kristian.reotutar@student.ateneo.edu,"REOTUTAR, Hynz Kristian T.",256985,TRUE,
+2025-2026-236073,hayden.tam@student.ateneo.edu,"TAM, Hayden H.",236073,TRUE,
+2025-2026-224667,joanna.ordona@student.ateneo.edu,"ORDOÑA, Joanna Marie",224667,TRUE,
+2025-2026-230940,neil.biason@student.ateneo.edu,"BIASON, Neil Aldous A.",230940,TRUE,
+2025-2026-247119,karelle.vanessa.martinez@student.ateneo.edu,"MARTINEZ, Karelle Vanessa A. ",247119,TRUE,
+2025-2026-224038,anina.manuel@student.ateneo.edu,"MANUEL, Anina Jiliana A. ",224038,TRUE,
+2025-2026-243693,khurt.denzel.querubin@student.ateneo.edu,"QUERUBIN, Khurt Denzel R.",243693,TRUE,
+2025-2026-255770,althea.nicole.teodosio@student.ateneo.edu,"TEODOSIO, Althea Nicole P.",255770,TRUE,
+2025-2026-234598,kendrick.nathan.ong@student.ateneo.edu,"ONG, Kendrick Nathan W. ",234598,TRUE,
+2025-2026-257355,maria.dana.candelaria@student.ateneo.edu,"CANDELARIA, Maria Dana L.",257355,TRUE,
+2025-2026-234650,celver.ortiz@student.ateneo.edu,"ORTIZ, Celver Zitro Huerte",234650,TRUE,
+2025-2026-220238,hxyll.almonguera@student.ateneo.edu,"ALMONGUERA, Hxyll N. ",220238,TRUE,
+2025-2026-222983,princess.gonzales@student.ateneo.edu,"GONZALES, Princess Kate P.",222983,TRUE,
+2025-2026-255111,mariel.anne.salcedo@student.ateneo.edu,"SALCEDO, Mariel Anne A.",255111,TRUE,
+2025-2026-250475,zlynn.anne.asuncion@student.ateneo.edu,"ASUNCION, Zlynn Anne A.",250475,TRUE,
+2025-2026-233857,jan.carlo.magcalas@student.ateneo.edu,"MAGCALAS, Jan Carlo V.",233857,TRUE,
+2025-2026-241722,marian.kate.encarnacion@student.ateneo.edu,"ENCARNACION, Marian Kate M.",241722,TRUE,
+2025-2026-243626,john.steven.pioquid@student.ateneo.edu,"PIOQUID, John Steven G.",243626,TRUE,
+2025-2026-255002,sarah.angelyn.rollan@student.ateneo.edu,"ROLLAN, Sarah Angelyn R. ",255002,TRUE,
+2025-2026-224188,harket.medina@student.ateneo.edu,"MEDINA, Harket R.",224188,TRUE,
+2025-2026-230853,judd.banas@student.ateneo.edu,"BANAS, Judd Christian F.",230853,TRUE,
+2025-2026-232365,linang.echanis@student.ateneo.edu,"ECHANIS, Linang Lumari N.",232365,TRUE,
+2025-2026-243870,czairra.paulette.ricamata@student.ateneo.edu,"RICAMATA, Czairra Paulette R.",243870,TRUE,
+2025-2026-246020,kim.marielle.maghirang@student.ateneo.edu,"MAGHIRANG, Kim Marielle S.",246020,TRUE,
+2025-2026-230181,,"ALBANO, Jhared",230181,FALSE,
+2025-2026-241764,,"ESPIRITU, Eulalia Naomi",241764,FALSE,
+2025-2026-232224,,"DINI-AY, Madieline Nicole",232224,FALSE,
+2025-2026-232612,,"FLORANO, Bryan Jenniel",232612,FALSE,
+2025-2026-231519,,"CHING, Viktoria Jane",231519,FALSE,
+2025-2026-235643,,"SANTOS, Anne Chezka",235643,FALSE,
+2025-2026-247369,,"BOY, Maiev Tyrande",247369,FALSE,
+2025-2026-235705,,"Sarmiento, Alyssa Beatrice",235705,FALSE,
+2025-2026-243820,,"Rentoza, Mary Angela",243820,FALSE,
+2025-2026-231235,,"Caminong, Adrian Sean",231235,FALSE,
+2025-2026-255931,,"Uddi, Gabriel Tracy Corbari P.",255931,FALSE,
+2025-2026-252861,,"Hilario, Kristel Mae",252861,FALSE,
+2025-2026-254356,,"Pacson, Crysch Ericah",254356,FALSE,
+2025-2026-253146,,"Lagunsad, Mark Russell",253146,FALSE,
+2025-2026-254872,,"Repe, Antonio Gabriel",254872,FALSE,
+2025-2026-246235,,"Paches, Joeie Denielle",246235,FALSE,
+2025-2026-243693,,"Querubin, Khurt Denzel",243693,FALSE,
+2025-2026-254384,,"Pahunang, Allainah Jade",254384,FALSE,
+2025-2026-230588,,"Bacani, Lian Ehren",230588,FALSE,
+2025-2026-243682,,"Purisima, Miguel Antonio",243682,FALSE,
+2025-2026-240499,,"Bandola, Joshua Patrick",240499,FALSE,
+2025-2026-226644,,"Velasco, Madison Alyssa",226644,FALSE,
+2025-2026-234509,,"Obos, Juliana Roxcel",234509,FALSE,
+2025-2026-246341,,"Ramirez, Aldy Ezekiel",246341,FALSE,
+2025-2026-236092,alexia.f.tan@student.ateneo.edu,"TAN, Alexia Nicole F. ",236092,FALSE,
+2025-2026-233566,abigaile.leonardo@student.ateneo.edu,"LEONARDO, Abigaile M.",233566,FALSE,
+2025-2026-236155,sean.matthew.tan@student.ateneo.edu,"TAN, Sean Matthew G.",236155,FALSE,
+2025-2026-231736,clarine.cortez@student.ateneo.edu,"CORTEZ, Clarine Elizabeth C.",231736,FALSE,
+2025-2026-226372,jeanette.tolosa@student.ateneo.edu,"TOLOSA, Jeanette Elaine M.",226372,FALSE,
+2025-2026-236513,damielle.valera@student.ateneo.edu,"VALERA, Damielle Rovelyn V.",236513,FALSE,
+2025-2026-234949,jasmine.pena@student.ateneo.edu,"PEÑA, Jasmine Maryl P.",234949,FALSE,
+2025-2026-233862,cristine.magistrado@student.ateneo.edu,"MAGISTRADO, Cristine J.",233862,FALSE,
+2025-2026-231030,arcelle.braganza@student.ateneo.edu,"BRAGANZA, Arcelle Mariz D.",231030,FALSE,
+2025-2026-231365,hanzo.castillo@student.ateneo.edu,"CASTILLO, Hanzo Ricardo M.",231365,FALSE,
+2025-2026-233915,rob.malonzo@student.ateneo.edu,"MALONZO, Rob Sebastian P.",233915,FALSE,
+2025-2026-234376,christian.naguio@student.ateneo.edu,"NAGUIO, Christian Angelo A.",234376,FALSE,
+2025-2026-235683,rosh.miguel.santos@student.ateneo.edu,"SANTOS, Rosh Miguel S.",235683,FALSE,
+2025-2026-253280,stefanie.jianne.leones@student.ateneo.edu,"LEONES, Stefanie Jianne Kimberly S. ",253280,FALSE,
+2025-2026-250993,justin.beaver.cabrera@student.ateneo.edu,"CABRERA, Justin Beaver R.",250993,FALSE,
+2025-2026-252976,charlize.jade.janda@student.ateneo.edu,"JANDA, Charlize Jade D.",252976,FALSE,
+2025-2026-240071,matthew.acosta@student.ateneo.edu,"ACOSTA, Francis Matthew M.",240071,FALSE,
+2025-2026-234704,johan.padit@student.ateneo.edu,"PADIT, Johan Howard N.",234704,FALSE,
+2025-2026-235371,dorothy.robles@student.ateneo.edu,"ROBLES, Dorothy Dea Faith T.",235371,FALSE,
+2025-2026-235495,mikaela.sagaran@student.ateneo.edu,"SAGARAN, Mikaela Alexandria C.",235495,FALSE,
+2025-2026-236125,janina.kiara.tan@student.ateneo.edu,"TAN, Janina Kiara M. ",236125,FALSE,
+2025-2026-255164,joyce.ann.sanbuenaventura@student.ateneo.edu,"SAN BUENAVENTURA, Joyce Ann C.",255164,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
+,,,,FALSE,
