@@ -28,6 +28,26 @@
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* lighter shadow for subtle depth */
 }
+.scroll-down {
+  font-size: 1rem;
+  color: #902f36;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  transition: color 0.3s;
+  align-self: flex-start;
+  margin-top: 20px;
+  margin-left: 100px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.scroll-down:hover { color: #b6e630; }
+
+.scroll-down span {
+  font-weight: 500;
+}
+
 
 /* LEFT LOGO */
 .navbar .logo {
@@ -157,7 +177,7 @@
 
   <!-- RIGHT NAV LINKS -->
   <div class="nav-links">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">How to use</a>
+    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
     <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
@@ -171,7 +191,7 @@
 
   <!-- MOBILE DROPDOWN -->
   <div class="mobile-nav">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">How to use</a>
+    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
     <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
@@ -525,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </section>
 
-<section class="content py-5 text-center">
+<section id="download" class="content py-5 text-center">
   <div class="container" style="max-width: 500px;">
     <h2 class="fw-bold mb-4">Download Your Scholars' Card</h2>
 
@@ -556,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 function scrollToInstructions() {
-  const section = document.getElementById('instructions');
+  const section = document.getElementById('download');
   section.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
