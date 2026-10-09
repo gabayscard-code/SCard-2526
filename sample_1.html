@@ -110,7 +110,8 @@
   padding: 10px 0;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  width: 140px;
+  min-width: 160px;
+  width: max-content;
   z-index: 999;
 }
 .mobile-nav a {
@@ -118,6 +119,7 @@
   font-size: 16px;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
 }
 .mobile-nav a:hover { background-color: rgba(255,255,255,0.1); }
 
@@ -212,7 +214,8 @@ div[style*="max-width:1000px"] { padding: 0 10px; }
   </div>
 
   <div class="mobile-nav">
-    <a href="https://sites.google.com/view/scholarscard/about-scard">About SCard</a>
+    <a href="index.html">About SCard</a>
+    <a href="how_to_use.html">Download card</a>
     <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
@@ -269,7 +272,7 @@ function toggleMenu(el) {
 
 // Partners array
 const partners = [
-  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9" }, mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!...kindred...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>` },
+  { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"], googleMapsLink: "https://maps.app.goo.gl/nzqPGivC83hQtVTt9", mapEmbed: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!...kindred...!" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>` },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
   { name:"Funki Izakaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
   { name:"Funki Pizzikaya", tier:"Bronze", discount:["Pop Up", "10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
