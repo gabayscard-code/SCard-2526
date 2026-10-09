@@ -20,7 +20,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   padding: 17px 20px; /* increased vertical padding for 2px allowance */
   font-family: 'Finger Paint', cursive;
   position: sticky; /* subtle sticky */
@@ -71,6 +72,23 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.navbar .title .title-logo {
+  display: block;
+  height: 68px;
+  width: auto;
+  transition: transform 0.3s;
+}
+.navbar .title .title-logo:hover { transform: scale(1.05); }
+@media (max-width: 700px) {
+  .navbar .title .title-logo { height: 60px; }
+}
+/* Green header: taller so the logo fits, logo vertically centered */
+.navbar { min-height: 88px; box-sizing: border-box; }
+.navbar .title { top: 50%; transform: translate(-50%, -50%); margin: 0; }
+@media (max-width: 700px) {
+  .navbar { min-height: 76px; }
+  .navbar .title { margin: 0; }
+}
 .title span:nth-child(1) { color: #fedd1d; }
 .title span:nth-child(2) { color: #dce198; }
 .title span:nth-child(3) { color: #b6e630; }
@@ -118,7 +136,7 @@
   position: absolute;
   right: 0;
   top: 100%;
-  background-color: #902f36;
+  background-color: #1e9c5e;
   padding: 10px 0;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -169,16 +187,15 @@
 
   <!-- CENTER TITLE -->
   <div class="title">
-    <a href="https://scholarscard.gabayateneo.org/" style="text-decoration:none;">
-      <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span>
-      <span>2</span><span>5</span><span>2</span><span>6</span>
+    <a href="index.html" style="text-decoration:none;">
+      <img src="scard-logo.png" alt="Ateneo Scholars' Card" class="title-logo">
     </a>
   </div>
 
   <!-- RIGHT NAV LINKS -->
   <div class="nav-links">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
-    <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
+    <a href="how_to_use.html">Download Card</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 
@@ -191,8 +208,8 @@
 
   <!-- MOBILE DROPDOWN -->
   <div class="mobile-nav">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
-    <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
+    <a href="how_to_use.html">Download Card</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 </div>
@@ -292,7 +309,8 @@ body {
 
 /* FOOTER */
 footer {
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   color: white;
   text-align: center;
   padding: 20px;
@@ -443,20 +461,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     baseImage.src = "SCard-base.png"; // your base template
     baseImage.onload = function () {
-      canvas.width = baseImage.width;
-      canvas.height = baseImage.height;
+      const W = baseImage.width;
+      const H = baseImage.height;
+      canvas.width = W;
+      canvas.height = H;
 
       ctx.drawImage(baseImage, 0, 0);
 
-      // Add Name
-      ctx.font = "bold 130px Calibri";
-      ctx.fillStyle = "#c8f7d6";
+      // All sizes/positions are proportional to the template, so any resolution works.
+      const rightX = W * 0.95;        // right margin
+      const maxTextWidth = W * 0.53;  // keep text clear of the clovers on the left
+      const FONT = "Arial, Helvetica, sans-serif";
+
+      // Shrinks the font until the text fits within maxTextWidth
+      function fitFont(text, startSize) {
+        let size = startSize;
+        do {
+          ctx.font = `bold ${size}px ${FONT}`;
+          if (ctx.measureText(text).width <= maxTextWidth) break;
+          size -= 1;
+        } while (size > 10);
+      }
+
+      ctx.fillStyle = "#ffffff";
       ctx.textAlign = "right";
-      ctx.fillText(cardName, canvas.width - 80, canvas.height - 240); // adjust position
+      ctx.textBaseline = "alphabetic";
+      ctx.shadowColor = "rgba(0, 0, 0, 0.25)"; // subtle shadow for legibility on the pink area
+      ctx.shadowBlur = W * 0.006;
+      ctx.shadowOffsetY = W * 0.002;
+
+      // Add Name
+      fitFont(cardName, Math.round(W * 0.042));
+      ctx.fillText(cardName, rightX, H * 0.72);
 
       // Add Card Number
-      ctx.font = "bold 170px Calibri";
-      ctx.fillText(cardNumber, canvas.width - 80, canvas.height - 100);
+      fitFont(cardNumber, Math.round(W * 0.06));
+      ctx.fillText(cardNumber, rightX, H * 0.85);
 
       // Download final image
       const link = document.createElement("a");
@@ -492,7 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- Right Image -->
       <div class="col-md-6 text-center">
         <div class="hero-image-wrapper position-relative overflow-hidden">
-          <img src="SCard-Design.jpg" alt="SCard Design" class="img-fluid rounded-3 shadow-lg hero-img">
+          <img src="SCard-Design.png" alt="SCard Design" class="img-fluid rounded-3 shadow-lg hero-img">
         </div>
       </div>
 
@@ -571,7 +611,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!-- ====== FOOTER ====== -->
 <footer>
-  © 2025 Ateneo Scholars' Card 2526. All Rights Reserved.
+  &copy; 2026 Ateneo Scholars' Card 2627. All Rights Reserved.
 </footer>
 
 <script>

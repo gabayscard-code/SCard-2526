@@ -14,7 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   padding: 17px 20px; /* increased vertical padding for 2px allowance */
   font-family: 'Finger Paint', cursive;
   position: sticky; /* subtle sticky */
@@ -24,7 +25,8 @@
 }
 
 footer {
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   color: white;
   text-align: center;
   padding: 20px;
@@ -52,6 +54,23 @@ footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+.navbar .title .title-logo {
+  display: block;
+  height: 68px;
+  width: auto;
+  transition: transform 0.3s;
+}
+.navbar .title .title-logo:hover { transform: scale(1.05); }
+@media (max-width: 700px) {
+  .navbar .title .title-logo { height: 60px; }
+}
+/* Green header: taller so the logo fits, logo vertically centered */
+.navbar { min-height: 88px; box-sizing: border-box; }
+.navbar .title { top: 50%; transform: translate(-50%, -50%); margin: 0; }
+@media (max-width: 700px) {
+  .navbar { min-height: 76px; }
+  .navbar .title { margin: 0; }
 }
 .title span:nth-child(1) { color: #fedd1d; }
 .title span:nth-child(2) { color: #dce198; }
@@ -100,7 +119,7 @@ footer {
   position: absolute;
   right: 0;
   top: 100%;
-  background-color: #902f36;
+  background-color: #1e9c5e;
   padding: 10px 0;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -254,16 +273,15 @@ footer {
 
   <!-- CENTER TITLE -->
   <div class="title">
-    <a href="https://scholarscard.gabayateneo.org/" style="text-decoration:none;">
-      <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span>
-      <span>2</span><span>5</span><span>2</span><span>6</span>
+    <a href="index.html" style="text-decoration:none;">
+      <img src="scard-logo.png" alt="Ateneo Scholars' Card" class="title-logo">
     </a>
   </div>
 
   <!-- RIGHT NAV LINKS -->
   <div class="nav-links">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
-    <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
+    <a href="how_to_use.html">Download Card</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 
@@ -277,7 +295,7 @@ footer {
   <!-- MOBILE DROPDOWN -->
   <div class="mobile-nav">
     <a href="https://sites.google.com/view/scholarscard/about-scard">About SCard</a>
-    <a href="https://sites.google.com/view/scholarscard/partners">Partners</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 </div>
@@ -594,7 +612,7 @@ div[style*="max-width:1000px"] {
 </html>
 
 <footer>
-  © 2025 Ateneo Scholars' Card 2526. All Rights Reserved.
+  &copy; 2026 Ateneo Scholars' Card 2627. All Rights Reserved.
 </footer>
 
 
