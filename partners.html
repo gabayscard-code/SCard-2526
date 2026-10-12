@@ -271,7 +271,6 @@ footer {
   <!-- LEFT LOGO -->
   <div class="logo">
     <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/2b141dee4659d959700f4c7d2d91ca91f5a3150f/Gabay%20%5BLogo%20-%20White%5D" alt="Logo">
-    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/16e8ab87551a1d20b86a60a4afe66db263ad3691/White.png" alt="Logo">
   </div>
 
   <!-- CENTER TITLE -->
@@ -283,6 +282,7 @@ footer {
 
   <!-- RIGHT NAV LINKS -->
   <div class="nav-links">
+    <a href="index.html">About SCard</a>
     <a href="how_to_use.html">Download Card</a>
     <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
@@ -374,7 +374,13 @@ function toggleMenu(el) {
 </div>
 
 <script>
+// Partners list for the new school year
 const partners = [
+  // Add new partners here as they are confirmed
+];
+
+/* Previous partners (archived for reference):
+const previousPartners = [
   { name:"Kindred", tier:"Platinum", discount: ["40% discount on medical consultations to new customers","30% discount to medical consultations to old customers"], filters:["Services","Other Locations"] },
   { name:"Homeboy Hainanese Hawker", tier:"Platinum", discount:"20% discount", filters:["Other Locations","Food"] },
   { name:"Funki Izakaya", tier:"Bronze", discount:["10% discount every Monday to Thursday","5% discount every Friday and Saturday","Free Hot or Iced Americano for every ₱300 purchase"], filters:["Along Katipunan","Food"] },
@@ -403,6 +409,7 @@ const partners = [
   { name:"Brucal Dental Studios", tier:"Platinum", discount:"20% discount on services", filters:["Services","Along Katipunan"] },
   { name:"Kim's Ramyun - Regis Center", tier:"Bronze", discount:"10% discount", filters:["Food","Regis"] },
 ];
+*/
 
 const cardContainer = document.getElementById("cardContainer");
 const pagination = document.getElementById("pagination");
@@ -412,6 +419,17 @@ const cardsPerPage = 9;
 let filteredPartners = [...partners];
 
 function renderCards(list, page=1) {
+  if (list.length === 0) {
+    cardContainer.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #0e8a56; font-family: 'Karla', sans-serif;">
+        <p style="font-size: 1.3rem; font-weight: 700; margin: 0 0 8px 0; color: #119462;">No partners available yet.</p>
+        <p style="font-size: 1rem; color: #555; margin: 0;">Stay tuned for new partner announcements this school year!</p>
+      </div>
+    `;
+    updatePagination(list);
+    return;
+  }
+
   const start = (page - 1) * cardsPerPage;
   const end = start + cardsPerPage;
   const paginated = list.slice(start, end);
