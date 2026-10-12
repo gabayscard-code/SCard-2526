@@ -615,11 +615,13 @@ footer {
 </style>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("cardForm");
   const status = document.getElementById("statusMessage");
+
+  // Replace with your deployed Google Apps Script Web App URL
+  const API_URL = "YOUR_WEB_APP_URL_HERE";
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -630,27 +632,30 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Parse the verification CSV file
-    Papa.parse("Verified-Card-Numbers.csv", {
-      download: true,
-      header: true,
-      complete: function (results) {
-        // Find the matching row
-        const match = results.data.find(row => row["Card Number"] === cardNumber);
+    // Display loading state
+    status.innerHTML = `<div class="alert alert-info">⏳ Verifying card number, please wait...</div>`;
 
-        if (match) {
-          const cardName = match["Full Name"]; 
-
-          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing Your Scholars' Card </div>`;
+    // Fetch verification from Google Apps Script Web App
+    fetch(`${API_URL}?id=${encodeURIComponent(cardNumber)}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data.valid) {
+          const cardName = data.name;
+          status.innerHTML = `<div class="alert alert-success">✅ Card verified for ${cardName}! Preparing Your Scholars' Card</div>`;
           setTimeout(() => downloadCard(cardNumber, cardName), 1000);
         } else {
           status.innerHTML = `<div class="alert alert-danger">❌ Invalid or unverified card number. Please try again.</div>`;
         }
-      },
-      error: function () {
-        status.innerHTML = `<div class="alert alert-warning">⚠️ Unable to load verification list. Please try again later.</div>`;
-      }
-    });
+      })
+      .catch(error => {
+        console.error("Verification error:", error);
+        status.innerHTML = `<div class="alert alert-warning">⚠️ Unable to verify card number. Please try again later.</div>`;
+      });
   });
 
   // ✅ Accept both card number and name
