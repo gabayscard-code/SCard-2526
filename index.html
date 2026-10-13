@@ -6,7 +6,7 @@
 <title>SCard 2526 | Home</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Rubik+Mono+One&family=Inter:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
 
 <!-- Navbar starts. -->
 
@@ -18,7 +18,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   padding: 17px 20px; /* increased vertical padding for 2px allowance */
   font-family: 'Finger Paint', cursive;
   position: sticky; /* subtle sticky */
@@ -48,6 +49,23 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+.navbar .title .title-logo {
+  display: block;
+  height: 68px;
+  width: auto;
+  transition: transform 0.3s;
+}
+.navbar .title .title-logo:hover { transform: scale(1.05); }
+@media (max-width: 700px) {
+  .navbar .title .title-logo { height: 60px; }
+}
+/* Green header: taller so the logo fits, logo vertically centered */
+.navbar { min-height: 88px; box-sizing: border-box; }
+.navbar .title { top: 50%; transform: translate(-50%, -50%); margin: 0; }
+@media (max-width: 700px) {
+  .navbar { min-height: 76px; }
+  .navbar .title { margin: 0; }
 }
 .title span:nth-child(1) { color: #fedd1d; }
 .title span:nth-child(2) { color: #dce198; }
@@ -96,11 +114,12 @@
   position: absolute;
   right: 0;
   top: 100%;
-  background-color: #902f36;
+  background-color: #1e9c5e;
   padding: 10px 0;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  width: 140px;
+  min-width: 160px;
+  width: max-content;
   z-index: 999;
 }
 .mobile-nav a {
@@ -108,6 +127,7 @@
   font-size: 16px;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
 }
 .mobile-nav a:hover { background-color: rgba(255,255,255,0.1); }
 
@@ -142,21 +162,20 @@
   <!-- LEFT LOGO -->
   <div class="logo">
     <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/2b141dee4659d959700f4c7d2d91ca91f5a3150f/Gabay%20%5BLogo%20-%20White%5D" alt="Logo">
-    <img src="https://raw.githubusercontent.com/gabayscard-code/SCard-2526/16e8ab87551a1d20b86a60a4afe66db263ad3691/White.png" alt="Logo">
   </div>
 
   <!-- CENTER TITLE -->
   <div class="title">
-    <a href="https://scholarscard.gabayateneo.org/" style="text-decoration:none;">
-      <span>S</span><span>C</span><span>A</span><span>R</span><span>D</span>
-      <span>2</span><span>5</span><span>2</span><span>6</span>
+    <a href="index.html" style="text-decoration:none;">
+      <img src="scard-logo.png" alt="Ateneo Scholars' Card" class="title-logo">
     </a>
   </div>
 
   <!-- RIGHT NAV LINKS -->
   <div class="nav-links">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download Card</a>
-    <a href="https://scholarscard.gabayateneo.org/partners.html">Partners</a>
+    <a href="index.html">About SCard</a>
+    <a href="how_to_use.html">Download Card</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 
@@ -169,8 +188,9 @@
 
   <!-- MOBILE DROPDOWN -->
   <div class="mobile-nav">
-    <a href="https://scholarscard.gabayateneo.org/how_to_use.html">Download card</a>
-    <a href="https://sites.google.com/view/scholarscard/partners">Partners</a>
+    <a href="index.html">About SCard</a>
+    <a href="how_to_use.html">Download card</a>
+    <a href="partners.html">Partners</a>
     <a href="https://forms.gle/wskJ4HvaMV7x1kUA7">Contact Us</a>
   </div>
 </div>
@@ -211,7 +231,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top right, #fedd1d 0%, #ffffff 50%, #dce198 100%);
+  /* pink-to-green background (image), with a matching CSS gradient as fallback */
+  background-color: #faf4de;
+  background: url("hero-bg.png") center / cover no-repeat,
+              linear-gradient(to bottom, #fdd6e5 0%, #faf4de 50%, #e0ee9d 100%);
   padding: 60px 20px;
   box-sizing: border-box;
 }
@@ -222,8 +245,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: left;
-  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HERO MAIN - Symmetrical side-by-side row in the middle */
+.hero-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
 }
 
 /* TEXT SECTION */
@@ -232,34 +266,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative;
-  margin-right: 45px; 
-  margin-top: 45px;
 }
 
 .hero-text h1 {
   font-family: 'Inter', sans-serif;
   font-style: italic;
-  font-weight: 700;
-  font-size: 96px;
-  line-height: 1.1;
-  color: #902f36;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.15;
+  color: #119462;
   margin: 0;
   white-space: pre-line;
-  position: relative;
 }
 
-/* IMAGE positioning beside "SCard!" with slight upward shift */
+/* IMAGE SECTION */
 .hero-image {
-  position: absolute;
-  top: 55%;
-  left: calc(100% - 198px); /* small gap beside text */
-  transform: translateY(-60%); /* raise image slightly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .hero-image img {
-  width: 320px;
-  transform: rotate(-8deg);
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  transform: rotate(-5deg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border-radius: 12px;
 }
@@ -268,22 +300,20 @@ body {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* SCROLL DOWN directly below text */
+/* SCROLL DOWN centered underneath */
 .scroll-down {
   font-size: 1rem;
-  color: #902f36;
+  color: #119462;
   cursor: pointer;
   animation: bounce 2s infinite;
   transition: color 0.3s;
-  align-self: flex-start;
-  margin-top: 220px; /* ensures it sits below the image+text combo */
-  margin-left: 10px;
-  top: 10px;
+  align-self: center;
+  margin-top: 50px;
   display: flex;
   align-items: center;
-  gap: 7px; /* space between arrow and text */
+  gap: 7px;
 }
-.scroll-down:hover { color: #b6e630; }
+.scroll-down:hover { color: #57c24c; }
 
 .scroll-down span {
   font-weight: 500;
@@ -297,25 +327,34 @@ body {
 
 /* INSTRUCTIONS SECTION */
 .instructions {
-  background-color: #cbd54b;
-  color: #902f36;
-  padding: 80px 20px;
+  background-color: #f5eccf;
+  color: #129462;
+  padding: 90px 24px;
   text-align: center;
 }
 .instructions h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-family: 'Finger Paint', cursive;
+  font-size: 2.8rem;
+  color: #e0819e;
+  -webkit-text-stroke: 1.2px #e0819e;
+  margin-top: 0;
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
 }
 .instructions p {
-  max-width: 700px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  max-width: 920px;
   margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  color: #129462;
 }
 
 /* FOOTER */
 footer {
-  background-color: #902f36;
+  background-color: #2fa85a; /* fallback */
+  background-image: radial-gradient(ellipse 50% 160% at 50% 50%, #119462 0%, #57c24c 100%);
   color: white;
   text-align: center;
   padding: 20px;
@@ -324,37 +363,30 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-content {
-    align-items: center;
+  .hero-main {
+    flex-direction: column;
     text-align: center;
+    gap: 30px;
   }
 
   .hero-text {
     align-items: center;
     text-align: center;
-    margin-right: 0;
-    margin-top: 20px;
   }
 
   .hero-text h1 {
-    font-size: 60px;
-  }
-
-  .hero-image {
-    position: static;
-    transform: none;
-    margin-top: 15px;
+    font-size: 42px;
+    text-align: center;
   }
 
   .hero-image img {
-    width: 240px;
+    width: 270px;
+    transform: none;
   }
 
   .scroll-down {
-    align-self: center;
+    margin-top: 30px;
     font-size: 0.9rem;
-    margin-top: 20px;
-    flex-direction: row; /* arrow stays left of text */
   }
 }
 </style>
@@ -365,29 +397,32 @@ footer {
 <!-- ====== HERO SECTION ====== -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-text">
-      <h1>Welcome to
-SCard!</h1>
-      <div class="hero-image">
-        <img src="SCard-Design.jpg" alt="SCard Design">
+    <div class="hero-main">
+      <div class="hero-text">
+        <h1>You’re in luck,
+Scholars &amp;
+Gabayanos!</h1>
       </div>
-      <div class="scroll-down" onclick="scrollToInstructions()">↓ <span>Scroll down for more information</span></div>
+      <div class="hero-image">
+        <img src="SCard-Design.png" alt="SCard Design">
+      </div>
     </div>
+    <div class="scroll-down" onclick="scrollToInstructions()">↓ <span>Scroll down for more information</span></div>
   </div>
 </section>
 
 <!-- ====== INSTRUCTIONS SECTION ====== -->
 <section id="instructions" class="instructions">
-  <h2>What is the Scholars Card?</h2>
+  <h2>WHAT IS THE SCHOLARS' CARD?</h2>
   <p>
-    The Scholar’s Card (SCard) is an initiative designed to extend meaningful benefits, such as discounts and exclusive offers, to scholars and Gabayanos within the Atenean community. 
+    The Scholar&#8217;s Card (SCard) is an initiative designed to extend meaningful benefits, such as discounts and exclusive offers, to scholars and Gabayanos within the Atenean community. 
     More than just a card, SCard represents our collective commitment to supporting academic journeys and uplifting one another through shared opportunities.
   </p>
 </section>
 
 <!-- ====== FOOTER ====== -->
 <footer>
-  © 2025 Ateneo Scholars' Card 2526. All Rights Reserved.
+  &copy; 2026 Ateneo Scholars' Card 2627. All Rights Reserved.
 </footer>
 
 <script>
