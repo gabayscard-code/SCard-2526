@@ -1,0 +1,10 @@
+{
+  "name": "scard-2526",
+  "version": "1.0.0",
+  "description": "SCard 2526 Website",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000",
+    "serve": "npx serve -l 3000 ."
+  }
+}
