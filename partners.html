@@ -376,7 +376,47 @@ function toggleMenu(el) {
 <script>
 // Partners list for the new school year
 const partners = [
-  // Add new partners here as they are confirmed
+  {
+    name: "Sweetbread",
+    tier: "Bronze",
+    discount: [
+      "10% discount on one food order per member, per day",
+      "10% discount on one drink order per member, per day"
+    ],
+    filters: ["Food", "Other Locations"]
+  },
+  {
+    name: "Baekiri (SpudBae)",
+    tier: "Gold",
+    discount: [
+      "15% off the menu items: Baecyo XXL, Chili Con Carne XXL, Golden Curry XXL",
+      "Redeemable every Wednesday and Saturday only.",
+      "Redeemable only ONCE per day per cardholder."
+    ],
+    filters: ["Food", "Regis"]
+  },
+  {
+    name: "L.A. Sauce Sneaker Laundry Katipunan",
+    tier: "Bronze",
+    discount: "10% discount",
+    filters: ["Services", "Along Katipunan"]
+  },
+  {
+    name: "Cozi Studios",
+    tier: "Platinum",
+    discount: "20% discount",
+    filters: ["Online", "Other Locations"]
+  },
+  {
+    name: "Sunrise Fresh",
+    tier: "Bronze",
+    discount: [
+      "5% discount with a maximum purchase amounting to P1000",
+      "Eat! Katipunan - 10% discount with a limit of only 1 dish (Cardholder's Dish)",
+      "Ferino's Bibingka Katipunan - 10% discount with a limit of 1 Bibingka or Puto Bumbong."
+    ],
+    filters: ["Food", "Along Katipunan"]
+  }
 ];
 
 /* Previous partners (archived for reference):
@@ -448,7 +488,7 @@ function renderCards(list, page=1) {
       <div style="margin:6px 0; font-family:'Karla', sans-serif; font-size:0.95rem; color:#2d3748; line-height:1.45;">
         ${
           Array.isArray(p.discount)
-            ? p.discount.map(d => `<div style="margin-bottom:3px;">${d}</div>`).join('')
+            ? `<ul style="margin:4px 0 6px 0; padding-left:18px; list-style-type:disc;">${p.discount.map(d => `<li style="margin-bottom:3px;">${d}</li>`).join('')}</ul>`
             : `<div>${p.discount}</div>`
         }
       </div>
@@ -484,11 +524,12 @@ function getFilterColor(filter) {
 }
 
 function filterCards() {
-  const search = document.getElementById("searchInput").value.toLowerCase();
+  const search = document.getElementById("searchInput").value.toLowerCase().trim();
   const activeFilter = document.querySelector(".filter-btn.active").dataset.filter;
 
   filteredPartners = partners.filter(p => {
-    const matchesSearch = p.name.toLowerCase().includes(search);
+    const discountText = Array.isArray(p.discount) ? p.discount.join(' ') : (p.discount || '');
+    const matchesSearch = !search || p.name.toLowerCase().includes(search) || discountText.toLowerCase().includes(search);
     const matchesFilter = activeFilter === "all" || p.filters.includes(activeFilter);
     return matchesSearch && matchesFilter;
   });
@@ -590,10 +631,9 @@ div[style*="max-width:1000px"] {
   }
 
   .filter-btn {
-    flex: 1 1 auto;
-    max-width: 45%;
+    flex: 0 0 auto;
     font-size: 13px;
-    padding: 6px 12px;
+    padding: 6px 14px;
   }
 
   #searchInput {
